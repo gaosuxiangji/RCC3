@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RealtimePlayerWidget</class>
+ <widget class="QWidget" name="RealtimePlayerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>698</width>
+    <height>426</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="PlayerTitleBar" name="widgetTitleBar" native="true">
+     <property name="style" stdset="0">
+      <string>player-titlebar</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="VideoToolBar" name="widgetToolBar" native="true"/>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="CWidgetVideoPlaySingle" name="widgetPlayer0" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="CWidgetVideoPlaySingle" name="widgetPlayer1" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VideoToolBar</class>
+   <extends>QWidget</extends>
+   <header>Common/VideoToolBar/videotoolbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CWidgetVideoPlaySingle</class>
+   <extends>QWidget</extends>
+   <header>WidgetVideoPlaySingle.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlayerTitleBar</class>
+   <extends>QWidget</extends>
+   <header>Common/PlayerTitleBar/playertitlebar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

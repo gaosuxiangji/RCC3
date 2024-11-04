@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/settings.png</file>
+        <file>images/help.png</file>
+        <file>images/delete.png</file>
+        <file>images/export.png</file>
+        <file>images/import.png</file>
+        <file>qss/default.qss</file>
+        <file>images/settings-white.png</file>
+        <file>translations/qt_zh_CN.qm</file>
+        <file>images/logo.ico</file>
+        <file>images/video_camera.png</file>
+        <file>images/trigger_lable.png</file>
+        <file>qss/scale_150per.qss</file>
+        <file>images/window_control_icon_close.png</file>
+        <file>images/window_control_icon_maximize.png</file>
+        <file>images/window_control_icon_minimize.png</file>
+        <file>images/window_control_icon_restore.png</file>
+        <file>strings/en_US/gdstrings.ini</file>
+        <file>strings/zh_CN/gdstrings.ini</file>
+        <file>images/camera_abnormal.gif</file>
+        <file>images/camera_external_sync_abnormal.gif</file>
+        <file>images/camera_normal.gif</file>
+        <file>images/camera_unconnected.gif</file>
+        <file>translations/refaapp_en.qm</file>
+        <file>translations/csrccapp-zh_CN.qm</file>
+        <file>images/G_blue.png</file>
+        <file>images/G_green.png</file>
+        <file>images/G_normal.png</file>
+        <file>images/G_red.png</file>
+        <file>images/GR_blue.png</file>
+        <file>images/GR_green.png</file>
+        <file>images/GR_normal.png</file>
+        <file>images/GR_red.png</file>
+        <file>images/MX_blue.png</file>
+        <file>images/MX_green.png</file>
+        <file>images/MX_normal.png</file>
+        <file>images/MX_red.png</file>
+        <file>images/syn_normal.png</file>
+        <file>images/syn_blue.png</file>
+        <file>images/syn_green.png</file>
+        <file>images/syn_red.png</file>
+        <file>translations/csrccapp-zh_CN.ts</file>
+        <file>translations/refaapp_en.ts</file>
+    </qresource>
+</RCC>

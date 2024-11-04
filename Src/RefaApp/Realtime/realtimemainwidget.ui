@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RealtimeMainWidget</class>
+ <widget class="QWidget" name="RealtimeMainWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>846</width>
+    <height>506</height>
+   </rect>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="RealtimePlayerWidget" name="widgetPlayer" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="RealtimeCtrlWidget" name="widgetCtrl">
+      <property name="style" stdset="0">
+       <string>ctrl-panel</string>
+      </property>
+     </widget>
+     <widget class="SetRoiWidget" name="widgetRoi">
+      <property name="style" stdset="0">
+       <string>ctrl-panel</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SetRoiWidget</class>
+   <extends>QWidget</extends>
+   <header>Common/setroiwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RealtimePlayerWidget</class>
+   <extends>QWidget</extends>
+   <header>realtimeplayerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RealtimeCtrlWidget</class>
+   <extends>QWidget</extends>
+   <header>realtimectrlwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

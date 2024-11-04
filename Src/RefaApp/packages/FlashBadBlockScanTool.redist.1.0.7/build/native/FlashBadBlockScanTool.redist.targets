@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="FlashBadBlockScanTool_redist_init;FlashBadBlockScanTool_redist_init_2">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-FlashBadBlockScanTool_redist Condition="'$(Linkage-FlashBadBlockScanTool_redist)' == ''">dynamic</Linkage-FlashBadBlockScanTool_redist>
+    <CallingConvention-FlashBadBlockScanTool_redist Condition="'$(CallingConvention-FlashBadBlockScanTool_redist)' == ''">cdecl</CallingConvention-FlashBadBlockScanTool_redist>
+  </PropertyGroup>
+  <Target Name="FlashBadBlockScanTool_redist_init">
+    <FlashBadBlockScanTool_redist_Contains Text="Linkage-dynamic" Library="FlashBadBlockScanTool_redist" Value="dynamic" Condition="'$(Linkage-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="Linkage-static" Library="FlashBadBlockScanTool_redist" Value="static" Condition="'$(Linkage-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="Linkage-ltcg" Library="FlashBadBlockScanTool_redist" Value="ltcg" Condition="'$(Linkage-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="Linkage-sxs" Library="FlashBadBlockScanTool_redist" Value="sxs" Condition="'$(Linkage-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="CallingConvention-cdecl" Library="FlashBadBlockScanTool_redist" Value="cdecl" Condition="'$(CallingConvention-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="CallingConvention-stdcall" Library="FlashBadBlockScanTool_redist" Value="stdcall" Condition="'$(CallingConvention-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="CallingConvention-fastcall" Library="FlashBadBlockScanTool_redist" Value="fastcall" Condition="'$(CallingConvention-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="CallingConvention-thiscall" Library="FlashBadBlockScanTool_redist" Value="thiscall" Condition="'$(CallingConvention-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+    <FlashBadBlockScanTool_redist_Contains Text="CallingConvention-clrcall" Library="FlashBadBlockScanTool_redist" Value="clrcall" Condition="'$(CallingConvention-FlashBadBlockScanTool_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FlashBadBlockScanTool_redist" />
+    </FlashBadBlockScanTool_redist_Contains>
+  </Target>
+  <Target Name="FlashBadBlockScanTool_redist_init_2">
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+  </Target>
+  <ItemGroup Label="x64 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug\FlashBadBlockScanTool.exe" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug\libLogModuel.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug\protocol_tcpd.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="x64 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release\FlashBadBlockScanTool.exe" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release\libLogModuel.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release\protocol_tcp.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <Target Name="FlashBadBlockScanTool_redist_AfterBuild" AfterTargets="AfterBuild" />
+  <Target Name="FlashBadBlockScanTool_redist_AfterBuild_x64_and_Debug" Label="x64 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )" AfterTargets="FlashBadBlockScanTool_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug\FlashBadBlockScanTool.exe" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug\libLogModuel.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Debug\protocol_tcpd.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="FlashBadBlockScanTool_redist_AfterBuild_x64_and_Release" Label="x64 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )" AfterTargets="FlashBadBlockScanTool_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release\FlashBadBlockScanTool.exe" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release\libLogModuel.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/x64\Release\protocol_tcp.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <UsingTask TaskName="FlashBadBlockScanTool_redist_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+</Project>

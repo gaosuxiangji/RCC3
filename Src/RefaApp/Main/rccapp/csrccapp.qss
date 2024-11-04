@@ -1,0 +1,364 @@
+﻿/*
+1. 字体规范(暂定)：
+（1）字体类型：Microsoft YaHei
+（2）字体大小
+    13pt 大标题或特殊标题
+    12pt 小标题
+    11pt  正文
+    10pt  Icon注释、提示文案
+ */
+
+QWidget {
+    font-family: "Microsoft YaHei";
+}
+
+/****************   国产化采集系统主模块  *****************/
+CSRccApp::QLabel #capLabel
+{
+	background-color:transparent;
+	color:gray;
+        font-size:12px;
+	/*font-weight:bold;*/
+	font-family:Microsoft YaHei;
+}
+
+CSRccApp::QLabel #numLabel
+{
+        background-color:transparent;
+	color:black;
+	font-size:12px;
+	/*font-weight:bold;*/
+	font-family:Microsoft YaHei;
+}
+
+CSRccApp::QLabel #numLabelforbid
+{
+	background-color:transparent;
+	color:gray;
+	font-size:12px;
+	/*font-weight:bold;*/
+	font-family:Microsoft YaHei;
+}
+
+QDockWidget > QWidget 
+{
+    border: 1px solid rgb(127,127,127);
+}
+
+/***********************CSParamSetting**************************/
+CSParamSetting::QWidget #mainWidget
+{
+	background-color:transparent;
+	border-width:1px;
+	border-color:#CCCCCC;
+	border-style:solid;
+}
+
+CSParamSetting::QLabel #commonLabel
+{
+	background-color:transparent;
+	color:black;
+	font-size:12px;
+	font-family:Microsoft YaHei;
+}
+
+CSParamSetting::QLineEdit #commonLineEdit
+{
+	background-color:transparent;
+	color:black;
+	font-size:12px;
+	font-family:Microsoft YaHei;
+}
+
+CSParamSetting::QPushButton #commonBtn
+{
+	border-width:2px;
+	border-color:transparent;
+	border-style:solid;
+}
+
+CSParamSetting::QPushButton #commonBtn:checked
+{
+	border-width:2px;
+	border-color:#00FFFF;
+	border-style:solid;
+}
+
+CSLocalVideoPlayer::QPushButton #commonBtn
+{
+	border-width:1px;
+	border-color:transparent;
+	border-style:solid;
+}
+
+CSLocalVideoPlayer::QPushButton #commonBtn:checked
+{
+	border-width:1px;
+	border-color:blue;
+	border-style:solid;
+}
+
+
+
+/********************导出预览**********************************/
+CSThumbnailControl::QLabel #FrameInfo
+{
+	background-color:#666666;
+	color:red;
+	font-size:12px;
+	font-weight:bold;
+	font-family:Microsoft YaHei;
+}
+
+CSThumbnailControl::QLabel #LoadingInfo
+{
+	background-color:#666666;
+	color:#FFFFFF;
+	font-size:13px;
+	font-weight:bold;
+	font-family:Microsoft YaHei;
+}
+
+CSThumbnailControl::QLabel #ImageInfo
+{
+	background-color:#333333;
+}
+
+
+CSThumbnailControl::QWidget #MainWidgetMoveIn
+{
+	border-width:2px;
+	border-color:red;
+	border-style:solid;
+}
+
+CSThumbnailControl::QWidget #MainWidgetMoveOut
+{
+	border-width:2px;
+	border-color:transparent;
+	border-style:solid;
+}
+
+CSExportPreviewPlayCtrl::QPushButton #PlayPauseControl
+{
+	border-image:url(:/image/image/Display.png);
+}
+
+CSExportPreviewPlayCtrl::QPushButton #PlayPauseControl:checked
+{
+	border-image:url(:/image/image/pause.png);
+}
+
+CSExportPreviewPlayCtrl::QPushButton #PlayPauseControl:disabled
+{
+	border-image:url(:/image/image/Display_disable.png);
+}
+
+CSDisplaySetting::QPushButton #SDIPlayPauseControl
+{
+	border-image:url(:/image/image/Display.png);
+}
+
+CSDisplaySetting::QPushButton #SDIPlayPauseControl:hover
+{
+	border-image:url(:/image/image/Display-hover.png);
+}
+
+CSDisplaySetting::QPushButton #SDIPlayPauseControl:checked
+{
+	border-image:url(:/image/image/pause.png);
+}
+
+CSDisplaySetting::QPushButton #SDIPlayPauseControl:checked:hover
+{
+	border-image:url(:/image/image/pause-hover.png);
+}
+
+CSDisplaySetting::QPushButton #SDIPlayPauseControl:disabled
+{
+	border-image:url(:/image/image/Display_disable.png);
+}
+
+CSDisplaySetting::QLabel #Opened
+{
+	background-color:transparent;
+	color:#00CC00;
+	font-size:10px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QLabel #UnOpened
+{
+	background-color:transparent;
+	color:#333333;
+	font-size:10px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QLabel #TitleText
+{
+	background-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-weight:bold;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #TitleButton
+{
+	background-color:#DDDDDD;
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #TitleButton:hover
+{
+	background-color:rgb(216,230,246);
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #TitleButton:checked
+{
+	background-color:#DDDDDD;
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #TitleButton:checked:hover
+{
+	background-color:rgb(216,230,246);
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #PlaySettingBtn
+{
+	background-color:#DDDDDD;
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #PlaySettingBtn:hover
+{
+	background-color:rgb(216,230,246);
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #PlaySettingBtn:checked
+{
+	background-color:#DDDDDD;
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QPushButton #PlaySettingBtn:checked:hover
+{
+	background-color:rgb(216,230,246);
+	border-width:1px;
+	border-style:solid;
+	border-color:transparent;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSDisplaySetting::QLabel #TitleIcon
+{
+	background-color:transparent;
+	border-width:0px;
+	border-image:url(:/image/image/title_hide.png);
+}
+
+CSDisplaySetting::QLabel #TitleIconChecked
+{
+	background-color:transparent;
+	border-width:0px;
+	border-image:url(:/image/image/title_show.png);
+}
+
+CSTargetScoring::QLabel #CommonInfo
+{
+	background-color:transparent;
+	color:#CCCCCC;
+	font-size:18px;
+	font-family:Microsoft YaHei;
+}
+
+CSTargetScoring::QLabel #ScoringValue
+{
+	background-color:transparent;
+	color:#333333;
+	font-size:24px;
+	font-weight:bold;
+	font-family:Microsoft YaHei;
+}
+
+CSTargetScoring::QLabel #ScoringName
+{
+	background-color:transparent;
+	color:#333333;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSExportPreview::QLabel #DisplayCtrlText
+{
+	background-color:transparent;
+	color:#000000;
+	font-size:12px;
+	font-family:Microsoft YaHei;
+}
+
+CSExportPreview::QPushButton #FrameBtn
+{
+	background-color:white;
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSExportPreview::QPushButton #FrameBtn:hover
+{
+	background-color:rgb(216,230,246);
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+CSExportPreview::QPushButton #FrameBtn:pressed
+{
+	background-color:rgb(216,230,246);
+	color:#000000;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}

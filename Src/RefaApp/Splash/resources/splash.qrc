@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/splash">
+        <file>qss/black.qss</file>
+        <file>translations/splash-en_US.qm</file>
+        <file>translations/splash-zh_CN.qm</file>
+        <file>avi/splash01.avi</file>
+        <file>avi/splash02.avi</file>
+        <file>avi/splash03.avi</file>
+        <file>avi/splash04.avi</file>
+        <file>avi/splash05.avi</file>
+    </qresource>
+</RCC>

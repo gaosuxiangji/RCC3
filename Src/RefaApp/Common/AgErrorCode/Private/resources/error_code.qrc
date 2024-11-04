@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/errorcode">
+        <file>en_US/error_code.csv</file>
+        <file>zh_CN/error_code.csv</file>
+    </qresource>
+</RCC>

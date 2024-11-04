@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="FallPointMeasure_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-FallPointMeasure Condition="'$(Linkage-FallPointMeasure)' == ''">dynamic</Linkage-FallPointMeasure>
+    <CallingConvention-FallPointMeasure Condition="'$(CallingConvention-FallPointMeasure)' == ''">cdecl</CallingConvention-FallPointMeasure>
+  </PropertyGroup>
+  <ItemDefinitionGroup Label="x64 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Debug\FallPointMeasure.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Release\FallPointMeasure.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="FallPointMeasure_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="FallPointMeasure_init">
+    <FallPointMeasure_Contains Text="Linkage-dynamic" Library="FallPointMeasure" Value="dynamic" Condition="'$(Linkage-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="Linkage-static" Library="FallPointMeasure" Value="static" Condition="'$(Linkage-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="Linkage-ltcg" Library="FallPointMeasure" Value="ltcg" Condition="'$(Linkage-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="Linkage-sxs" Library="FallPointMeasure" Value="sxs" Condition="'$(Linkage-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="CallingConvention-cdecl" Library="FallPointMeasure" Value="cdecl" Condition="'$(CallingConvention-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="CallingConvention-stdcall" Library="FallPointMeasure" Value="stdcall" Condition="'$(CallingConvention-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="CallingConvention-fastcall" Library="FallPointMeasure" Value="fastcall" Condition="'$(CallingConvention-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="CallingConvention-thiscall" Library="FallPointMeasure" Value="thiscall" Condition="'$(CallingConvention-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+    <FallPointMeasure_Contains Text="CallingConvention-clrcall" Library="FallPointMeasure" Value="clrcall" Condition="'$(CallingConvention-FallPointMeasure)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-FallPointMeasure" />
+    </FallPointMeasure_Contains>
+  </Target>
+</Project>

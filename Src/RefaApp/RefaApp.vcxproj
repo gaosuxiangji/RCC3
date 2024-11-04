@@ -1,0 +1,1080 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C154FB0-A7DC-3171-A56D-6681D98EE065}</ProjectGuid>
+    <RootNamespace>RefaApp</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\x64\Release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>RefaApp</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\x64\Debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>RefaApp</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RefaApp</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PostBuildEventUseInBuild>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RefaApp</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\3rdparty\filesystem\include;..\3rdparty\qtpropertybrowser;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc2015;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\include;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\include;$(ProjectDir)..\..\AGSDK\AGCommon\Src;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\HscInterface;$(ProjectDir)..\..\AGSDK\AGSDK\include;.\PointMeasure;.\ManualWhiteBalance;.\Main\rccapp\render\graphicsview;.\Main\rccapp\cssoftwareversion</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;CF18SDK_EXPORTS;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AGSDK.lib;shell32.lib;AgCapability.lib;HscSDK.lib;HscExport.lib;DeviceDiscovery.lib;$(QTDIR)\lib\qtmain.lib;$(QTDIR)\lib\Qt5MultimediaWidgets.lib;$(QTDIR)\lib\Qt5Multimedia.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGSDK\DeviceDiscovery\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\AgCapability\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGSDK\bin\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\RefaApp.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <QtMoc>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <InputFile>%(FullPath)</InputFile>
+      <DynamicSource>output</DynamicSource>
+      <IncludePath>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName)\.;.\..\3rdparty\filesystem\include;.\..\3rdparty\qtpropertybrowser;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc2015;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\include;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\include;$(ProjectDir)..\..\AGSDK\AGCommon\Src;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\HscInterface;$(ProjectDir)..\..\AGSDK\AGSDK\include;.\PointMeasure;.\ManualWhiteBalance;.\Main\rccapp\render\graphicsview;.\Main\rccapp\cssoftwareversion;$(NOINHERIT)\.</IncludePath>
+      <Define>_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;CF18SDK_EXPORTS;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </QtMoc>
+    <QtUic>
+      <InputFile>%(FullPath)</InputFile>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <Compression>default</Compression>
+      <InputFile>%(FullPath)</InputFile>
+    </QtRcc>
+    <PreBuildEvent>
+      <Command>if not exist autoGenVer.h (
+powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(ProjectDir)..\pipeLineScript\autoVersion\getGitVersionInfo.ps1 $(ProjectDir)
+)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\3rdparty\filesystem\include;..\3rdparty\qtpropertybrowser;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc2015;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\include;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\include;$(ProjectDir)..\..\AGSDK\AGCommon\Src;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\HscInterface;$(ProjectDir)..\..\AGSDK\AGSDK\include;.\PointMeasure;.\ManualWhiteBalance;.\Main\rccapp\render\graphicsview;.\Main\rccapp\cssoftwareversion;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;CF18SDK_EXPORTS;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AGSDK.lib;shell32.lib;AgCapability.lib;HscSDK.lib;HscExport.lib;DeviceDiscovery.lib;$(QTDIR)\lib\qtmaind.lib;$(QTDIR)\lib\Qt5MultimediaWidgetsd.lib;$(QTDIR)\lib\Qt5Multimediad.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGSDK\DeviceDiscovery\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\AgCapability\bin\$(Platform)\$(Configuration)\;$(ProjectDir)..\..\AGSDK\AGSDK\bin\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\RefaApp.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <QtMoc>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <InputFile>%(FullPath)</InputFile>
+      <DynamicSource>output</DynamicSource>
+      <IncludePath>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName)\.;.\..\3rdparty\filesystem\include;.\..\3rdparty\qtpropertybrowser;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc2015;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\include;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\include;$(ProjectDir)..\..\AGSDK\AGCommon\Src;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\HscInterface;$(ProjectDir)..\..\AGSDK\AGSDK\include;.\PointMeasure;.\ManualWhiteBalance;.\Main\rccapp\render\graphicsview;.\Main\rccapp\cssoftwareversion</IncludePath>
+      <Define>_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;CF18SDK_EXPORTS;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB</Define>
+    </QtMoc>
+    <QtUic>
+      <InputFile>%(FullPath)</InputFile>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>$(QTDIR)</QTDIR>
+    </QtUic>
+    <QtRcc>
+      <Compression>default</Compression>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <InputFile>%(FullPath)</InputFile>
+    </QtRcc>
+    <PreBuildEvent>
+      <Command>if not exist autoGenVer.h (
+powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(ProjectDir)..\pipeLineScript\autoVersion\getGitVersionInfo.ps1 $(ProjectDir)
+)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\ImageNS\ImageNS.cpp" />
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\UtilityNS\Buffer.cpp" />
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\UtilityNS\StringUtil.cpp" />
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\UtilityNS\UtilityNS.cpp" />
+    <ClCompile Include="Common\ExportCom\AGCacheStream.cpp" />
+    <ClCompile Include="Common\ExportCom\SegMemCache.cpp" />
+    <ClCompile Include="Device\cdgrcameradiskselect\csdlgdiskselect.cpp" />
+    <ClCompile Include="Device\CF18\CF18SyncTrigger.cpp" />
+    <ClCompile Include="Device\cscf18controlpanel\cscf18controlpanel.cpp" />
+    <ClCompile Include="Main\rccapp\cslowlightmode\cslowlightmode.cpp" />
+    <ClCompile Include="Main\rccapp\cssoftwareversion\csaboutqtopensourcedlg.cpp" />
+    <ClCompile Include="Main\rccapp\cssoftwareversion\csopensourcelicensedlg.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgimageitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bglineitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bglinemeasureitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bglinesmeasureitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgmeasurebase.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgmeasuremanage.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgrectitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgtextitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bqgraphicsscene.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bqgraphicsview.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureangle3item.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureangle4item.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureareapolygonitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurearearadiusitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurebaseitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurecenterdistanceitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurediameteritem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasuredimensionitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurelineitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasuremanage.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureradiusitem.cpp" />
+    <ClCompile Include="Device\csdevicesearchlistwidget.cpp" />
+    <ClCompile Include="Device\editdeviceinfo\editdeviceinfo.cpp" />
+    <ClCompile Include="Device\editgroupinfo\editgroupinfo.cpp" />
+    <ClCompile Include="Device\treenodeoperate\treenodeoperate.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\AviVideoFileReader.cpp" />
+    <ClCompile Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.cpp" />
+    <ClCompile Include="PointMeasure\CMeasureLineManage.cpp" />
+    <ClCompile Include="PointMeasure\CSMeasureCalibrationDlg.cpp" />
+    <ClCompile Include="PointMeasure\CSMeasurePageDlg.cpp" />
+    <ClCompile Include="PointMeasure\CSPointMeasureDlg.cpp" />
+    <ClCompile Include="PointMeasure\measureresulttabelmodel.cpp" />
+    <ClCompile Include="System\DeviceList\devicerefreshwidget.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv4.cpp" />
+    <ClCompile Include="System\SystemSettings\rangemodulemanage\rangemodulemanage.cpp" />
+    <ClCompile Include="System\SystemSettings\rangemodulemanage\rangeslider.cpp" />
+    <ClCompile Include="videolistthumbnail\videolistthumbnail.cpp" />
+    <ClCompile Include="Video\DataSavers\BmpWriter.cpp" />
+    <ClCompile Include="Main\CrashDump\CrashDumpInfo.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreview\DoubleValidator.cpp" />
+    <ClCompile Include="Video\Export\ExportCacheFrame.cpp" />
+    <ClCompile Include="Playback\CSPlaybackCacher\cache\FrameMgrFixed.cpp" />
+    <ClCompile Include="System\FunctionCustomizer\FunctionCustomizer.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\ImageVideoFileReader.cpp" />
+    <ClCompile Include="Common\ExportCom\MemCacheFile.cpp" />
+    <ClCompile Include="Playback\CSPlaybackCacher\cache\MemFile.cpp" />
+    <ClCompile Include="Main\rccapp\render\PlayerViewBase.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\RhvdVideoFileReader.cpp" />
+    <ClCompile Include="Common\UIUtils\UIHelper.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\VideoFileUtils.cpp" />
+    <ClCompile Include="Main\rccapp\render\ViewMatrixTransform.cpp" />
+    <ClCompile Include="Common\AgCheckBoxHeaderView\agcheckboxheaderview.cpp" />
+    <ClCompile Include="Common\AgCheckBoxItemDelegate\agcheckboxitemdelegate.cpp" />
+    <ClCompile Include="Common\AgErrorCode\agerrorcode.cpp" />
+    <ClCompile Include="Common\AgErrorCode\Private\agerrorcodeprivate.cpp" />
+    <ClCompile Include="Common\AgLinkButtonItemDelegate\aglinkbuttonitemdelegate.cpp" />
+    <ClCompile Include="Common\AgRadioButton\agradiobutton.cpp" />
+    <ClCompile Include="Common\AgSwitchButton\agswitchbutton.cpp" />
+    <ClCompile Include="Video\checkboxdelegate.cpp" />
+    <ClCompile Include="Device\csdevicelistwidget.cpp" />
+    <ClCompile Include="Device\Temperature\csdevicetemperaturepanel.cpp" />
+    <ClCompile Include="Device\csdevicetreeview.cpp" />
+    <ClCompile Include="Main\rccapp\csdisplaysetting\csdisplaysetting.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgarmmanualwhitebalance.cpp" />
+    <ClCompile Include="Device\csdlgcameraproperty.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgdeviceauth.cpp" />
+    <ClCompile Include="Video\Export\csdlgdevicevideoexport.cpp" />
+    <ClCompile Include="System\csdlgfallpointmeasuresetup.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsetting.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv2.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv3.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlghealthmanagersetting.cpp" />
+    <ClCompile Include="System\csdlgimagetrainning.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgluminanceandcontrastsetting.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgmanualwhitebalance.cpp" />
+    <ClCompile Include="System\Experiment\csdlgnewexp.cpp" />
+    <ClCompile Include="System\Experiment\csdlgopenexp.cpp" />
+    <ClCompile Include="Device\csdlgprogressformat.cpp" />
+    <ClCompile Include="System\csdlgselfcheck.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgsetoption.cpp" />
+    <ClCompile Include="Device\csdlgtriggerproperty.cpp" />
+    <ClCompile Include="Device\csdlgtriggerpulsecontrol.cpp" />
+    <ClCompile Include="Main\rccapp\edrexposureparamsetting\csedrexposureparamsetting.cpp" />
+    <ClCompile Include="System\Experiment\csexperimentutil.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreview\csexportpreview.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.cpp" />
+    <ClCompile Include="System\cshealthmanager.cpp" />
+    <ClCompile Include="Property\csintcomboproperty.cpp" />
+    <ClCompile Include="Video\cslistviewvideo.cpp" />
+    <ClCompile Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.cpp" />
+    <ClCompile Include="System\SystemSettings\cslutcurveeditwidget.cpp" />
+    <ClCompile Include="Main\rccapp\csmenulocalvideo\csmenulocalvideo.cpp" />
+    <ClCompile Include="Main\rccapp\csnetconfig\csnetconfig.cpp" />
+    <ClCompile Include="Main\rccapp\paramsetting\csparamsetting.cpp" />
+    <ClCompile Include="Playback\CSPlayBackCacher\csplaybackcacher.cpp" />
+    <ClCompile Include="Playback\csplaybackcontroller.cpp" />
+    <ClCompile Include="Property\cspropertyviewdevice.cpp" />
+    <ClCompile Include="Main\rccapp\csrccapp.cpp" />
+    <ClCompile Include="Main\csrccapptranslator.cpp" />
+    <ClCompile Include="Main\rccapp\cssecondscreen\cssecondscreen.cpp" />
+    <ClCompile Include="Main\rccapp\cssoftwareversion\cssoftwareversion.cpp" />
+    <ClCompile Include="Playback\CSTargetScoring\cstargerscoring.cpp" />
+    <ClCompile Include="Main\rccapp\cstargetscoring\cstargetscoring.cpp" />
+    <ClCompile Include="Main\rccapp\csthumbnailcontrol\csthumbnailcontrol.cpp" />
+    <ClCompile Include="Main\rccapp\csthumbnailmanage\csthumbnailmanage.cpp" />
+    <ClCompile Include="Property\cstreepropertybrowser.cpp" />
+    <ClCompile Include="Video\DataSavers\csvideosaver.cpp" />
+    <ClCompile Include="Video\csvideotableview.cpp" />
+    <ClCompile Include="Main\rccapp\csviewmanager.cpp" />
+    <ClCompile Include="Main\rccapp\windowcrosslinesetting\cswindowcrosslinesetting.cpp" />
+    <ClCompile Include="Device\device.cpp" />
+    <ClCompile Include="Device\devicemanager.cpp" />
+    <ClCompile Include="Device\deviceproperties.cpp" />
+    <ClCompile Include="System\DeviceList\devicesearchthread.cpp" />
+    <ClCompile Include="System\DeviceList\devicesearchwidget.cpp" />
+    <ClCompile Include="Device\deviceutils.cpp" />
+    <ClCompile Include="Common\ErrorCodeUtils\errorcodeutils.cpp" />
+    <ClCompile Include="Video\Export\exportutils.cpp" />
+    <ClCompile Include="Video\Export\ToolTipsShowWidget.cpp" />
+    <ClCompile Include="Video\FeatureItem\featureitem.cpp" />
+    <ClCompile Include="Main\framelesswindow\framelesswindow.cpp" />
+    <ClCompile Include="Device\imageprocessor.cpp" />
+    <ClCompile Include="Common\KeyBoardControl\keyboardcontrol.cpp" />
+    <ClCompile Include="Main\main.cpp" />
+    <ClCompile Include="Main\maininitthread.cpp" />
+    <ClCompile Include="Common\ParamIntValidator\paramintvalidator.cpp" />
+    <ClCompile Include="Common\ParamSpinBox\paramspinbox.cpp" />
+    <ClCompile Include="Common\PathUtils\pathutils.cpp" />
+    <ClCompile Include="Common\PlayCtrlWidget\playctrlwidget.cpp" />
+    <ClCompile Include="Common\PlayCtrlWidget\playersliderwidget.cpp" />
+    <ClCompile Include="Common\PlayerTitleBar\playertitlebar.cpp" />
+    <ClCompile Include="Main\rccapp\csnetconfig\qiplineedit.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtbuttonpropertybrowser.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtgroupboxpropertybrowser.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtpropertybrowserutils.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtvariantproperty.cpp" />
+    <ClCompile Include="Main\rccapp\recoveringdata\recoveringdatawidget.cpp" />
+    <ClCompile Include="Common\setroiwidget.cpp" />
+    <ClCompile Include="Splash\splashwidget.cpp" />
+    <ClCompile Include="Main\systemlauncher.cpp" />
+    <ClCompile Include="System\SystemSettings\systemsettingsmanager.cpp" />
+    <ClCompile Include="Video\tabelheaderview.cpp" />
+    <ClCompile Include="Common\TouchCheckWidget\touchcheckwidget.cpp" />
+    <ClCompile Include="Common\TouchComboWidget\touchcombowidget.cpp" />
+    <ClCompile Include="Common\TouchOptionsWidget\touchoptionswidget.cpp" />
+    <ClCompile Include="Common\TouchOptionWidget\touchoptionwidget.cpp" />
+    <ClCompile Include="Common\UIExplorer\uiexplorer.cpp" />
+    <ClCompile Include="Common\UIUtils\uiutils.cpp" />
+    <ClCompile Include="Video\VideoItem\videoitem.cpp" />
+    <ClCompile Include="Video\VideoItemManager\videoitemmanager.cpp" />
+    <ClCompile Include="Video\Export\videolisttabelmodel.cpp" />
+    <ClCompile Include="Common\VideoListWidget\videolistwidget.cpp" />
+    <ClCompile Include="Common\VideoToolBar\videotoolbar.cpp" />
+    <ClCompile Include="Video\VideoUtils\videoutils.cpp" />
+    <ClCompile Include="Video\Export\watermarkView.cpp" />
+    <ClCompile Include="Main\framelesswindow\windowdragger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\AGSDK\AGCommon\Src\ImageNS\ImageNS.h" />
+    <ClInclude Include="..\..\AGSDK\AGCommon\Src\UtilityNS\StringUtil.h" />
+    <ClInclude Include="..\..\AGSDK\AGCommon\Src\UtilityNS\UtilityNS.h" />
+    <ClInclude Include="Common\ExportCom\AGCacheStream.h" />
+    <ClInclude Include="Common\ExportCom\SegMemCache.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bqgraphicsscene.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bqgraphicsview.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgtextitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgimageitem.h" />
+    <QtMoc Include="Main\rccapp\cslowlightmode\cslowlightmode.h" />
+    <QtMoc Include="Device\cdgrcameradiskselect\csdlgdiskselect.h" />
+    <QtMoc Include="Main\rccapp\cssoftwareversion\csopensourcelicensedlg.h" />
+    <QtMoc Include="Main\rccapp\cssoftwareversion\csaboutqtopensourcedlg.h" />
+    <ClInclude Include="Main\rccapp\render\graphicsview\bglineitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bglinemeasureitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgmeasuremanage.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgmeasurebase.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bglinesmeasureitem.h" />
+    <ClInclude Include="Main\rccapp\render\graphicsview\bgrectitem.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName)\.;.\..\3rdparty\filesystem\include;.\..\3rdparty\qtpropertybrowser;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc2015;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\include;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\include;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\HscInterface</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName)\.;.\..\3rdparty\filesystem\include;.\..\3rdparty\qtpropertybrowser;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;$(QTDIR)\mkspecs\win32-msvc2015;$(ProjectDir)..\..\AGSDK\AGSDK\HscSDK\include;$(ProjectDir)..\..\AGSDK\AGSDK\HscExport\include;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS;$(ProjectDir)..\..\AGSDK\AGCommon\Src\RccNS\HscInterface</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG</Define>
+    </ClInclude>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurebaseitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasuremanage.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurelineitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureangle3item.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureangle4item.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureradiusitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasuredimensionitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurediameteritem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurecenterdistanceitem.h" />
+    <QtMoc Include="Device\csdevicesearchlistwidget.h" />
+    <QtMoc Include="Device\treenodeoperate\treenodeoperate.h" />
+    <QtMoc Include="Device\editdeviceinfo\editdeviceinfo.h" />
+    <QtMoc Include="Device\editgroupinfo\editgroupinfo.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurearearadiusitem.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureareapolygonitem.h" />
+    <QtMoc Include="Device\cscf18controlpanel\cscf18controlpanel.h" />
+    <ClInclude Include="Device\CF18\CF18SyncTrigger.h" />
+    <ClInclude Include="Device\CF18\httplib.h" />
+    <ClInclude Include="Device\CF18\nlohmann\json.hpp" />
+    <ClInclude Include="Main\rccapp\VideoFile\AviVideoFileReader.h" />
+    <QtMoc Include="PointMeasure\CSPointMeasureDlg.h" />
+    <QtMoc Include="PointMeasure\measureresulttabelmodel.h" />
+    <QtMoc Include="PointMeasure\CMeasureLineManage.h" />
+    <QtMoc Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.h" />
+    <QtMoc Include="PointMeasure\CSMeasureCalibrationDlg.h" />
+    <QtMoc Include="PointMeasure\CSMeasurePageDlg.h" />
+    <QtMoc Include="System\DeviceList\devicerefreshwidget.h" />
+    <QtMoc Include="videolistthumbnail\videolistthumbnail.h" />
+    <QtMoc Include="System\SystemSettings\rangemodulemanage\rangemodulemanage.h" />
+    <QtMoc Include="System\SystemSettings\rangemodulemanage\rangeslider.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsettingv4.h" />
+    <ClInclude Include="Video\DataSavers\BmpWriter.h" />
+    <ClInclude Include="Main\CrashDump\CrashDumpInfo.h" />
+    <QtMoc Include="Main\rccapp\csexportpreview\DoubleValidator.h" />
+    <ClInclude Include="Video\Export\ExportCacheFrame.h" />
+    <ClInclude Include="Playback\CSPlaybackCacher\cache\FrameMgrFixed.h" />
+    <ClInclude Include="System\FunctionCustomizer\FunctionCustomizer.h" />
+    <ClInclude Include="Common\ExportCom\IOCacheObj.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\IVideoFileReader.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\ImageVideoFileReader.h" />
+    <ClInclude Include="Common\ExportCom\MemCacheFile.h" />
+    <ClInclude Include="Playback\CSPlaybackCacher\cache\MemFile.h" />
+    <QtMoc Include="Main\rccapp\render\PlayerViewBase.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\RhvdVideoFileReader.h" />
+    <ClInclude Include="Common\UIUtils\UIHelper.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\VideoFileUtils.h" />
+    <ClInclude Include="Main\rccapp\render\ViewMatrixTransform.h" />
+    <QtMoc Include="Device\acquirethread.h" />
+    <QtMoc Include="Common\AgCheckBoxHeaderView\agcheckboxheaderview.h" />
+    <ClInclude Include="Common\AgCheckBoxItemDelegate\agcheckboxitemdelegate.h" />
+    <ClInclude Include="Common\AgErrorCode\agerrorcode.h" />
+    <ClInclude Include="Common\AgErrorCode\Private\agerrorcodeprivate.h" />
+    <QtMoc Include="Common\AgLinkButtonItemDelegate\aglinkbuttonitemdelegate.h" />
+    <ClInclude Include="Common\AgRadioButton\agradiobutton.h" />
+    <QtMoc Include="Common\AgSwitchButton\agswitchbutton.h" />
+    <QtMoc Include="Video\checkboxdelegate.h" />
+    <QtMoc Include="Device\csdevicelistwidget.h" />
+    <QtMoc Include="Device\Temperature\csdevicetemperaturepanel.h" />
+    <QtMoc Include="Device\csdevicetreeview.h" />
+    <QtMoc Include="Main\rccapp\csdisplaysetting\csdisplaysetting.h" />
+    <QtMoc Include="System\SystemSettings\csdlgarmmanualwhitebalance.h" />
+    <QtMoc Include="Device\csdlgcameraproperty.h" />
+    <QtMoc Include="System\SystemSettings\csdlgdeviceauth.h" />
+    <QtMoc Include="Video\Export\csdlgdevicevideoexport.h" />
+    <QtMoc Include="System\csdlgfallpointmeasuresetup.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsetting.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsettingv2.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsettingv3.h" />
+    <QtMoc Include="System\SystemSettings\csdlghealthmanagersetting.h" />
+    <QtMoc Include="System\csdlgimagetrainning.h" />
+    <QtMoc Include="System\SystemSettings\csdlgluminanceandcontrastsetting.h" />
+    <QtMoc Include="System\SystemSettings\csdlgmanualwhitebalance.h" />
+    <QtMoc Include="System\Experiment\csdlgnewexp.h" />
+    <QtMoc Include="System\Experiment\csdlgopenexp.h" />
+    <QtMoc Include="Device\csdlgprogressformat.h" />
+    <QtMoc Include="System\csdlgselfcheck.h" />
+    <QtMoc Include="System\SystemSettings\csdlgsetoption.h" />
+    <QtMoc Include="Device\csdlgtriggerproperty.h" />
+    <QtMoc Include="Device\csdlgtriggerpulsecontrol.h" />
+    <QtMoc Include="Main\rccapp\edrexposureparamsetting\csedrexposureparamsetting.h" />
+    <ClInclude Include="System\Experiment\csexperimentutil.h" />
+    <QtMoc Include="Main\rccapp\csexportpreview\csexportpreview.h" />
+    <QtMoc Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.h" />
+    <QtMoc Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.h" />
+    <ClInclude Include="Device\csframeinfo.h" />
+    <ClInclude Include="Main\rccapp\csglobaldefine.h" />
+    <ClInclude Include="System\cshealthmanager.h" />
+    <QtMoc Include="Property\csintcomboproperty.h" />
+    <QtMoc Include="Video\cslistviewvideo.h" />
+    <QtMoc Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.h" />
+    <QtMoc Include="System\SystemSettings\cslutcurveeditwidget.h" />
+    <QtMoc Include="Main\rccapp\csmenulocalvideo\csmenulocalvideo.h" />
+    <QtMoc Include="Main\rccapp\csnetconfig\csnetconfig.h" />
+    <QtMoc Include="Main\rccapp\paramsetting\csparamsetting.h" />
+    <ClInclude Include="Playback\CSPlayBackCacher\csplaybackcacher.h" />
+    <QtMoc Include="Playback\csplaybackcontroller.h" />
+    <QtMoc Include="Property\cspropertyviewdevice.h" />
+    <QtMoc Include="Main\rccapp\csrccapp.h" />
+    <ClInclude Include="Main\csrccapptranslator.h" />
+    <QtMoc Include="Main\rccapp\cssecondscreen\cssecondscreen.h" />
+    <QtMoc Include="Main\rccapp\cssoftwareversion\cssoftwareversion.h" />
+    <QtMoc Include="Playback\CSTargetScoring\cstargerscoring.h" />
+    <QtMoc Include="Main\rccapp\cstargetscoring\cstargetscoring.h" />
+    <QtMoc Include="Main\rccapp\csthumbnailcontrol\csthumbnailcontrol.h" />
+    <QtMoc Include="Main\rccapp\csthumbnailmanage\csthumbnailmanage.h" />
+    <QtMoc Include="Property\cstreepropertybrowser.h" />
+    <ClInclude Include="Video\DataSavers\csvideosaver.h" />
+    <QtMoc Include="Video\csvideotableview.h" />
+    <QtMoc Include="Main\rccapp\csviewmanager.h" />
+    <QtMoc Include="Main\rccapp\windowcrosslinesetting\cswindowcrosslinesetting.h" />
+    <QtMoc Include="Device\device.h" />
+    <ClInclude Include="Device\deviceframe.h" />
+    <ClInclude Include="Device\devicelicense.h" />
+    <QtMoc Include="Device\devicemanager.h" />
+    <QtMoc Include="System\DeviceList\devicesearchthread.h" />
+    <QtMoc Include="System\DeviceList\devicesearchwidget.h" />
+    <ClInclude Include="Device\devicestate.h" />
+    <ClInclude Include="Device\deviceutils.h" />
+    <ClInclude Include="Common\ErrorCodeUtils\errorcodeutils.h" />
+    <ClInclude Include="Video\Export\exportutils.h" />
+    <QtMoc Include="Video\Export\ToolTipsShowWidget.h" />
+    <ClInclude Include="Video\FeatureItem\featureitem.h" />
+    <QtMoc Include="Main\framelesswindow\framelesswindow.h" />
+    <ClInclude Include="Device\imageprocessor.h" />
+    <ClInclude Include="Common\KeyBoardControl\keyboardcontrol.h" />
+    <ClInclude Include="Common\LogUtils\logutils.h" />
+    <QtMoc Include="Main\maininitthread.h" />
+    <ClInclude Include="Device\msglistener.h" />
+    <QtMoc Include="Common\ParamIntValidator\paramintvalidator.h" />
+    <QtMoc Include="Common\ParamSpinBox\paramspinbox.h" />
+    <ClInclude Include="Common\PathUtils\pathutils.h" />
+    <QtMoc Include="Common\PlayCtrlWidget\playctrlwidget.h" />
+    <QtMoc Include="Common\PlayCtrlWidget\playersliderwidget.h" />
+    <QtMoc Include="Common\PlayerTitleBar\playertitlebar.h" />
+    <ClInclude Include="Video\preexportcolorcorrectrollback.h" />
+    <QtMoc Include="Device\previewthread.h" />
+    <QtMoc Include="Main\rccapp\csnetconfig\qiplineedit.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtbuttonpropertybrowser.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qteditorfactory.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtgroupboxpropertybrowser.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowserutils_p.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertymanager.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qttreepropertybrowser.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtvariantproperty.h">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DynamicSource>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DynamicSource>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\recoveringdata\recoveringdatawidget.h" />
+    <QtMoc Include="Common\setroiwidget.h" />
+    <QtMoc Include="Splash\splashwidget.h" />
+    <QtMoc Include="Main\systemlauncher.h" />
+    <ClInclude Include="System\SystemSettings\systemsettingsmanager.h" />
+    <QtMoc Include="Video\tabelheaderview.h" />
+    <QtMoc Include="Common\TouchCheckWidget\touchcheckwidget.h" />
+    <QtMoc Include="Common\TouchComboWidget\touchcombowidget.h" />
+    <QtMoc Include="Common\TouchOptionsWidget\touchoptionswidget.h" />
+    <QtMoc Include="Common\TouchOptionWidget\touchoptionwidget.h" />
+    <ClInclude Include="Common\UIExplorer\uiexplorer.h" />
+    <ClInclude Include="Common\UIUtils\uiutils.h" />
+    <ClInclude Include="Video\VideoItem\videoitem.h" />
+    <ClInclude Include="Video\VideoItemManager\videoitemmanager.h" />
+    <QtMoc Include="Video\Export\videolisttabelmodel.h" />
+    <QtMoc Include="Common\VideoListWidget\videolistwidget.h" />
+    <QtMoc Include="Common\VideoToolBar\videotoolbar.h" />
+    <ClInclude Include="Video\VideoUtils\videoutils.h" />
+    <QtMoc Include="Video\Export\watermarkView.h" />
+    <QtMoc Include="Main\framelesswindow\windowdragger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qteditorfactory.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_MSC_VER=1900;_WIN32;_WIN64</Define>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_MSC_VER=1900;_WIN32;_WIN64</Define>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\3rdparty\qtpropertybrowser\qteditorfactory.cpp</InputFile>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\3rdparty\qtpropertybrowser\qteditorfactory.cpp</InputFile>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertymanager.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_MSC_VER=1900;_WIN32;_WIN64</Define>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_MSC_VER=1900;_WIN32;_WIN64</Define>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\3rdparty\qtpropertybrowser\qtpropertymanager.cpp</InputFile>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\3rdparty\qtpropertybrowser\qtpropertymanager.cpp</InputFile>
+    </QtMoc>
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qttreepropertybrowser.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_MSC_VER=1900;_WIN32;_WIN64</Define>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;WIN32;WIN64;CSRCCAPP_PRO;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_MSC_VER=1900;_WIN32;_WIN64</Define>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\3rdparty\qtpropertybrowser\qttreepropertybrowser.cpp</InputFile>
+      <InputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\3rdparty\qtpropertybrowser\qttreepropertybrowser.cpp</InputFile>
+    </QtMoc>
+    <ClInclude Include="GeneratedFiles\ui_acqparamdiagram.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdevicelistwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdevicetemperaturepanel.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdisplaysetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgarmmanualwhitebalance.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgcameraproperty.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgdeviceauth.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgdevicevideoexport.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgfallpointmeasuresetup.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlggainsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlggainsettingv2.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlggainsettingv3.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlghealthmanagersetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgimagetrainning.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgluminanceandcontrastsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgmanualwhitebalance.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgnewexp.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgopenexp.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgprogressformat.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgselfcheck.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgsetoption.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgtriggerproperty.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgtriggerpulsecontrol.h" />
+    <ClInclude Include="GeneratedFiles\ui_csedrexposureparamsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csexportpreview.h" />
+    <ClInclude Include="GeneratedFiles\ui_csexportpreviewplayctrl.h" />
+    <ClInclude Include="GeneratedFiles\ui_csexportpreviewplayersliderwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_cslistviewvideo.h" />
+    <ClInclude Include="GeneratedFiles\ui_cslocalvideoplayer.h" />
+    <ClInclude Include="GeneratedFiles\ui_csmenulocalvideo.h" />
+    <ClInclude Include="GeneratedFiles\ui_csnetconfig.h" />
+    <ClInclude Include="GeneratedFiles\ui_csparamsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_cspropertyviewdevice.h" />
+    <ClInclude Include="GeneratedFiles\ui_csrccapp.h" />
+    <ClInclude Include="GeneratedFiles\ui_cssecondscreen.h" />
+    <ClInclude Include="GeneratedFiles\ui_cssoftwareversion.h" />
+    <ClInclude Include="GeneratedFiles\ui_cstargetscoring.h" />
+    <ClInclude Include="GeneratedFiles\ui_csthumbnailcontrol.h" />
+    <ClInclude Include="GeneratedFiles\ui_csthumbnailmanage.h" />
+    <ClInclude Include="GeneratedFiles\ui_cswindowcrosslinesetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicealterip.h" />
+    <ClInclude Include="GeneratedFiles\ui_deviceeditname.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicelistwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicesearchwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicesystemwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_framelesswindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_playctrlwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_playersliderwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_playertitlebar.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimectrlwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimemainwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimeothersettingswidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimeplayerwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_recoveringdatawidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_refamainwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_setroiwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_splashwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_systemsettingswidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchcheckwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchcombowidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchoptionswidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchoptionwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_videolistwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_videotoolbar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\translations\csrccapp-zh_CN.ts" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Device\cdgrcameradiskselect\csdlgdiskselect.ui" />
+    <QtUic Include="Device\csdevicesearchlistwidget.ui" />
+    <QtUic Include="Device\editdeviceinfo\editdeviceinfo.ui" />
+    <QtUic Include="Device\editgroupinfo\editgroupinfo.ui" />
+    <QtUic Include="Device\treenodeoperate\treenodeoperate.ui" />
+    <QtUic Include="Main\rccapp\cslowlightmode\cslowlightmode.ui" />
+    <QtUic Include="Device\cscf18controlpanel\cscf18controlpanel.ui" />
+    <QtUic Include="Main\rccapp\cssoftwareversion\csaboutqtopensourcedlg.ui" />
+    <QtUic Include="Main\rccapp\cssoftwareversion\csopensourcelicensedlg.ui" />
+    <QtUic Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.ui" />
+    <QtUic Include="PointMeasure\CSMeasureCalibrationDlg.ui" />
+    <QtUic Include="PointMeasure\CSMeasurePageDlg.ui" />
+    <QtUic Include="PointMeasure\CSPointMeasureDlg.ui" />
+    <QtUic Include="Realtime\acqparamdiagram.ui">
+    </QtUic>
+    <QtUic Include="Device\csdevicelistwidget.ui">
+    </QtUic>
+    <QtUic Include="Device\Temperature\csdevicetemperaturepanel.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csdisplaysetting\csdisplaysetting.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlgarmmanualwhitebalance.ui">
+    </QtUic>
+    <QtUic Include="Device\csdlgcameraproperty.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlgdeviceauth.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlggainsettingv4.ui" />
+    <QtUic Include="System\SystemSettings\rangemodulemanage\rangemodulemanage.ui" />
+    <QtUic Include="videolistthumbnail\videolistthumbnail.ui" />
+    <QtUic Include="Video\Export\csdlgdevicevideoexport.ui">
+    </QtUic>
+    <QtUic Include="System\csdlgfallpointmeasuresetup.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlggainsetting.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlggainsettingv2.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlggainsettingv3.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlghealthmanagersetting.ui">
+    </QtUic>
+    <QtUic Include="System\csdlgimagetrainning.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlgluminanceandcontrastsetting.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlgmanualwhitebalance.ui">
+    </QtUic>
+    <QtUic Include="System\Experiment\csdlgnewexp.ui">
+    </QtUic>
+    <QtUic Include="System\Experiment\csdlgopenexp.ui">
+    </QtUic>
+    <QtUic Include="Device\csdlgprogressformat.ui">
+    </QtUic>
+    <QtUic Include="System\csdlgselfcheck.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlgsetoption.ui">
+    </QtUic>
+    <QtUic Include="Device\csdlgtriggerproperty.ui">
+    </QtUic>
+    <QtUic Include="Device\csdlgtriggerpulsecontrol.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\edrexposureparamsetting\csedrexposureparamsetting.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csexportpreview\csexportpreview.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.ui">
+    </QtUic>
+    <QtUic Include="Video\cslistviewvideo.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csmenulocalvideo\csmenulocalvideo.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csnetconfig\csnetconfig.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\paramsetting\csparamsetting.ui">
+    </QtUic>
+    <QtUic Include="Property\cspropertyviewdevice.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csrccapp.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\cssecondscreen\cssecondscreen.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\cssoftwareversion\cssoftwareversion.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\cstargetscoring\cstargetscoring.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csthumbnailcontrol\csthumbnailcontrol.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\csthumbnailmanage\csthumbnailmanage.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\windowcrosslinesetting\cswindowcrosslinesetting.ui">
+    </QtUic>
+    <QtUic Include="System\DeviceList\devicealterip.ui">
+    </QtUic>
+    <QtUic Include="System\DeviceList\deviceeditname.ui">
+    </QtUic>
+    <QtUic Include="System\DeviceList\devicelistwidget.ui">
+    </QtUic>
+    <QtUic Include="System\DeviceList\devicesearchwidget.ui">
+    </QtUic>
+    <QtUic Include="System\devicesystemwidget.ui">
+    </QtUic>
+    <QtUic Include="Main\framelesswindow\framelesswindow.ui">
+    </QtUic>
+    <QtUic Include="Common\PlayCtrlWidget\playctrlwidget.ui">
+    </QtUic>
+    <QtUic Include="Common\PlayCtrlWidget\playersliderwidget.ui">
+    </QtUic>
+    <QtUic Include="Common\PlayerTitleBar\playertitlebar.ui">
+    </QtUic>
+    <QtUic Include="Realtime\realtimectrlwidget.ui">
+    </QtUic>
+    <QtUic Include="Realtime\realtimemainwidget.ui">
+    </QtUic>
+    <QtUic Include="Realtime\realtimeothersettingswidget.ui">
+    </QtUic>
+    <QtUic Include="Realtime\realtimeplayerwidget.ui">
+    </QtUic>
+    <QtUic Include="Main\rccapp\recoveringdata\recoveringdatawidget.ui">
+    </QtUic>
+    <QtUic Include="Main\refamainwindow.ui">
+    </QtUic>
+    <QtUic Include="Common\setroiwidget.ui">
+    </QtUic>
+    <QtUic Include="Splash\splashwidget.ui">
+    </QtUic>
+    <QtUic Include="System\SystemSettings\systemsettingswidget.ui">
+    </QtUic>
+    <QtUic Include="Common\TouchCheckWidget\touchcheckwidget.ui">
+    </QtUic>
+    <QtUic Include="Common\TouchComboWidget\touchcombowidget.ui">
+    </QtUic>
+    <QtUic Include="Common\TouchOptionsWidget\touchoptionswidget.ui">
+    </QtUic>
+    <QtUic Include="Common\TouchOptionWidget\touchoptionwidget.ui">
+    </QtUic>
+    <QtUic Include="Common\VideoListWidget\videolistwidget.ui">
+    </QtUic>
+    <QtUic Include="Common\VideoToolBar\videotoolbar.ui">
+    </QtUic>
+    <QtUic Include="Video\Export\ToolTipsShowWidget.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Main\rccapp\image\Display-hover.png" />
+    <None Include="Main\rccapp\image\Display.png" />
+    <None Include="Main\rccapp\image\Display_disable.png" />
+    <None Include="Common\PlayCtrlWidget\images\Forward-play.png" />
+    <None Include="Main\rccapp\image\background.png" />
+    <None Include="Common\PlayCtrlWidget\images\backward-play.png" />
+    <None Include="Common\PlayCtrlWidget\images\backward.png" />
+    <None Include="Main\rccapp\image\big.png" />
+    <None Include="resources\translations\refaapp_en.qm" />
+    <None Include="resources\translations\refaapp_en.ts" />
+    <None Include="Splash\resources\qss\black.qss" />
+    <None Include="resources\images\camera_abnormal.gif" />
+    <None Include="resources\images\camera_external_sync_abnormal.gif" />
+    <None Include="resources\images\camera_normal.gif" />
+    <None Include="resources\images\camera_unconnected.gif" />
+    <None Include="Main\rccapp\image\collect.png" />
+    <None Include="Main\rccapp\image\collectmiddle.png" />
+    <None Include="Main\rccapp\image\collectsetting.png" />
+    <None Include="Main\rccapp\image\copydeviceparam.bmp" />
+    <None Include="Main\rccapp\image\cross.png" />
+    <None Include="resources\translations\csrccapp-zh_CN.qm" />
+    <QtRcc Include="Main\rccapp\csrccapp.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">csrccapp</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">csrccapp</InitFuncName>
+    </QtRcc>
+    <None Include="Main\rccapp\csrccapp.qss" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-arrow.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-busy.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-closedhand.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-cross.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-forbidden.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-hand.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-hsplit.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-ibeam.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-openhand.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeall.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeb.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizef.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeh.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizev.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-uparrow.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-vsplit.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-wait.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-whatsthis.png" />
+    <None Include="resources\qss\default.qss" />
+    <None Include="resources\images\delete.png" />
+    <None Include="Common\AgSwitchButton\images\disabled_checked.png" />
+    <None Include="Common\AgSwitchButton\images\disabled_unchecked.png" />
+    <None Include="Common\AgSwitchButton\images\enabled_checked.png" />
+    <None Include="Common\AgSwitchButton\images\enabled_unchecked.png" />
+    <None Include="Common\AgErrorCode\Private\resources\en_US\error_code.csv" />
+    <None Include="Common\AgErrorCode\Private\resources\zh_CN\error_code.csv" />
+    <QtRcc Include="Common\AgErrorCode\Private\resources\error_code.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">error_code</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">error_code</InitFuncName>
+    </QtRcc>
+    <None Include="resources\images\export.png" />
+    <None Include="Main\rccapp\image\export_preview_slider-left.png" />
+    <None Include="Main\rccapp\image\export_preview_slider-pos.png" />
+    <None Include="Main\rccapp\image\export_preview_slider-right.png" />
+    <None Include="Main\rccapp\image\export_preview_trigger.png" />
+    <None Include="Main\rccapp\image\fallmirror.png" />
+    <None Include="Common\PlayCtrlWidget\images\fast-backward-play.png" />
+    <None Include="Common\PlayCtrlWidget\images\fast-forward-play.png" />
+    <None Include="Main\rccapp\image\fit.png" />
+    <None Include="Common\VideoToolBar\images\focus-line.png" />
+    <None Include="Common\PlayCtrlWidget\images\forward.png" />
+    <None Include="Main\rccapp\image\full.png" />
+    <None Include="Common\VideoToolBar\images\fullscreen.png" />
+    <None Include="resources\strings\en_US\gdstrings.ini" />
+    <None Include="resources\strings\zh_CN\gdstrings.ini" />
+    <None Include="Main\rccapp\image\help.png" />
+    <None Include="resources\images\help.png" />
+    <None Include="Main\rccapp\image\highspeed.png" />
+    <None Include="resources\images\import.png" />
+    <None Include="Main\rccapp\image\jointimage.png" />
+    <None Include="resources\images\logo.ico" />
+    <None Include="Main\rccapp\image\logo.png" />
+    <None Include="Main\rccapp\image\manual_select_close.png" />
+    <None Include="Main\rccapp\image\manualinput.png" />
+    <None Include="Main\rccapp\image\mirror.png" />
+    <None Include="Main\rccapp\image\onoff.png" />
+    <None Include="Main\rccapp\image\pastedeviceparam.bmp" />
+    <None Include="Main\rccapp\image\pause-hover.png" />
+    <None Include="Common\PlayCtrlWidget\images\pause.png" />
+    <None Include="Main\rccapp\image\pause.png" />
+    <QtRcc Include="Common\PlayCtrlWidget\playctrl.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">playctrl</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">playctrl</InitFuncName>
+    </QtRcc>
+    <None Include="Main\rccapp\image\preview.png" />
+    <None Include="resources\translations\qt_zh_CN.qm" />
+    <QtRcc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qtpropertybrowser</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qtpropertybrowser</InitFuncName>
+    </QtRcc>
+    <QtRcc Include="resources\refaapp.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">refaapp</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">refaapp</InitFuncName>
+    </QtRcc>
+    <None Include="Main\rccapp\image\refreshdevicelist.bmp" />
+    <None Include="Main\rccapp\image\restore.png" />
+    <None Include="Common\VideoToolBar\images\roi-selection.png" />
+    <None Include="Main\rccapp\image\rotate.png" />
+    <None Include="resources\qss\scale_150per.qss" />
+    <None Include="Main\rccapp\image\selfinspection.png" />
+    <None Include="resources\images\settings-white.png" />
+    <None Include="resources\images\settings.png" />
+    <None Include="Common\PlayCtrlWidget\images\slider-left.png" />
+    <None Include="Common\PlayCtrlWidget\images\slider-pos.png" />
+    <None Include="Common\PlayCtrlWidget\images\slider-right.png" />
+    <None Include="Main\rccapp\image\small.png" />
+    <None Include="Common\VideoToolBar\images\snapshot.png" />
+    <None Include="Main\rccapp\image\speed_1.png" />
+    <None Include="Main\rccapp\image\speed_16.png" />
+    <None Include="Main\rccapp\image\speed_2.png" />
+    <None Include="Main\rccapp\image\speed_4.png" />
+    <None Include="Main\rccapp\image\speed_8.png" />
+    <None Include="Splash\resources\translations\splash-en_US.qm" />
+    <None Include="Splash\resources\translations\splash-zh_CN.qm" />
+    <QtRcc Include="Splash\resources\splash.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">splash</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">splash</InitFuncName>
+    </QtRcc>
+    <None Include="Splash\resources\avi\splash01.avi" />
+    <None Include="Splash\resources\avi\splash02.avi" />
+    <None Include="Splash\resources\avi\splash03.avi" />
+    <None Include="Splash\resources\avi\splash04.avi" />
+    <None Include="Splash\resources\avi\splash05.avi" />
+    <None Include="Main\rccapp\image\stop.png" />
+    <QtRcc Include="Common\AgSwitchButton\switchbutton.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">switchbutton</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">switchbutton</InitFuncName>
+    </QtRcc>
+    <None Include="Main\rccapp\image\takephoto.png" />
+    <None Include="Main\rccapp\image\title_hide.png" />
+    <None Include="Main\rccapp\image\title_show.png" />
+    <None Include="Common\PlayCtrlWidget\images\trigger.png" />
+    <None Include="Main\rccapp\image\trigger.png" />
+    <None Include="resources\images\trigger_lable.png" />
+    <None Include="Main\rccapp\image\turnimage.png" />
+    <None Include="resources\images\video_camera.png" />
+    <None Include="Main\rccapp\image\videobackground.png" />
+    <QtRcc Include="Common\VideoToolBar\videotoolbar.qrc">
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">videotoolbar</InitFuncName>
+      <InitFuncName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">videotoolbar</InitFuncName>
+    </QtRcc>
+    <None Include="Main\rccapp\image\warning.png" />
+    <None Include="Main\rccapp\image\wincross.png" />
+    <None Include="Main\rccapp\image\wincrosssetting.jpg" />
+    <None Include="resources\images\window_control_icon_close.png" />
+    <None Include="resources\images\window_control_icon_maximize.png" />
+    <None Include="resources\images\window_control_icon_minimize.png" />
+    <None Include="resources\images\window_control_icon_restore.png" />
+    <None Include="Main\rccapp\image\xgs_stop_recording.png" />
+    <None Include="Main\rccapp\image\xgs_trigger.png" />
+    <None Include="Common\VideoToolBar\images\zoom-fit.png" />
+    <None Include="Common\VideoToolBar\images\zoom-full.png" />
+    <None Include="Common\VideoToolBar\images\zoom-in.png" />
+    <None Include="Common\VideoToolBar\images\zoom-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\RefaApp_resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(SolutionDir)\packages\OpenCV.redist.4.4.0\build\native\OpenCV.redist.targets" Condition="Exists('$(SolutionDir)\packages\OpenCV.redist.4.4.0\build\native\OpenCV.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\OpenCV.4.4.0\build\native\OpenCV.targets" Condition="Exists('$(SolutionDir)\packages\OpenCV.4.4.0\build\native\OpenCV.targets')" />
+    <Import Project="$(SolutionDir)\packages\boost.1.70.0.0\build\boost.targets" Condition="Exists('$(SolutionDir)\packages\boost.1.70.0.0\build\boost.targets')" />
+    <Import Project="$(SolutionDir)\packages\boost_chrono-vc140.1.70.0.0\build\boost_chrono-vc140.targets" Condition="Exists('$(SolutionDir)\packages\boost_chrono-vc140.1.70.0.0\build\boost_chrono-vc140.targets')" />
+    <Import Project="$(SolutionDir)\packages\boost_date_time-vc140.1.70.0.0\build\boost_date_time-vc140.targets" Condition="Exists('$(SolutionDir)\packages\boost_date_time-vc140.1.70.0.0\build\boost_date_time-vc140.targets')" />
+    <Import Project="$(SolutionDir)\packages\boost_filesystem-vc140.1.70.0.0\build\boost_filesystem-vc140.targets" Condition="Exists('$(SolutionDir)\packages\boost_filesystem-vc140.1.70.0.0\build\boost_filesystem-vc140.targets')" />
+    <Import Project="$(SolutionDir)\packages\boost_serialization-vc140.1.70.0.0\build\boost_serialization-vc140.targets" Condition="Exists('$(SolutionDir)\packages\boost_serialization-vc140.1.70.0.0\build\boost_serialization-vc140.targets')" />
+    <Import Project="$(SolutionDir)\packages\boost_thread-vc140.1.70.0.0\build\boost_thread-vc140.targets" Condition="Exists('$(SolutionDir)\packages\boost_thread-vc140.1.70.0.0\build\boost_thread-vc140.targets')" />
+    <Import Project="$(SolutionDir)\packages\FallPointMeasure.redist.1.0.43\build\native\FallPointMeasure.redist.targets" Condition="Exists('$(SolutionDir)\packages\FallPointMeasure.redist.1.0.43\build\native\FallPointMeasure.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\FallPointMeasure.1.0.43\build\native\FallPointMeasure.targets" Condition="Exists('$(SolutionDir)\packages\FallPointMeasure.1.0.43\build\native\FallPointMeasure.targets')" />
+    <Import Project="$(SolutionDir)\packages\FallPointMeasure.symbols.1.0.43\build\native\FallPointMeasure.symbols.targets" Condition="Exists('$(SolutionDir)\packages\FallPointMeasure.symbols.1.0.43\build\native\FallPointMeasure.symbols.targets')" />
+    <Import Project="$(SolutionDir)\packages\qtcsv.redist.1.6.0\build\native\qtcsv.redist.targets" Condition="Exists('$(SolutionDir)\packages\qtcsv.redist.1.6.0\build\native\qtcsv.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\qtcsv.1.6.0\build\native\qtcsv.targets" Condition="Exists('$(SolutionDir)\packages\qtcsv.1.6.0\build\native\qtcsv.targets')" />
+    <Import Project="$(SolutionDir)\packages\qtcsv.symbols.1.6.0\build\native\qtcsv.symbols.targets" Condition="Exists('$(SolutionDir)\packages\qtcsv.symbols.1.6.0\build\native\qtcsv.symbols.targets')" />
+    <Import Project="$(SolutionDir)\packages\VS2015Runtime.redist.1.0.2\build\native\VS2015Runtime.redist.targets" Condition="Exists('$(SolutionDir)\packages\VS2015Runtime.redist.1.0.2\build\native\VS2015Runtime.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\VS2015Runtime.1.0.2\build\native\VS2015Runtime.targets" Condition="Exists('$(SolutionDir)\packages\VS2015Runtime.1.0.2\build\native\VS2015Runtime.targets')" />
+    <Import Project="$(SolutionDir)\packages\VS2015Runtime.symbols.1.0.2\build\native\VS2015Runtime.symbols.targets" Condition="Exists('$(SolutionDir)\packages\VS2015Runtime.symbols.1.0.2\build\native\VS2015Runtime.symbols.targets')" />
+    <Import Project="$(SolutionDir)\packages\UpdateGradeTool.redist.1.1.6\build\native\UpdateGradeTool.redist.targets" Condition="Exists('$(SolutionDir)\packages\UpdateGradeTool.redist.1.1.6\build\native\UpdateGradeTool.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\FlashBadBlockScanTool.redist.1.0.7\build\native\FlashBadBlockScanTool.redist.targets" Condition="Exists('$(SolutionDir)\packagesFlashBadBlockScanTool.redist.1.0.7\build\native\FlashBadBlockScanTool.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\FlashBadBlockScanTool.1.0.7\build\native\FlashBadBlockScanTool.targets" Condition="Exists('$(SolutionDir)\packages\FlashBadBlockScanTool.1.0.7\build\native\FlashBadBlockScanTool.targets')" />
+    <Import Project="$(SolutionDir)\packages\libtiff.redist.4.5.0.3\build\native\libtiff.redist.targets" Condition="Exists('$(SolutionDir)\packages\libtiff.redist.4.5.0.3\build\native\libtiff.redist.targets')" />
+    <Import Project="$(SolutionDir)\packages\libtiff.4.5.0.3\build\native\libtiff.targets" Condition="Exists('$(SolutionDir)\packages\libtiff.4.5.0.3\build\native\libtiff.targets')" />
+    <Import Project="$(SolutionDir)\packages\libjpeg.0.0.2\build\native\libjpeg.targets" Condition="Exists('$(SolutionDir)\packages\libjpeg.0.0.2\build\native\libjpeg.targets')" />
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_x64="Qt5.7.0" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\packages\OpenCV.redist.4.4.0\build\native\OpenCV.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\OpenCV.redist.4.4.0\build\native\OpenCV.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\OpenCV.4.4.0\build\native\OpenCV.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\OpenCV.4.4.0\build\native\OpenCV.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\boost.1.70.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost.1.70.0.0\build\boost.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\boost_chrono-vc140.1.70.0.0\build\boost_chrono-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_chrono-vc140.1.70.0.0\build\boost_chrono-vc140.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\boost_date_time-vc140.1.70.0.0\build\boost_date_time-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_date_time-vc140.1.70.0.0\build\boost_date_time-vc140.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\boost_filesystem-vc140.1.70.0.0\build\boost_filesystem-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_filesystem-vc140.1.70.0.0\build\boost_filesystem-vc140.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\boost_serialization-vc140.1.70.0.0\build\boost_serialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_serialization-vc140.1.70.0.0\build\boost_serialization-vc140.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\boost_thread-vc140.1.70.0.0\build\boost_thread-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_thread-vc140.1.70.0.0\build\boost_thread-vc140.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\FallPointMeasure.redist.1.0.43\build\native\FallPointMeasure.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\FallPointMeasure.redist.1.0.43\build\native\FallPointMeasure.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\FallPointMeasure.1.0.43\build\native\FallPointMeasure.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\FallPointMeasure.1.0.43\build\native\FallPointMeasure.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\FallPointMeasure.symbols.1.0.43\build\native\FallPointMeasure.symbols.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\FallPointMeasure.symbols.1.0.43\build\native\FallPointMeasure.symbols.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\qtcsv.redist.1.6.0\build\native\qtcsv.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\qtcsv.redist.1.6.0\build\native\qtcsv.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\qtcsv.1.6.0\build\native\qtcsv.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\qtcsv.1.6.0\build\native\qtcsv.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\qtcsv.symbols.1.6.0\build\native\qtcsv.symbols.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\qtcsv.symbols.1.6.0\build\native\qtcsv.symbols.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\VS2015Runtime.redist.1.0.2\build\native\VS2015Runtime.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\VS2015Runtime.redist.1.0.2\build\native\VS2015Runtime.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\VS2015Runtime.1.0.2\build\native\VS2015Runtime.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\VS2015Runtime.1.0.2\build\native\VS2015Runtime.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\VS2015Runtime.symbols.1.0.2\build\native\VS2015Runtime.symbols.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\VS2015Runtime.symbols.1.0.2\build\native\VS2015Runtime.symbols.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\UpdateGradeTool.redist.1.1.6\build\native\UpdateGradeTool.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\UpdateGradeTool.redist.1.1.6\build\native\UpdateGradeTool.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\libjpeg.redist.0.0.2\build\native\libjpeg.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\libjpeg.redist.0.0.2\build\native\libjpeg.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\libtiff.redist.4.5.0.3\build\native\libtiff.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\libtiff.redist.4.5.0.3\build\native\libtiff.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\libtiff.4.5.0.3\build\native\libtiff.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\libtiff.4.5.0.3\build\native\libtiff.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\libjpeg.0.0.2\build\native\libjpeg.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\libjpeg.0.0.2\build\native\libjpeg.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\FlashBadBlockScanTool.redist.1.0.7\build\native\FlashBadBlockScanTool.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\FlashBadBlockScanTool.redist.1.0.7\build\native\FlashBadBlockScanTool.redist.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\packages\FlashBadBlockScanTool.1.0.7\build\native\FlashBadBlockScanTool.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\FlashBadBlockScanTool.1.0.7\build\native\FlashBadBlockScanTool.targets'))" />
+  </Target>
+</Project>

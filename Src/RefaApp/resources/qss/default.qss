@@ -1,0 +1,213 @@
+﻿/*
+1. 字体规范：
+（1）字体类型：Microsoft YaHei
+（2）字体大小    
+    13pt 大标题或特殊标题
+    12pt 小标题
+    11pt  正文
+    10pt  Icon注释、提示文案
+ */
+
+QWidget {
+    font-family: "Microsoft YaHei";
+    font-size: 11pt;
+}
+
+QLabel[style = "topo-tip"]{
+    font-size: 10pt;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: #F3E4DA;
+}
+
+QWidget[style="large-gap"] {
+    border: none;
+    min-height:8px;
+}
+
+QWidget[style="medium-gap"] {
+    border: none;
+    min-height:6px;
+}
+
+QWidget[style="small-gap"] {
+    border: none;
+    min-height:4px;
+}
+
+QWidget[style="ctrl-panel"] {
+    min-width: 240px;
+}
+
+AgSwitchButton {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+QWidget[style="ctrl-title"] {
+    background-color: #CCCCCC;
+    padding-left: 4px;
+    padding-right: 4px;
+    min-height : 40px;
+}
+
+QWidget[style="ctrl-item"] {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+QPushButton[style="large"] {
+    min-height: 32px;
+}
+
+QPushButton[style="medium"] {
+    min-height: 24px;
+}
+
+QPushButton[style="device_list"] {
+    min-width: 130px;
+    min-height: 28px;
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton {
+    font-size: 13pt;
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton#toolButtonSettings {
+    image:url(:/images/settings.png);
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton#toolButtonSettings:checked {
+    image:url(:/images/settings-white.png);
+}
+
+QToolButton {
+    border: none;
+}
+
+QToolButton:hover {
+    border: none;
+    background-color: lightblue;
+}
+
+QToolButton:unchecked {
+    border: 1px solid lightgray;
+    background: black;
+}
+
+QToolButton:checked {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+QToolButton[style = measure] {
+    border: 1px solid lightgray;
+}
+
+QToolButton[style = measure]:hover {
+    background-color: #EFFFFF;
+    border: 1px solid lightgray;
+}
+
+QToolButton[style = measure]:checked {
+    background-color: #D9F0FF;
+    color: black;
+    border: 1px solid lightgray;
+}
+
+QToolButton[style = play-ctrl] {
+        border: none;
+        background : rgb(38, 169, 255);
+        min-width: 60px;
+        min-height: 46px;
+}
+
+QToolButton[style = play-ctrl]:disabled {
+        border: none;
+        background : lightgray;
+}
+
+QToolButton[style = play-ctrl]:pressed {
+        border: none;
+        background-color : rgb(15, 130, 230);
+}
+
+QTabBar::tab:selected {
+    background-color: rgb(102,102,102);
+    color: white;
+}
+
+VideoToolBar QToolButton {
+    font-size: 10pt;
+}
+
+QToolButton {
+    margin: 0px;
+}
+
+QRadioButton {
+    height: 24px;
+}
+
+AgRatioButton {
+    background-color: white;
+    padding: 4px 4px 4px 4px;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+/* NoFrame */
+.QFrame[frameShape="0"] {
+  border: none;
+  background-color: #FFFFFF;
+  padding: 4px 4px 4px 4px;
+  min-height: 24px;
+}
+
+/* HLine */
+.QFrame[frameShape="4"] {
+  max-height: 1px;
+  border: none;
+  background-color: #DCDCDC;
+}
+
+/* VLine */
+.QFrame[frameShape="5"] {
+  max-width: 1px;
+  border: none;
+  background-color: #DCDCDC;
+}
+
+QToolButton[style-class="titlebar-minimize"] {
+  padding: 4px;
+  image: url(:/images/window_control_icon_minimize.png);
+}
+
+QToolButton[style-class="titlebar-restore"] {
+  padding: 4px;
+  image: url(:/images/window_control_icon_restore.png);
+}
+
+QToolButton[style-class="titlebar-maximize"] {
+  padding: 4px;
+  image: url(:/images/window_control_icon_maximize.png);
+}
+
+QToolButton[style-class="titlebar-close"] {
+  padding: 4px;
+  image: url(:/images/window_control_icon_close.png);
+}
+
+QLabel[style-class="titlebar-icon"]{
+    border: none;
+    padding: 0px;
+    background: none;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+}
+
+QWidget[style="titlebar-right-gap"] {
+    min-width: 16px;
+}

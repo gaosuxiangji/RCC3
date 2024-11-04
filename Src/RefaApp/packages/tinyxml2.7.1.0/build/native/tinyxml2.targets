@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="tinyxml2_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-tinyxml2 Condition="'$(Linkage-tinyxml2)' == ''">dynamic</Linkage-tinyxml2>
+    <CallingConvention-tinyxml2 Condition="'$(CallingConvention-tinyxml2)' == ''">cdecl</CallingConvention-tinyxml2>
+  </PropertyGroup>
+  <ItemDefinitionGroup Label="x64 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Debug\tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Release\tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="tinyxml2_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="tinyxml2_init">
+    <tinyxml2_Contains Text="Linkage-dynamic" Library="tinyxml2" Value="dynamic" Condition="'$(Linkage-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="Linkage-static" Library="tinyxml2" Value="static" Condition="'$(Linkage-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="Linkage-ltcg" Library="tinyxml2" Value="ltcg" Condition="'$(Linkage-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="Linkage-sxs" Library="tinyxml2" Value="sxs" Condition="'$(Linkage-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="CallingConvention-cdecl" Library="tinyxml2" Value="cdecl" Condition="'$(CallingConvention-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="CallingConvention-stdcall" Library="tinyxml2" Value="stdcall" Condition="'$(CallingConvention-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="CallingConvention-fastcall" Library="tinyxml2" Value="fastcall" Condition="'$(CallingConvention-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="CallingConvention-thiscall" Library="tinyxml2" Value="thiscall" Condition="'$(CallingConvention-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-tinyxml2" />
+    </tinyxml2_Contains>
+    <tinyxml2_Contains Text="CallingConvention-clrcall" Library="tinyxml2" Value="clrcall" Condition="'$(CallingConvention-tinyxml2)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-tinyxml2" />
+    </tinyxml2_Contains>
+  </Target>
+</Project>

@@ -1,0 +1,341 @@
+﻿/*
+1. 字体规范：
+（1）字体类型：Microsoft YaHei
+（2）字体大小    
+    13pt 大标题或特殊标题
+    12pt 小标题
+    11pt  正文
+    10pt  Icon注释、提示文案
+ */
+
+QWidget {
+    font-family: "Microsoft YaHei";
+    font-size: 11pt;
+}
+
+QLabel[style = "topo-tip"]{
+    font-size: 10pt;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #F3E4DA;
+}
+
+QWidget[style="large-gap"] {
+    border: none;
+    min-height:16px;
+}
+
+QWidget[style="medium-gap"] {
+    border: none;
+    min-height:12px;
+}
+
+QWidget[style="small-gap"] {
+    border: none;
+    min-height:8px;
+}
+
+QWidget[style="ctrl-panel"] {
+    min-width: 360px;
+}
+
+AgSwitchButton {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+QWidget[style="ctrl-title"] {
+    background-color: #CCCCCC;
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height : 60px;
+}
+
+QWidget[style="ctrl-item"] {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+QPushButton[style="large"] {
+    min-height: 64px;
+}
+
+QPushButton[style="medium"] {
+    min-height: 48px;
+}
+
+QPushButton[style="device_list"] {
+    min-width: 200px;
+    min-height: 48px;
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton {
+    font-size: 13pt;
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton#toolButtonSettings {
+    image:url(:/images/settings.png);
+    max-width: 75px;
+    max-height: 75px;
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton#toolButtonSettings:checked {
+    image:url(:/images/settings-white.png);
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton#toolButtonHelp {
+    max-width: 75px;
+    max-height: 75px;
+    qproperty-iconSize: 60px 60px;
+}
+
+QMainWindow QWidget#widgetMainToolbar QToolButton{
+    width: 240px;
+    height: 75px;
+}
+
+DeviceSystemWidget QToolButton{
+    width: 300px;
+    height: 75px;
+    qproperty-iconSize: 36px 36px;
+}
+
+QToolButton {
+    border: none;
+    margin: 0px;
+}
+
+QToolButton:hover {
+    border: none;
+    background-color: lightblue;
+}
+
+QToolButton:unchecked {
+    border: 1px solid lightgray;
+    background: black;
+}
+
+QToolButton:checked {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+QToolButton[style = measure] {
+    border: 1px solid lightgray;
+    min-width : 144px;
+    min-height : 144px;
+}
+
+QToolButton[style = measure]:hover {
+    background-color: #EFFFFF;
+    border: 1px solid lightgray;
+}
+
+QToolButton[style = measure]:checked {
+    background-color: #D9F0FF;
+    color: black;
+    border: 1px solid lightgray;
+}
+
+QToolButton[style = play-ctrl] {
+        border: none;
+        background : rgb(38, 169, 255);
+        min-width: 90px;
+        min-height: 60px;
+        qproperty-iconSize: 48px 48px;
+}
+
+QToolButton[style = play-ctrl]:disabled {
+        border: none;
+        background : lightgray;
+}
+
+QToolButton[style = play-ctrl]:pressed {
+        border: none;
+        background-color : rgb(15, 130, 230);
+}
+
+QTabBar::tab:selected {
+    background-color: rgb(102,102,102);
+    color: white;
+}
+
+/*设置tabwidget页标签高度*/
+QTabBar::tab{
+    min-height : 48px;
+}
+
+VideoToolBar QToolButton {
+    font-size: 10pt;
+    width: 150px;
+    height: 75px;
+    qproperty-iconSize: 36px 36px;
+}
+
+QRadioButton {
+    height: 48px;
+}
+
+AgRatioButton {
+    background-color: white;
+    padding: 8px 8px 8px 8px;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+/* NoFrame */
+.QFrame[frameShape="0"] {
+  border: none;
+  background-color: #FFFFFF;
+  padding: 8px 8px 8px 8px;
+  min-height: 48px;
+}
+
+/* HLine */
+.QFrame[frameShape="4"] {
+  max-height: 1px;
+  border: none;
+  background-color: #DCDCDC;
+}
+
+/* VLine */
+.QFrame[frameShape="5"] {
+  max-width: 1px;
+  border: none;
+  background-color: #DCDCDC;
+}
+
+BasicMeasurerWidget QToolButton{
+    font-size: 10pt;
+    qproperty-iconSize: 60px 60px;
+}
+
+/*设置QPushButton默认最小高度*/
+QPushButton{
+    min-height: 36px;
+}
+
+WidgetThumbnail{
+    min-height : 180px;
+}
+
+/*修改QTableView单元格大小，未成功*/
+QTableView::item{
+    min-height : 45px;
+}
+
+/*修改滚动条宽度和高度*/
+QScrollBar:vertical{
+    min-width : 45;
+}
+
+QScrollBar:horizontal{
+    min-height : 45;
+}
+
+/*修改checkbox大小，如果缩放不是150%的话,修改成150%并且注销计算机才可以生效*/
+QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    min-width: 26px;
+    min-height: 26px;
+	width:26 px ; 
+	height:26 px;
+}
+
+/*修改QTableView复选框的大小,如果缩放不是150%的话,修改成150%并且注销计算机才可以生效*/
+QTableView::indicator{
+	width:26 px ; 
+	height:26 px;
+	/*image: url(:/images/window_control_icon_maximize.png);*/
+}
+
+
+/*修改combobox高度*/
+QComboBox {
+    min-height: 40px;
+}
+
+/*设置QSlider滑块宽高*/
+QSlider{
+    min-height : 45px;
+    padding: 0px 40px 0px 40px;
+}
+
+QSlider::groove:horizontal {
+    min-height: 8px;
+    height: 8px;
+    background:#cccccc;
+}
+
+QSlider::handle:horizontal {
+    background: #007AD9;
+    min-width: 40px;
+    width: 40px;
+    margin: -20px 0;
+}
+
+QLineEdit {
+    min-height: 40px;
+}
+
+QDoubleSpinBox {
+    min-height: 40px;
+}
+
+QSpinBox {
+    min-height: 40px;
+}
+
+QWidget[style="titlebar-right-gap"] {
+    min-width: 32px;
+    border: none;
+}
+
+QLabel[style-class="titlebar-icon"]{
+    border: none;
+    padding: 0px;
+    background: none;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+}
+
+QToolButton[style-class="titlebar-minimize"] {
+    qproperty-icon: url(:/images/window_control_icon_minimize.png);
+}
+
+QToolButton[style-class="titlebar-restore"] {
+    qproperty-icon: url(:/images/window_control_icon_restore.png);
+}
+
+QToolButton[style-class="titlebar-maximize"] {
+    qproperty-icon: url(:/images/window_control_icon_maximize.png);
+}
+
+QToolButton[style-class="titlebar-close"] {
+    qproperty-icon: url(:/images/window_control_icon_close.png);
+}
+
+QWidget[style="player-titlebar"] QToolButton{
+    min-width: 72px;
+    min-height: 48px;
+    max-width: 72px;
+    max-height: 48px;
+    qproperty-iconSize: 24px 24px;
+}
+
+QWidget[style-class="titlebar"] QToolButton{
+    min-width: 72px;
+    min-height: 48px;
+    max-width: 72px;
+    max-height: 48px;
+    qproperty-iconSize: 24px 24px;
+}
+
+QMenu::item {
+    min-height:30px;
+}

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="libjpeg_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-libjpeg Condition="'$(Linkage-libjpeg)' == ''">dynamic</Linkage-libjpeg>
+    <CallingConvention-libjpeg Condition="'$(CallingConvention-libjpeg)' == ''">cdecl</CallingConvention-libjpeg>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Debug\turbojpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Release\turbojpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and Debug" Condition="'$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\Debug\turbojpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="Win32 and Release" Condition="'$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/Win32\Release\turbojpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="libjpeg_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="libjpeg_init">
+    <libjpeg_Contains Text="Linkage-dynamic" Library="libjpeg" Value="dynamic" Condition="'$(Linkage-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="Linkage-static" Library="libjpeg" Value="static" Condition="'$(Linkage-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="Linkage-ltcg" Library="libjpeg" Value="ltcg" Condition="'$(Linkage-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="Linkage-sxs" Library="libjpeg" Value="sxs" Condition="'$(Linkage-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="CallingConvention-cdecl" Library="libjpeg" Value="cdecl" Condition="'$(CallingConvention-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="CallingConvention-stdcall" Library="libjpeg" Value="stdcall" Condition="'$(CallingConvention-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="CallingConvention-fastcall" Library="libjpeg" Value="fastcall" Condition="'$(CallingConvention-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="CallingConvention-thiscall" Library="libjpeg" Value="thiscall" Condition="'$(CallingConvention-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libjpeg" />
+    </libjpeg_Contains>
+    <libjpeg_Contains Text="CallingConvention-clrcall" Library="libjpeg" Value="clrcall" Condition="'$(CallingConvention-libjpeg)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-libjpeg" />
+    </libjpeg_Contains>
+  </Target>
+</Project>

@@ -1,0 +1,83 @@
+{
+  "deviceList":[
+  {
+    "boardList": [
+      {
+        "boardName": "mainBoard",
+        "devAddr": 104,
+        "regAddr": 0,
+        "startUpgradeAddr": 4194304
+      },
+      {
+        "boardName": "slaveBoard",
+        "devAddr": 108,
+        "regAddr": 0,
+        "startUpgradeAddr": 4194304
+      }
+    ],
+    "deviceName": "ISPX213",
+    "i2cIndex": 0,
+    "i2cSwitchEnable": false
+  },
+  {
+		"boardList" : 
+		[
+      {
+        "boardName": "mainBoard",
+        "devAddr": 68,
+        "regAddr": 0,
+        "startUpgradeAddr": 16777216
+      },
+      {
+        "boardName": "slaveBoard",
+        "devAddr": 108,
+        "regAddr": 0,
+        "startUpgradeAddr": 4194304
+      }
+		],
+		"deviceName" : "ISPX150",
+		"i2cIndex" : 0,
+		"i2cSwitchEnable" : false
+	},
+	{
+			"boardList" : 
+		[
+      {
+        "boardName": "CFPGA",
+        "devAddr": 85,
+        "regAddr": 0,
+        "startUpgradeAddr": 4194304
+      },
+      {
+        "boardName": "IFPGA",
+        "devAddr": 83,
+        "regAddr": 0,
+        "startUpgradeAddr": 4194304
+      },
+	  {
+        "boardName": "UFPGA",
+        "devAddr": 81,
+        "regAddr": 0,
+        "startUpgradeAddr": 4194304
+      }
+		],
+		"deviceName" : "5KF20G",
+		"i2cIndex" : 0,
+		"i2cSwitchEnable" : true
+	},
+	{
+	"boardList" : 
+	[
+	  {
+        "boardName": "FPGA",
+        "devAddr": 58,
+        "regAddr": 0,
+        "startUpgradeAddr": 10485760
+      }
+	],
+	"deviceName" : "MiniSeries",
+	"i2cIndex" : 0,
+	"i2cSwitchEnable" : false
+	}
+]
+}

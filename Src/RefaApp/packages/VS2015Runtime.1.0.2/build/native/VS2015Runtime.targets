@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="VS2015Runtime_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-VS2015Runtime Condition="'$(Linkage-VS2015Runtime)' == ''">dynamic</Linkage-VS2015Runtime>
+    <CallingConvention-VS2015Runtime Condition="'$(CallingConvention-VS2015Runtime)' == ''">cdecl</CallingConvention-VS2015Runtime>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="VS2015Runtime_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="VS2015Runtime_init">
+    <VS2015Runtime_Contains Text="Linkage-dynamic" Library="VS2015Runtime" Value="dynamic" Condition="'$(Linkage-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="Linkage-static" Library="VS2015Runtime" Value="static" Condition="'$(Linkage-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="Linkage-ltcg" Library="VS2015Runtime" Value="ltcg" Condition="'$(Linkage-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="Linkage-sxs" Library="VS2015Runtime" Value="sxs" Condition="'$(Linkage-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="CallingConvention-cdecl" Library="VS2015Runtime" Value="cdecl" Condition="'$(CallingConvention-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="CallingConvention-stdcall" Library="VS2015Runtime" Value="stdcall" Condition="'$(CallingConvention-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="CallingConvention-fastcall" Library="VS2015Runtime" Value="fastcall" Condition="'$(CallingConvention-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="CallingConvention-thiscall" Library="VS2015Runtime" Value="thiscall" Condition="'$(CallingConvention-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+    <VS2015Runtime_Contains Text="CallingConvention-clrcall" Library="VS2015Runtime" Value="clrcall" Condition="'$(CallingConvention-VS2015Runtime)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-VS2015Runtime" />
+    </VS2015Runtime_Contains>
+  </Target>
+</Project>

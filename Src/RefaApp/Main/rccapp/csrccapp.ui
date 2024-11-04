@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CSRccApp</class>
+ <widget class="QMainWindow" name="CSRccApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1672</width>
+    <height>695</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::PreventContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>RccApp</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="csrccapp.qrc">
+    <normaloff>:/image/image/logo.png</normaloff>:/image/image/logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="minimumSize">
+    <size>
+     <width>944</width>
+     <height>585</height>
+    </size>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>2</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="widget" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1672</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Project(&amp;F)</string>
+    </property>
+    <addaction name="actionNew_File_N"/>
+    <addaction name="actionOpen_File_O"/>
+    <addaction name="actionSave_File_S"/>
+    <addaction name="actionExit_X"/>
+   </widget>
+   <widget class="QMenu" name="menuAcquision">
+    <property name="title">
+     <string>Collect(&amp;C)</string>
+    </property>
+    <addaction name="actionPreview_P"/>
+    <addaction name="actionTake_photo"/>
+    <addaction name="actionHigh_speed_Acquisition"/>
+    <addaction name="actionTrigger_T"/>
+    <addaction name="actionStop_Camera_S"/>
+    <addaction name="separator"/>
+    <addaction name="action_Menu_LocalVideo"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting">
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Setting(&amp;S)</string>
+    </property>
+    <widget class="QMenu" name="menuIntelligent_Trigger">
+     <property name="title">
+      <string>Intelligent Trigger</string>
+     </property>
+     <addaction name="IntelligentTriggerOpen"/>
+     <addaction name="IntelligentTriggerClose"/>
+     <addaction name="action_Intelligent_Param_Setting"/>
+    </widget>
+    <widget class="QMenu" name="menuAuto_Exposure">
+     <property name="title">
+      <string>Auto Exposure</string>
+     </property>
+     <addaction name="AutoExposureOpen"/>
+     <addaction name="AutoExposureClose"/>
+     <addaction name="action_AutoExposure_Param_Setting"/>
+    </widget>
+    <widget class="QMenu" name="menuEdr_Exposure">
+     <property name="title">
+      <string>Edr Exposure</string>
+     </property>
+     <addaction name="EdrExposureOpen"/>
+     <addaction name="EdrExposureClose"/>
+     <addaction name="action_EdrExposure_Param_Setting"/>
+    </widget>
+    <widget class="QMenu" name="menuFan_Control_F">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Fan Control(&amp;F)</string>
+     </property>
+     <addaction name="actionFan_ControlOpen"/>
+     <addaction name="actionFan_ControlClose"/>
+     <addaction name="actionFan_ControlAuto"/>
+    </widget>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionChinese"/>
+     <addaction name="actionEnglish"/>
+    </widget>
+    <addaction name="action_O"/>
+    <addaction name="separator"/>
+    <addaction name="actionMachine_Self_check"/>
+    <addaction name="actionRemote_Switch"/>
+    <addaction name="separator"/>
+    <addaction name="menuIntelligent_Trigger"/>
+    <addaction name="menuAuto_Exposure"/>
+    <addaction name="menuEdr_Exposure"/>
+    <addaction name="separator"/>
+    <addaction name="actionDelay_Correction"/>
+    <addaction name="actionDrop_Measurement_Settings"/>
+    <addaction name="actionHealth_Management_Settings"/>
+    <addaction name="separator"/>
+    <addaction name="action_C"/>
+    <addaction name="menuFan_Control_F"/>
+    <addaction name="separator"/>
+    <addaction name="menuLanguage"/>
+   </widget>
+   <widget class="QMenu" name="menuImage_I">
+    <property name="title">
+     <string>Image(&amp;I)</string>
+    </property>
+    <widget class="QMenu" name="menuWhite_Balance">
+     <property name="title">
+      <string>White Balance</string>
+     </property>
+     <addaction name="actionNone"/>
+     <addaction name="actionAuto"/>
+     <addaction name="actionManual"/>
+     <addaction name="separator"/>
+     <addaction name="actionSettingManual"/>
+    </widget>
+    <widget class="QMenu" name="menuShooting_Environment">
+     <property name="title">
+      <string>Shooting Environment</string>
+     </property>
+     <addaction name="actionEnvironmentNone"/>
+     <addaction name="actionEnvironmentAuto"/>
+     <addaction name="actionSunny"/>
+     <addaction name="actionSunset"/>
+     <addaction name="actionCloudy_Day"/>
+     <addaction name="actionFill_Light"/>
+    </widget>
+    <widget class="QMenu" name="menuShooting_Mode">
+     <property name="title">
+      <string>Shooting Mode</string>
+     </property>
+     <addaction name="actionDay_Mode"/>
+     <addaction name="actionNight_Mode"/>
+    </widget>
+    <widget class="QMenu" name="menuColor_Mode">
+     <property name="title">
+      <string>Color Mode</string>
+     </property>
+     <addaction name="actionMonochrome"/>
+     <addaction name="actionColor"/>
+    </widget>
+    <addaction name="actionSet_Up_Darkfield"/>
+    <addaction name="action_DarkFieldCorrection"/>
+    <addaction name="action_W"/>
+    <addaction name="actionBright_Field_Correction"/>
+    <addaction name="separator"/>
+    <addaction name="actionGain_Setting"/>
+    <addaction name="actionBrightness_Contrast"/>
+    <addaction name="menuWhite_Balance"/>
+    <addaction name="menuShooting_Environment"/>
+    <addaction name="menuShooting_Mode"/>
+    <addaction name="actionChroma_Adjustment"/>
+    <addaction name="menuColor_Mode"/>
+    <addaction name="action_low_light_mode"/>
+    <addaction name="actionAnti_aliasing"/>
+    <addaction name="actionBinning_Mode"/>
+    <addaction name="separator"/>
+    <addaction name="actionImage_Training_E"/>
+    <addaction name="separator"/>
+    <addaction name="actionData_Processing_Analysis"/>
+    <addaction name="actionData_Storage_Management"/>
+    <addaction name="actionFilter"/>
+    <addaction name="actionFiler1"/>
+   </widget>
+   <widget class="QMenu" name="menuTool_T">
+    <property name="title">
+     <string>Tool(&amp;T)</string>
+    </property>
+    <addaction name="actionEnlarge"/>
+    <addaction name="actionZoom_Out_Z"/>
+    <addaction name="action1_1Show"/>
+    <addaction name="actionFit_Window"/>
+    <addaction name="actionCrossHair"/>
+    <addaction name="separator"/>
+    <addaction name="actionWindow_Centerline"/>
+    <addaction name="actionWindow_Centerline_Settings"/>
+    <addaction name="separator"/>
+    <addaction name="actionMirror"/>
+    <addaction name="actionInverted_Image"/>
+    <addaction name="actionFlip_The_Image"/>
+    <addaction name="actionRotate_The_Image_R"/>
+    <addaction name="separator"/>
+    <addaction name="actionUAV_Calibration"/>
+    <addaction name="actionStitching_Preview"/>
+   </widget>
+   <widget class="QMenu" name="menuView_V">
+    <property name="title">
+     <string>View(&amp;V)</string>
+    </property>
+    <widget class="QMenu" name="menuDocked_Window_D">
+     <property name="title">
+      <string>Docked Window(&amp;D)</string>
+     </property>
+     <addaction name="actionDevice_List"/>
+     <addaction name="actionProperty_List"/>
+     <addaction name="actionVideo_List"/>
+     <addaction name="actionMeasure"/>
+     <addaction name="actionTemperature_Panel"/>
+     <addaction name="actionControl_Panel"/>
+    </widget>
+    <widget class="QMenu" name="menuToolbar_T">
+     <property name="title">
+      <string>Toolbar(&amp;T)</string>
+     </property>
+     <addaction name="actionWindow_Tool"/>
+     <addaction name="actionCamera_Acquisition"/>
+     <addaction name="actionAcquisition_Window"/>
+     <addaction name="actionRun_Alarm"/>
+     <addaction name="actionUser_Manual"/>
+    </widget>
+    <addaction name="menuDocked_Window_D"/>
+    <addaction name="menuToolbar_T"/>
+    <addaction name="separator"/>
+    <addaction name="actionStatus_Bar_S"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp_H">
+    <property name="title">
+     <string>Help(&amp;H)</string>
+    </property>
+    <addaction name="actionDevice_Authorization"/>
+    <addaction name="actionOnline_Upgrade"/>
+    <addaction name="actionReset"/>
+    <addaction name="actionNetwork_Configuration"/>
+    <addaction name="separator"/>
+    <addaction name="actionUser_Manual_D"/>
+    <addaction name="separator"/>
+    <addaction name="actionSoftware_Version_S"/>
+    <addaction name="actionCompany_Website_W"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAcquision"/>
+   <addaction name="menuSetting"/>
+   <addaction name="menuImage_I"/>
+   <addaction name="menuTool_T"/>
+   <addaction name="menuView_V"/>
+   <addaction name="menuHelp_H"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionEnlarge"/>
+   <addaction name="actionZoom_Out_Z"/>
+   <addaction name="action1_1Show"/>
+   <addaction name="actionFit_Window"/>
+   <addaction name="actionCrossHair"/>
+   <addaction name="separator"/>
+   <addaction name="actionWindow_Centerline"/>
+   <addaction name="actionWindow_Centerline_Settings"/>
+   <addaction name="separator"/>
+   <addaction name="actionMirror"/>
+   <addaction name="actionInverted_Image"/>
+   <addaction name="actionFlip_The_Image"/>
+   <addaction name="actionRotate_The_Image_R"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="cameraAcqToolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionPreview_P"/>
+   <addaction name="actionTake_photo"/>
+   <addaction name="actionHigh_speed_Acquisition"/>
+   <addaction name="actionTrigger_T"/>
+   <addaction name="actionStop_Camera_S"/>
+  </widget>
+  <widget class="QToolBar" name="acqWindowToolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAcquisition_Window_Settings"/>
+   <addaction name="actionMaximize_The_Acquisition_Window"/>
+   <addaction name="actionCenter_The_Acquisition_Window"/>
+   <addaction name="actionDisplay_The_Acquisition_Window"/>
+  </widget>
+  <widget class="QToolBar" name="runAlarmToolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionRun_Alarm_W"/>
+  </widget>
+  <widget class="QToolBar" name="userManualToolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_4</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionUser_Manual_D"/>
+  </widget>
+  <widget class="CSDockWidget" name="dockWidgetDevicelist">
+   <property name="minimumSize">
+    <size>
+     <width>420</width>
+     <height>41</height>
+    </size>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Device List</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContentsDevicelist"/>
+  </widget>
+  <widget class="CSDockWidget" name="dockWidgetPropertyList">
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>41</height>
+    </size>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Property List</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContentsPropertyList"/>
+  </widget>
+  <widget class="CSDockWidget" name="dockWidgetVideoList">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Video List</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContentsVideoList"/>
+  </widget>
+  <widget class="CSDockWidget" name="dockWidgetTemperature">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Temperature Panel</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContentsTemperature"/>
+  </widget>
+  <widget class="CSDockWidget" name="dockWidgetPointMeasure">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>Measure</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContentsMeasure"/>
+  </widget>
+  <widget class="CSDockWidget" name="cf18_control_dockWidget">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>Control</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContentsCF18"/>
+  </widget>
+  <action name="actionFile_F">
+   <property name="text">
+    <string>File(F)</string>
+   </property>
+  </action>
+  <action name="actionNew_File_N">
+   <property name="text">
+    <string>New Project(&amp;N)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_File_O">
+   <property name="text">
+    <string>Open Project(&amp;O)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave_File_S">
+   <property name="text">
+    <string>Save Project(&amp;S)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit_X">
+   <property name="text">
+    <string>Exit(&amp;X)</string>
+   </property>
+  </action>
+  <action name="actionPreview_P">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/preview.png</normaloff>:/image/image/preview.png</iconset>
+   </property>
+   <property name="text">
+    <string>Preview(&amp;P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionTake_photo">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/takephoto.png</normaloff>:/image/image/takephoto.png</iconset>
+   </property>
+   <property name="text">
+    <string>Capture(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionHigh_speed_Acquisition">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/highspeed.png</normaloff>:/image/image/highspeed.png</iconset>
+   </property>
+   <property name="text">
+    <string>Acquire(&amp;H)</string>
+   </property>
+  </action>
+  <action name="actionTrigger_T">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/trigger.png</normaloff>:/image/image/trigger.png</iconset>
+   </property>
+   <property name="text">
+    <string>Trigger</string>
+   </property>
+  </action>
+  <action name="actionStop_Camera_S">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/stop.png</normaloff>:/image/image/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop Device(&amp;E)</string>
+   </property>
+  </action>
+  <action name="action_Menu_LocalVideo">
+   <property name="text">
+    <string>Video Exported(&amp;L)</string>
+   </property>
+  </action>
+  <action name="action_O">
+   <property name="text">
+    <string>Program Run Options(&amp;O)</string>
+   </property>
+  </action>
+  <action name="action_R">
+   <property name="text">
+    <string>Refresh Device List(&amp;R)</string>
+   </property>
+  </action>
+  <action name="actionMachine_Self_check">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/selfinspection.png</normaloff>:/image/image/selfinspection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Machine Self-check(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionRemote_Switch">
+   <property name="icon">
+    <iconset>
+     <normaloff>image/onoff.png</normaloff>image/onoff.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remote Switch(&amp;E)</string>
+   </property>
+  </action>
+  <action name="actionDelay_Correction">
+   <property name="text">
+    <string>Delay Correction(&amp;L)</string>
+   </property>
+  </action>
+  <action name="actionDrop_Measurement_Settings">
+   <property name="text">
+    <string>Drop Measurement Settings</string>
+   </property>
+  </action>
+  <action name="actionHealth_Management_Settings">
+   <property name="text">
+    <string>Health Management Settings</string>
+   </property>
+  </action>
+  <action name="action_C">
+   <property name="text">
+    <string>Turntable Control(&amp;C)</string>
+   </property>
+  </action>
+  <action name="IntelligentTriggerOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="IntelligentTriggerClose">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="action_Intelligent_Param_Setting">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Param Setting</string>
+   </property>
+  </action>
+  <action name="AutoExposureOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="AutoExposureClose">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="action_AutoExposure_Param_Setting">
+   <property name="text">
+    <string>Param Setting</string>
+   </property>
+  </action>
+  <action name="EdrExposureOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="EdrExposureClose">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="action_EdrExposure_Param_Setting">
+   <property name="text">
+    <string>Param Setting</string>
+   </property>
+  </action>
+  <action name="actionFan_ControlOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionFan_ControlClose">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionSet_Up_Darkfield">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Set Up Dark Field(&amp;B)</string>
+   </property>
+  </action>
+  <action name="action_DarkFieldCorrection">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark Field Correction(&amp;D)</string>
+   </property>
+  </action>
+  <action name="action_W">
+   <property name="text">
+    <string>Set Bright Field(&amp;W)</string>
+   </property>
+  </action>
+  <action name="actionBright_Field_Correction">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Bright Field Correction(&amp;F)</string>
+   </property>
+  </action>
+  <action name="actionGain_Setting">
+   <property name="text">
+    <string>Gain Setting</string>
+   </property>
+  </action>
+  <action name="actionBrightness_Contrast">
+   <property name="text">
+    <string>Brightness/Contrast</string>
+   </property>
+  </action>
+  <action name="actionChroma_Adjustment">
+   <property name="text">
+    <string>Chroma Adjustment</string>
+   </property>
+  </action>
+  <action name="actionAnti_aliasing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Anti-aliasing(&amp;A)</string>
+   </property>
+  </action>
+  <action name="actionImage_Training_E">
+   <property name="text">
+    <string>Image Training(&amp;E)</string>
+   </property>
+  </action>
+  <action name="actionData_Processing_Analysis">
+   <property name="text">
+    <string>Data Processing Analysis</string>
+   </property>
+  </action>
+  <action name="actionData_Storage_Management">
+   <property name="text">
+    <string>Data Storage Management</string>
+   </property>
+  </action>
+  <action name="actionNone">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>None</string>
+   </property>
+  </action>
+  <action name="actionAuto">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto</string>
+   </property>
+  </action>
+  <action name="actionManual">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Manual</string>
+   </property>
+  </action>
+  <action name="actionEnvironmentNone">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>None</string>
+   </property>
+  </action>
+  <action name="actionEnvironmentAuto">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto</string>
+   </property>
+  </action>
+  <action name="actionSunny">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sunny</string>
+   </property>
+  </action>
+  <action name="actionSunset">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sunset</string>
+   </property>
+  </action>
+  <action name="actionCloudy_Day">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Cloudy Day</string>
+   </property>
+  </action>
+  <action name="actionFill_Light">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Fill Light</string>
+   </property>
+  </action>
+  <action name="actionDay_Mode">
+   <property name="text">
+    <string>Day Mode</string>
+   </property>
+  </action>
+  <action name="actionNight_Mode">
+   <property name="text">
+    <string>Night Mode</string>
+   </property>
+  </action>
+  <action name="actionMonochrome">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Monochrome</string>
+   </property>
+  </action>
+  <action name="actionColor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionEnlarge">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/big.png</normaloff>:/image/image/big.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enlarge(&amp;I)</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out_Z">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/small.png</normaloff>:/image/image/small.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out(&amp;Z)</string>
+   </property>
+  </action>
+  <action name="actionFit_Window">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/fit.png</normaloff>:/image/image/fit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fit Window(&amp;F)</string>
+   </property>
+  </action>
+  <action name="action1_1Show">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/full.png</normaloff>:/image/image/full.png</iconset>
+   </property>
+   <property name="text">
+    <string>1:1Show(&amp;O)</string>
+   </property>
+  </action>
+  <action name="actionCrossHair">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/cross.png</normaloff>:/image/image/cross.png</iconset>
+   </property>
+   <property name="text">
+    <string>Crosshair</string>
+   </property>
+  </action>
+  <action name="actionWindow_Centerline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/wincross.png</normaloff>:/image/image/wincross.png</iconset>
+   </property>
+   <property name="text">
+    <string>Window Centerline</string>
+   </property>
+  </action>
+  <action name="actionWindow_Centerline_Settings">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/wincrosssetting.jpg</normaloff>:/image/image/wincrosssetting.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Window Centerline Settings</string>
+   </property>
+  </action>
+  <action name="actionMirror">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/mirror.png</normaloff>:/image/image/mirror.png</iconset>
+   </property>
+   <property name="text">
+    <string>Mirror</string>
+   </property>
+  </action>
+  <action name="actionInverted_Image">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/fallmirror.png</normaloff>:/image/image/fallmirror.png</iconset>
+   </property>
+   <property name="text">
+    <string>Inverted Image</string>
+   </property>
+  </action>
+  <action name="actionFlip_The_Image">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/turnimage.png</normaloff>:/image/image/turnimage.png</iconset>
+   </property>
+   <property name="text">
+    <string>Flip The Image</string>
+   </property>
+  </action>
+  <action name="actionRotate_The_Image_R">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/rotate.png</normaloff>:/image/image/rotate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rotate The Image(&amp;R)</string>
+   </property>
+  </action>
+  <action name="actionUAV_Calibration">
+   <property name="text">
+    <string>UAV Calibration</string>
+   </property>
+  </action>
+  <action name="actionStitching_Preview">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/jointimage.png</normaloff>:/image/image/jointimage.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stitching Preview</string>
+   </property>
+  </action>
+  <action name="actionStatus_Bar_S">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Status Bar(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionDevice_List">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Device List</string>
+   </property>
+  </action>
+  <action name="actionProperty_List">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Property List</string>
+   </property>
+  </action>
+  <action name="actionVideo_List">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Video List</string>
+   </property>
+  </action>
+  <action name="actionWindow_Tool">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Window Tool</string>
+   </property>
+  </action>
+  <action name="actionCamera_Acquisition">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Device Acquisition</string>
+   </property>
+  </action>
+  <action name="actionAcquisition_Window">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Acquisition Window</string>
+   </property>
+  </action>
+  <action name="actionRun_Alarm">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Run Alarm</string>
+   </property>
+  </action>
+  <action name="actionUser_Manual">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>User Manual</string>
+   </property>
+  </action>
+  <action name="actionDevice_Authorization">
+   <property name="text">
+    <string>Device Authorization</string>
+   </property>
+  </action>
+  <action name="actionOnline_Upgrade">
+   <property name="text">
+    <string>Online Upgrade</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionNetwork_Configuration">
+   <property name="text">
+    <string>Network Configuration</string>
+   </property>
+  </action>
+  <action name="actionUser_Manual_D">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/help.png</normaloff>:/image/image/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>User Manual(&amp;D)</string>
+   </property>
+  </action>
+  <action name="actionFault_Code_Description_S">
+   <property name="text">
+    <string>Fault Code Description(&amp;E)</string>
+   </property>
+  </action>
+  <action name="actionSoftware_Version_S">
+   <property name="text">
+    <string>Software Version(&amp;S)</string>
+   </property>
+  </action>
+  <action name="actionCompany_Website_W">
+   <property name="text">
+    <string>Company Website(&amp;W)</string>
+   </property>
+  </action>
+  <action name="actionAcquisition_Window_Settings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/manualinput.png</normaloff>:/image/image/manualinput.png</iconset>
+   </property>
+   <property name="text">
+    <string>Acquisition Window Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Acquisition Window Settings</string>
+   </property>
+  </action>
+  <action name="actionMaximize_The_Acquisition_Window">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/restore.png</normaloff>:/image/image/restore.png</iconset>
+   </property>
+   <property name="text">
+    <string>Maximize The Acquisition Window</string>
+   </property>
+   <property name="toolTip">
+    <string>Maximize The Acquisition Window</string>
+   </property>
+  </action>
+  <action name="actionCenter_The_Acquisition_Window">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/collectmiddle.png</normaloff>:/image/image/collectmiddle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Center The Acquisition Window</string>
+   </property>
+   <property name="toolTip">
+    <string>Center The Acquisition Window</string>
+   </property>
+  </action>
+  <action name="actionDisplay_The_Acquisition_Window">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/collect.png</normaloff>:/image/image/collect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Display The Acquisition Window</string>
+   </property>
+   <property name="toolTip">
+    <string>Display The Acquisition Window</string>
+   </property>
+  </action>
+  <action name="actionRun_Alarm_W">
+   <property name="icon">
+    <iconset resource="csrccapp.qrc">
+     <normaloff>:/image/image/warning.png</normaloff>:/image/image/warning.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run Alarm(W)</string>
+   </property>
+   <property name="toolTip">
+    <string>Run Alarm(W)</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>中文</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionTemperature_Panel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Temperature Panel</string>
+   </property>
+  </action>
+  <action name="actionMeasure">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Measure</string>
+   </property>
+  </action>
+  <action name="actionSettingManual">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>SettingManual</string>
+   </property>
+  </action>
+  <action name="actionBinning_Mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Binning Mode</string>
+   </property>
+  </action>
+  <action name="action_low_light_mode">
+   <property name="text">
+    <string>Low Light Mode</string>
+   </property>
+  </action>
+  <action name="actionFan_ControlAuto">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto</string>
+   </property>
+  </action>
+  <action name="actionControl_Panel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Control Panel</string>
+   </property>
+  </action>
+  <action name="actionFilter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Filter</string>
+   </property>
+  </action>
+  <action name="actionFiler1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Filter1</string>
+   </property>
+  </action>
+  <zorder>dockWidgetPropertyList</zorder>
+  <zorder>dockWidgetTemperature</zorder>
+  <zorder>dockWidgetPointMeasure</zorder>
+  <zorder>cf18_control_dockWidget</zorder>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CSDockWidget</class>
+   <extends>QDockWidget</extends>
+   <header>Main/rccapp/csrccapp.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="csrccapp.qrc"/>
+ </resources>
+ <connections/>
+</ui>

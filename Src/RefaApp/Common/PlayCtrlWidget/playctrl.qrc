@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/playctrl">
+        <file>images/backward.png</file>
+        <file>images/backward-play.png</file>
+        <file>images/fast-backward-play.png</file>
+        <file>images/fast-forward-play.png</file>
+        <file>images/forward.png</file>
+        <file>images/Forward-play.png</file>
+        <file>images/pause.png</file>
+        <file>images/slider-left.png</file>
+        <file>images/slider-pos.png</file>
+        <file>images/slider-right.png</file>
+        <file>images/trigger.png</file>
+    </qresource>
+</RCC>

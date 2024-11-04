@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Common\ExportCom\AGCacheStream.cpp" />
+    <ClCompile Include="Common\ExportCom\SegMemCache.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bglineitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgrectitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgtextitem.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bqgraphicsscene.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bqgraphicsview.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\AviVideoFileReader.cpp" />
+    <ClCompile Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.cpp" />
+    <ClCompile Include="PointMeasure\CMeasureLineManage.cpp" />
+    <ClCompile Include="PointMeasure\CSPointMeasureDlg.cpp" />
+    <ClCompile Include="PointMeasure\measureresulttabelmodel.cpp" />
+    <ClCompile Include="Video\DataSavers\BmpWriter.cpp" />
+    <ClCompile Include="Main\CrashDump\CrashDumpInfo.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreview\DoubleValidator.cpp" />
+    <ClCompile Include="Video\Export\ExportCacheFrame.cpp" />
+    <ClCompile Include="Playback\CSPlaybackCacher\cache\FrameMgrFixed.cpp" />
+    <ClCompile Include="System\FunctionCustomizer\FunctionCustomizer.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\ImageVideoFileReader.cpp" />
+    <ClCompile Include="Common\ExportCom\MemCacheFile.cpp" />
+    <ClCompile Include="Playback\CSPlaybackCacher\cache\MemFile.cpp" />
+    <ClCompile Include="Main\rccapp\render\PlayerViewBase.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\RhvdVideoFileReader.cpp" />
+    <ClCompile Include="Common\UIUtils\UIHelper.cpp" />
+    <ClCompile Include="Main\rccapp\VideoFile\VideoFileUtils.cpp" />
+    <ClCompile Include="Main\rccapp\render\ViewMatrixTransform.cpp" />
+    <ClCompile Include="Common\AgCheckBoxHeaderView\agcheckboxheaderview.cpp" />
+    <ClCompile Include="Common\AgCheckBoxItemDelegate\agcheckboxitemdelegate.cpp" />
+    <ClCompile Include="Common\AgErrorCode\agerrorcode.cpp" />
+    <ClCompile Include="Common\AgErrorCode\Private\agerrorcodeprivate.cpp" />
+    <ClCompile Include="Common\AgLinkButtonItemDelegate\aglinkbuttonitemdelegate.cpp" />
+    <ClCompile Include="Common\AgRadioButton\agradiobutton.cpp" />
+    <ClCompile Include="Common\AgSwitchButton\agswitchbutton.cpp" />
+    <ClCompile Include="Video\checkboxdelegate.cpp" />
+    <ClCompile Include="Device\csdevicelistwidget.cpp" />
+    <ClCompile Include="Device\Temperature\csdevicetemperaturepanel.cpp" />
+    <ClCompile Include="Device\csdevicetreeview.cpp" />
+    <ClCompile Include="Main\rccapp\csdisplaysetting\csdisplaysetting.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgarmmanualwhitebalance.cpp" />
+    <ClCompile Include="Device\csdlgcameraproperty.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgdeviceauth.cpp" />
+    <ClCompile Include="Video\Export\csdlgdevicevideoexport.cpp" />
+    <ClCompile Include="System\csdlgfallpointmeasuresetup.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsetting.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv2.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv3.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlghealthmanagersetting.cpp" />
+    <ClCompile Include="System\csdlgimagetrainning.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgluminanceandcontrastsetting.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgmanualwhitebalance.cpp" />
+    <ClCompile Include="System\Experiment\csdlgnewexp.cpp" />
+    <ClCompile Include="System\Experiment\csdlgopenexp.cpp" />
+    <ClCompile Include="Device\csdlgprogressformat.cpp" />
+    <ClCompile Include="System\csdlgselfcheck.cpp" />
+    <ClCompile Include="System\SystemSettings\csdlgsetoption.cpp" />
+    <ClCompile Include="Device\csdlgtriggerproperty.cpp" />
+    <ClCompile Include="Device\csdlgtriggerpulsecontrol.cpp" />
+    <ClCompile Include="Main\rccapp\edrexposureparamsetting\csedrexposureparamsetting.cpp" />
+    <ClCompile Include="System\Experiment\csexperimentutil.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreview\csexportpreview.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.cpp" />
+    <ClCompile Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.cpp" />
+    <ClCompile Include="System\cshealthmanager.cpp" />
+    <ClCompile Include="Property\csintcomboproperty.cpp" />
+    <ClCompile Include="Video\cslistviewvideo.cpp" />
+    <ClCompile Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.cpp" />
+    <ClCompile Include="System\SystemSettings\cslutcurveeditwidget.cpp" />
+    <ClCompile Include="Main\rccapp\csmenulocalvideo\csmenulocalvideo.cpp" />
+    <ClCompile Include="Main\rccapp\csnetconfig\csnetconfig.cpp" />
+    <ClCompile Include="Main\rccapp\paramsetting\csparamsetting.cpp" />
+    <ClCompile Include="Playback\CSPlayBackCacher\csplaybackcacher.cpp" />
+    <ClCompile Include="Playback\csplaybackcontroller.cpp" />
+    <ClCompile Include="Property\cspropertyviewdevice.cpp" />
+    <ClCompile Include="Main\rccapp\csrccapp.cpp" />
+    <ClCompile Include="Main\csrccapptranslator.cpp" />
+    <ClCompile Include="Main\rccapp\cssecondscreen\cssecondscreen.cpp" />
+    <ClCompile Include="Main\rccapp\cssoftwareversion\cssoftwareversion.cpp" />
+    <ClCompile Include="Playback\CSTargetScoring\cstargerscoring.cpp" />
+    <ClCompile Include="Main\rccapp\cstargetscoring\cstargetscoring.cpp" />
+    <ClCompile Include="Main\rccapp\csthumbnailcontrol\csthumbnailcontrol.cpp" />
+    <ClCompile Include="Main\rccapp\csthumbnailmanage\csthumbnailmanage.cpp" />
+    <ClCompile Include="Property\cstreepropertybrowser.cpp" />
+    <ClCompile Include="Video\DataSavers\csvideosaver.cpp" />
+    <ClCompile Include="Video\csvideotableview.cpp" />
+    <ClCompile Include="Main\rccapp\csviewmanager.cpp" />
+    <ClCompile Include="Main\rccapp\windowcrosslinesetting\cswindowcrosslinesetting.cpp" />
+    <ClCompile Include="Device\device.cpp" />
+    <ClCompile Include="Device\devicemanager.cpp" />
+    <ClCompile Include="Device\deviceproperties.cpp" />
+    <ClCompile Include="System\DeviceList\devicesearchthread.cpp" />
+    <ClCompile Include="System\DeviceList\devicesearchwidget.cpp" />
+    <ClCompile Include="Device\deviceutils.cpp" />
+    <ClCompile Include="Common\ErrorCodeUtils\errorcodeutils.cpp" />
+    <ClCompile Include="Video\Export\exportutils.cpp" />
+    <ClCompile Include="Video\Export\ToolTipsShowWidget.cpp" />
+    <ClCompile Include="Video\FeatureItem\featureitem.cpp" />
+    <ClCompile Include="Main\framelesswindow\framelesswindow.cpp" />
+    <ClCompile Include="Device\imageprocessor.cpp" />
+    <ClCompile Include="Common\KeyBoardControl\keyboardcontrol.cpp" />
+    <ClCompile Include="Main\main.cpp" />
+    <ClCompile Include="Main\maininitthread.cpp" />
+    <ClCompile Include="Common\ParamIntValidator\paramintvalidator.cpp" />
+    <ClCompile Include="Common\ParamSpinBox\paramspinbox.cpp" />
+    <ClCompile Include="Common\PathUtils\pathutils.cpp" />
+    <ClCompile Include="Common\PlayCtrlWidget\playctrlwidget.cpp" />
+    <ClCompile Include="Common\PlayCtrlWidget\playersliderwidget.cpp" />
+    <ClCompile Include="Common\PlayerTitleBar\playertitlebar.cpp" />
+    <ClCompile Include="Main\rccapp\csnetconfig\qiplineedit.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtbuttonpropertybrowser.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtgroupboxpropertybrowser.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtpropertybrowserutils.cpp" />
+    <ClCompile Include="..\3rdparty\qtpropertybrowser\qtvariantproperty.cpp" />
+    <ClCompile Include="Main\rccapp\recoveringdata\recoveringdatawidget.cpp" />
+    <ClCompile Include="Common\setroiwidget.cpp" />
+    <ClCompile Include="Splash\splashwidget.cpp" />
+    <ClCompile Include="Main\systemlauncher.cpp" />
+    <ClCompile Include="System\SystemSettings\systemsettingsmanager.cpp" />
+    <ClCompile Include="Video\tabelheaderview.cpp" />
+    <ClCompile Include="Common\TouchCheckWidget\touchcheckwidget.cpp" />
+    <ClCompile Include="Common\TouchComboWidget\touchcombowidget.cpp" />
+    <ClCompile Include="Common\TouchOptionsWidget\touchoptionswidget.cpp" />
+    <ClCompile Include="Common\TouchOptionWidget\touchoptionwidget.cpp" />
+    <ClCompile Include="Common\UIExplorer\uiexplorer.cpp" />
+    <ClCompile Include="Common\UIUtils\uiutils.cpp" />
+    <ClCompile Include="Video\VideoItem\videoitem.cpp" />
+    <ClCompile Include="Video\VideoItemManager\videoitemmanager.cpp" />
+    <ClCompile Include="Video\Export\videolisttabelmodel.cpp" />
+    <ClCompile Include="Common\VideoListWidget\videolistwidget.cpp" />
+    <ClCompile Include="Common\VideoToolBar\videotoolbar.cpp" />
+    <ClCompile Include="Video\VideoUtils\videoutils.cpp" />
+    <ClCompile Include="Video\Export\watermarkView.cpp" />
+    <ClCompile Include="Main\framelesswindow\windowdragger.cpp" />
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgimageitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\bglinemeasureitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgmeasuremanage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\bgmeasurebase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointMeasure\CSMeasureCalibrationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointMeasure\CSMeasurePageDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\bglinesmeasureitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurebaseitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasuremanage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurelineitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureangle3item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureangle4item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureradiusitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasuredimensionitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurediameteritem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurecenterdistanceitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\csdevicesearchlistwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\editdeviceinfo\editdeviceinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\editgroupinfo\editgroupinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\treenodeoperate\treenodeoperate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System\DeviceList\devicerefreshwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasurearearadiusitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\render\graphicsview\csmeasureareapolygonitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\cslowlightmode\cslowlightmode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="videolistthumbnail\videolistthumbnail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemSettings\rangemodulemanage\rangemodulemanage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemSettings\rangemodulemanage\rangeslider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\CF18\CF18SyncTrigger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\cscf18controlpanel\cscf18controlpanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\cdgrcameradiskselect\csdlgdiskselect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\ImageNS\ImageNS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\UtilityNS\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\UtilityNS\StringUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\AGSDK\AGCommon\Src\UtilityNS\UtilityNS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemSettings\csdlggainsettingv4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\cssoftwareversion\csopensourcelicensedlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\rccapp\cssoftwareversion\csaboutqtopensourcedlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common\ExportCom\AGCacheStream.h" />
+    <ClInclude Include="Common\ExportCom\SegMemCache.h" />
+    <ClInclude Include="Main\rccapp\render\graphicsview\bglineitem.h" />
+    <ClInclude Include="Main\rccapp\render\graphicsview\bgrectitem.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\AviVideoFileReader.h" />
+    <ClInclude Include="Video\DataSavers\BmpWriter.h" />
+    <ClInclude Include="Main\CrashDump\CrashDumpInfo.h" />
+    <ClInclude Include="Video\Export\ExportCacheFrame.h" />
+    <ClInclude Include="Playback\CSPlaybackCacher\cache\FrameMgrFixed.h" />
+    <ClInclude Include="System\FunctionCustomizer\FunctionCustomizer.h" />
+    <ClInclude Include="Common\ExportCom\IOCacheObj.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\IVideoFileReader.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\ImageVideoFileReader.h" />
+    <ClInclude Include="Common\ExportCom\MemCacheFile.h" />
+    <ClInclude Include="Playback\CSPlaybackCacher\cache\MemFile.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\RhvdVideoFileReader.h" />
+    <ClInclude Include="Common\UIUtils\UIHelper.h" />
+    <ClInclude Include="Main\rccapp\VideoFile\VideoFileUtils.h" />
+    <ClInclude Include="Main\rccapp\render\ViewMatrixTransform.h" />
+    <ClInclude Include="Common\AgCheckBoxItemDelegate\agcheckboxitemdelegate.h" />
+    <ClInclude Include="Common\AgErrorCode\agerrorcode.h" />
+    <ClInclude Include="Common\AgErrorCode\Private\agerrorcodeprivate.h" />
+    <ClInclude Include="Common\AgRadioButton\agradiobutton.h" />
+    <ClInclude Include="System\Experiment\csexperimentutil.h" />
+    <ClInclude Include="Device\csframeinfo.h" />
+    <ClInclude Include="Main\rccapp\csglobaldefine.h" />
+    <ClInclude Include="System\cshealthmanager.h" />
+    <ClInclude Include="Playback\CSPlayBackCacher\csplaybackcacher.h" />
+    <ClInclude Include="Main\csrccapptranslator.h" />
+    <ClInclude Include="Video\DataSavers\csvideosaver.h" />
+    <ClInclude Include="Device\deviceframe.h" />
+    <ClInclude Include="Device\devicelicense.h" />
+    <ClInclude Include="Device\devicestate.h" />
+    <ClInclude Include="Device\deviceutils.h" />
+    <ClInclude Include="Common\ErrorCodeUtils\errorcodeutils.h" />
+    <ClInclude Include="Video\Export\exportutils.h" />
+    <ClInclude Include="Video\FeatureItem\featureitem.h" />
+    <ClInclude Include="Device\imageprocessor.h" />
+    <ClInclude Include="Common\KeyBoardControl\keyboardcontrol.h" />
+    <ClInclude Include="Common\LogUtils\logutils.h" />
+    <ClInclude Include="Device\msglistener.h" />
+    <ClInclude Include="Common\PathUtils\pathutils.h" />
+    <ClInclude Include="Video\preexportcolorcorrectrollback.h" />
+    <ClInclude Include="System\SystemSettings\systemsettingsmanager.h" />
+    <ClInclude Include="Common\UIExplorer\uiexplorer.h" />
+    <ClInclude Include="Common\UIUtils\uiutils.h" />
+    <ClInclude Include="Video\VideoItem\videoitem.h" />
+    <ClInclude Include="Video\VideoItemManager\videoitemmanager.h" />
+    <ClInclude Include="Video\VideoUtils\videoutils.h" />
+    <ClInclude Include="GeneratedFiles\ui_acqparamdiagram.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdevicelistwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdevicetemperaturepanel.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdisplaysetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgarmmanualwhitebalance.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgcameraproperty.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgdeviceauth.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgdevicevideoexport.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgfallpointmeasuresetup.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlggainsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlggainsettingv2.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlggainsettingv3.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlghealthmanagersetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgimagetrainning.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgluminanceandcontrastsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgmanualwhitebalance.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgnewexp.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgopenexp.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgprogressformat.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgselfcheck.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgsetoption.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgtriggerproperty.h" />
+    <ClInclude Include="GeneratedFiles\ui_csdlgtriggerpulsecontrol.h" />
+    <ClInclude Include="GeneratedFiles\ui_csedrexposureparamsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_csexportpreview.h" />
+    <ClInclude Include="GeneratedFiles\ui_csexportpreviewplayctrl.h" />
+    <ClInclude Include="GeneratedFiles\ui_csexportpreviewplayersliderwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_cslistviewvideo.h" />
+    <ClInclude Include="GeneratedFiles\ui_cslocalvideoplayer.h" />
+    <ClInclude Include="GeneratedFiles\ui_csmenulocalvideo.h" />
+    <ClInclude Include="GeneratedFiles\ui_csnetconfig.h" />
+    <ClInclude Include="GeneratedFiles\ui_csparamsetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_cspropertyviewdevice.h" />
+    <ClInclude Include="GeneratedFiles\ui_csrccapp.h" />
+    <ClInclude Include="GeneratedFiles\ui_cssecondscreen.h" />
+    <ClInclude Include="GeneratedFiles\ui_cssoftwareversion.h" />
+    <ClInclude Include="GeneratedFiles\ui_cstargetscoring.h" />
+    <ClInclude Include="GeneratedFiles\ui_csthumbnailcontrol.h" />
+    <ClInclude Include="GeneratedFiles\ui_csthumbnailmanage.h" />
+    <ClInclude Include="GeneratedFiles\ui_cswindowcrosslinesetting.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicealterip.h" />
+    <ClInclude Include="GeneratedFiles\ui_deviceeditname.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicelistwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicesearchwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_devicesystemwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_framelesswindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_playctrlwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_playersliderwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_playertitlebar.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimectrlwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimemainwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimeothersettingswidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_realtimeplayerwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_recoveringdatawidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_refamainwindow.h" />
+    <ClInclude Include="GeneratedFiles\ui_setroiwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_splashwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_systemsettingswidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchcheckwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchcombowidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchoptionswidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_touchoptionwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_videolistwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_videotoolbar.h" />
+    <ClInclude Include="Device\CF18\CF18SyncTrigger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\CF18\httplib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AGSDK\AGCommon\Src\UtilityNS\StringUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AGSDK\AGCommon\Src\UtilityNS\UtilityNS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\AGSDK\AGCommon\Src\ImageNS\ImageNS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\RefaApp_resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Main\rccapp\render\graphicsview\bqgraphicsscene.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bqgraphicsview.h" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgtextitem.h" />
+    <QtMoc Include="PointMeasure\CSPointMeasureDlg.h" />
+    <QtMoc Include="PointMeasure\measureresulttabelmodel.h" />
+    <QtMoc Include="PointMeasure\CMeasureLineManage.h" />
+    <QtMoc Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.h" />
+    <QtMoc Include="Main\rccapp\csexportpreview\DoubleValidator.h" />
+    <QtMoc Include="Main\rccapp\render\PlayerViewBase.h" />
+    <QtMoc Include="Device\acquirethread.h" />
+    <QtMoc Include="Common\AgCheckBoxHeaderView\agcheckboxheaderview.h" />
+    <QtMoc Include="Common\AgLinkButtonItemDelegate\aglinkbuttonitemdelegate.h" />
+    <QtMoc Include="Common\AgSwitchButton\agswitchbutton.h" />
+    <QtMoc Include="Video\checkboxdelegate.h" />
+    <QtMoc Include="Device\csdevicelistwidget.h" />
+    <QtMoc Include="Device\Temperature\csdevicetemperaturepanel.h" />
+    <QtMoc Include="Device\csdevicetreeview.h" />
+    <QtMoc Include="Main\rccapp\csdisplaysetting\csdisplaysetting.h" />
+    <QtMoc Include="System\SystemSettings\csdlgarmmanualwhitebalance.h" />
+    <QtMoc Include="Device\csdlgcameraproperty.h" />
+    <QtMoc Include="System\SystemSettings\csdlgdeviceauth.h" />
+    <QtMoc Include="Video\Export\csdlgdevicevideoexport.h" />
+    <QtMoc Include="System\csdlgfallpointmeasuresetup.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsetting.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsettingv2.h" />
+    <QtMoc Include="System\SystemSettings\csdlggainsettingv3.h" />
+    <QtMoc Include="System\SystemSettings\csdlghealthmanagersetting.h" />
+    <QtMoc Include="System\csdlgimagetrainning.h" />
+    <QtMoc Include="System\SystemSettings\csdlgluminanceandcontrastsetting.h" />
+    <QtMoc Include="System\SystemSettings\csdlgmanualwhitebalance.h" />
+    <QtMoc Include="System\Experiment\csdlgnewexp.h" />
+    <QtMoc Include="System\Experiment\csdlgopenexp.h" />
+    <QtMoc Include="Device\csdlgprogressformat.h" />
+    <QtMoc Include="System\csdlgselfcheck.h" />
+    <QtMoc Include="System\SystemSettings\csdlgsetoption.h" />
+    <QtMoc Include="Device\csdlgtriggerproperty.h" />
+    <QtMoc Include="Device\csdlgtriggerpulsecontrol.h" />
+    <QtMoc Include="Main\rccapp\edrexposureparamsetting\csedrexposureparamsetting.h" />
+    <QtMoc Include="Main\rccapp\csexportpreview\csexportpreview.h" />
+    <QtMoc Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.h" />
+    <QtMoc Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.h" />
+    <QtMoc Include="Property\csintcomboproperty.h" />
+    <QtMoc Include="Video\cslistviewvideo.h" />
+    <QtMoc Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.h" />
+    <QtMoc Include="System\SystemSettings\cslutcurveeditwidget.h" />
+    <QtMoc Include="Main\rccapp\csmenulocalvideo\csmenulocalvideo.h" />
+    <QtMoc Include="Main\rccapp\csnetconfig\csnetconfig.h" />
+    <QtMoc Include="Main\rccapp\paramsetting\csparamsetting.h" />
+    <QtMoc Include="Playback\csplaybackcontroller.h" />
+    <QtMoc Include="Property\cspropertyviewdevice.h" />
+    <QtMoc Include="Main\rccapp\csrccapp.h" />
+    <QtMoc Include="Main\rccapp\cssecondscreen\cssecondscreen.h" />
+    <QtMoc Include="Main\rccapp\cssoftwareversion\cssoftwareversion.h" />
+    <QtMoc Include="Playback\CSTargetScoring\cstargerscoring.h" />
+    <QtMoc Include="Main\rccapp\cstargetscoring\cstargetscoring.h" />
+    <QtMoc Include="Main\rccapp\csthumbnailcontrol\csthumbnailcontrol.h" />
+    <QtMoc Include="Main\rccapp\csthumbnailmanage\csthumbnailmanage.h" />
+    <QtMoc Include="Property\cstreepropertybrowser.h" />
+    <QtMoc Include="Video\csvideotableview.h" />
+    <QtMoc Include="Main\rccapp\csviewmanager.h" />
+    <QtMoc Include="Main\rccapp\windowcrosslinesetting\cswindowcrosslinesetting.h" />
+    <QtMoc Include="Device\device.h" />
+    <QtMoc Include="Device\devicemanager.h" />
+    <QtMoc Include="System\DeviceList\devicesearchthread.h" />
+    <QtMoc Include="System\DeviceList\devicesearchwidget.h" />
+    <QtMoc Include="Video\Export\ToolTipsShowWidget.h" />
+    <QtMoc Include="Main\framelesswindow\framelesswindow.h" />
+    <QtMoc Include="Main\maininitthread.h" />
+    <QtMoc Include="Common\ParamIntValidator\paramintvalidator.h" />
+    <QtMoc Include="Common\ParamSpinBox\paramspinbox.h" />
+    <QtMoc Include="Common\PlayCtrlWidget\playctrlwidget.h" />
+    <QtMoc Include="Common\PlayCtrlWidget\playersliderwidget.h" />
+    <QtMoc Include="Common\PlayerTitleBar\playertitlebar.h" />
+    <QtMoc Include="Device\previewthread.h" />
+    <QtMoc Include="Main\rccapp\csnetconfig\qiplineedit.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtbuttonpropertybrowser.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qteditorfactory.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtgroupboxpropertybrowser.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowserutils_p.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertymanager.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qttreepropertybrowser.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtvariantproperty.h" />
+    <QtMoc Include="Main\rccapp\recoveringdata\recoveringdatawidget.h" />
+    <QtMoc Include="Common\setroiwidget.h" />
+    <QtMoc Include="Splash\splashwidget.h" />
+    <QtMoc Include="Main\systemlauncher.h" />
+    <QtMoc Include="Video\tabelheaderview.h" />
+    <QtMoc Include="Common\TouchCheckWidget\touchcheckwidget.h" />
+    <QtMoc Include="Common\TouchComboWidget\touchcombowidget.h" />
+    <QtMoc Include="Common\TouchOptionsWidget\touchoptionswidget.h" />
+    <QtMoc Include="Common\TouchOptionWidget\touchoptionwidget.h" />
+    <QtMoc Include="Video\Export\videolisttabelmodel.h" />
+    <QtMoc Include="Common\VideoListWidget\videolistwidget.h" />
+    <QtMoc Include="Common\VideoToolBar\videotoolbar.h" />
+    <QtMoc Include="Video\Export\watermarkView.h" />
+    <QtMoc Include="Main\framelesswindow\windowdragger.h" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qteditorfactory.cpp" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qtpropertymanager.cpp" />
+    <QtMoc Include="..\3rdparty\qtpropertybrowser\qttreepropertybrowser.cpp" />
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgimageitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgmeasuremanage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\bgmeasurebase.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\bglinemeasureitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PointMeasure\CSMeasureCalibrationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PointMeasure\CSMeasurePageDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\bglinesmeasureitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurebaseitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasuremanage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurelineitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureangle3item.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureangle4item.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureradiusitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasuredimensionitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurediameteritem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurecenterdistanceitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Device\csdevicesearchlistwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Device\treenodeoperate\treenodeoperate.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Device\editdeviceinfo\editdeviceinfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Device\editgroupinfo\editgroupinfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="System\DeviceList\devicerefreshwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasurearearadiusitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\render\graphicsview\csmeasureareapolygonitem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\cslowlightmode\cslowlightmode.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="videolistthumbnail\videolistthumbnail.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="System\SystemSettings\rangemodulemanage\rangemodulemanage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="System\SystemSettings\rangemodulemanage\rangeslider.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="Device\CF18\nlohmann\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="Device\cscf18controlpanel\cscf18controlpanel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Device\cdgrcameradiskselect\csdlgdiskselect.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="System\SystemSettings\csdlggainsettingv4.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\cssoftwareversion\csopensourcelicensedlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\rccapp\cssoftwareversion\csaboutqtopensourcedlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Main\rccapp\csrccapp.qrc" />
+    <QtRcc Include="Common\AgErrorCode\Private\resources\error_code.qrc" />
+    <QtRcc Include="Common\PlayCtrlWidget\playctrl.qrc" />
+    <QtRcc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.qrc" />
+    <QtRcc Include="resources\refaapp.qrc" />
+    <QtRcc Include="Splash\resources\splash.qrc" />
+    <QtRcc Include="Common\AgSwitchButton\switchbutton.qrc" />
+    <QtRcc Include="Common\VideoToolBar\videotoolbar.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.ui" />
+    <QtUic Include="PointMeasure\CSPointMeasureDlg.ui" />
+    <QtUic Include="Realtime\acqparamdiagram.ui" />
+    <QtUic Include="Device\csdevicelistwidget.ui" />
+    <QtUic Include="Device\Temperature\csdevicetemperaturepanel.ui" />
+    <QtUic Include="Main\rccapp\csdisplaysetting\csdisplaysetting.ui" />
+    <QtUic Include="System\SystemSettings\csdlgarmmanualwhitebalance.ui" />
+    <QtUic Include="Device\csdlgcameraproperty.ui" />
+    <QtUic Include="System\SystemSettings\csdlgdeviceauth.ui" />
+    <QtUic Include="Video\Export\csdlgdevicevideoexport.ui" />
+    <QtUic Include="System\csdlgfallpointmeasuresetup.ui" />
+    <QtUic Include="System\SystemSettings\csdlggainsetting.ui" />
+    <QtUic Include="System\SystemSettings\csdlggainsettingv2.ui" />
+    <QtUic Include="System\SystemSettings\csdlggainsettingv3.ui" />
+    <QtUic Include="System\SystemSettings\csdlghealthmanagersetting.ui" />
+    <QtUic Include="System\csdlgimagetrainning.ui" />
+    <QtUic Include="System\SystemSettings\csdlgluminanceandcontrastsetting.ui" />
+    <QtUic Include="System\SystemSettings\csdlgmanualwhitebalance.ui" />
+    <QtUic Include="System\Experiment\csdlgnewexp.ui" />
+    <QtUic Include="System\Experiment\csdlgopenexp.ui" />
+    <QtUic Include="Device\csdlgprogressformat.ui" />
+    <QtUic Include="System\csdlgselfcheck.ui" />
+    <QtUic Include="System\SystemSettings\csdlgsetoption.ui" />
+    <QtUic Include="Device\csdlgtriggerproperty.ui" />
+    <QtUic Include="Device\csdlgtriggerpulsecontrol.ui" />
+    <QtUic Include="Main\rccapp\edrexposureparamsetting\csedrexposureparamsetting.ui" />
+    <QtUic Include="Main\rccapp\csexportpreview\csexportpreview.ui" />
+    <QtUic Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.ui" />
+    <QtUic Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.ui" />
+    <QtUic Include="Video\cslistviewvideo.ui" />
+    <QtUic Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.ui" />
+    <QtUic Include="Main\rccapp\csmenulocalvideo\csmenulocalvideo.ui" />
+    <QtUic Include="Main\rccapp\csnetconfig\csnetconfig.ui" />
+    <QtUic Include="Main\rccapp\paramsetting\csparamsetting.ui" />
+    <QtUic Include="Property\cspropertyviewdevice.ui" />
+    <QtUic Include="Main\rccapp\csrccapp.ui" />
+    <QtUic Include="Main\rccapp\cssecondscreen\cssecondscreen.ui" />
+    <QtUic Include="Main\rccapp\cssoftwareversion\cssoftwareversion.ui" />
+    <QtUic Include="Main\rccapp\cstargetscoring\cstargetscoring.ui" />
+    <QtUic Include="Main\rccapp\csthumbnailcontrol\csthumbnailcontrol.ui" />
+    <QtUic Include="Main\rccapp\csthumbnailmanage\csthumbnailmanage.ui" />
+    <QtUic Include="Main\rccapp\windowcrosslinesetting\cswindowcrosslinesetting.ui" />
+    <QtUic Include="System\DeviceList\devicealterip.ui" />
+    <QtUic Include="System\DeviceList\deviceeditname.ui" />
+    <QtUic Include="System\DeviceList\devicelistwidget.ui" />
+    <QtUic Include="System\DeviceList\devicesearchwidget.ui" />
+    <QtUic Include="System\devicesystemwidget.ui" />
+    <QtUic Include="Main\framelesswindow\framelesswindow.ui" />
+    <QtUic Include="Common\PlayCtrlWidget\playctrlwidget.ui" />
+    <QtUic Include="Common\PlayCtrlWidget\playersliderwidget.ui" />
+    <QtUic Include="Common\PlayerTitleBar\playertitlebar.ui" />
+    <QtUic Include="Realtime\realtimectrlwidget.ui" />
+    <QtUic Include="Realtime\realtimemainwidget.ui" />
+    <QtUic Include="Realtime\realtimeothersettingswidget.ui" />
+    <QtUic Include="Realtime\realtimeplayerwidget.ui" />
+    <QtUic Include="Main\rccapp\recoveringdata\recoveringdatawidget.ui" />
+    <QtUic Include="Main\refamainwindow.ui" />
+    <QtUic Include="Common\setroiwidget.ui" />
+    <QtUic Include="Splash\splashwidget.ui" />
+    <QtUic Include="System\SystemSettings\systemsettingswidget.ui" />
+    <QtUic Include="Common\TouchCheckWidget\touchcheckwidget.ui" />
+    <QtUic Include="Common\TouchComboWidget\touchcombowidget.ui" />
+    <QtUic Include="Common\TouchOptionsWidget\touchoptionswidget.ui" />
+    <QtUic Include="Common\TouchOptionWidget\touchoptionwidget.ui" />
+    <QtUic Include="Common\VideoListWidget\videolistwidget.ui" />
+    <QtUic Include="Common\VideoToolBar\videotoolbar.ui" />
+    <QtUic Include="Video\Export\ToolTipsShowWidget.ui" />
+    <QtUic Include="PointMeasure\CSMeasureCalibrationDlg.ui" />
+    <QtUic Include="PointMeasure\CSMeasurePageDlg.ui" />
+    <QtUic Include="Device\csdevicesearchlistwidget.ui" />
+    <QtUic Include="Device\editdeviceinfo\editdeviceinfo.ui" />
+    <QtUic Include="Device\editgroupinfo\editgroupinfo.ui" />
+    <QtUic Include="Device\treenodeoperate\treenodeoperate.ui" />
+    <QtUic Include="Main\rccapp\cslowlightmode\cslowlightmode.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="videolistthumbnail\videolistthumbnail.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="System\SystemSettings\rangemodulemanage\rangemodulemanage.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Device\cscf18controlpanel\cscf18controlpanel.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Device\cdgrcameradiskselect\csdlgdiskselect.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="System\SystemSettings\csdlggainsettingv4.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Main\rccapp\cssoftwareversion\csopensourcelicensedlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Main\rccapp\cssoftwareversion\csaboutqtopensourcedlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\translations\csrccapp-zh_CN.ts" />
+    <None Include="packages.config" />
+    <None Include="Main\rccapp\image\Display-hover.png" />
+    <None Include="Main\rccapp\image\Display.png" />
+    <None Include="Main\rccapp\image\Display_disable.png" />
+    <None Include="Common\PlayCtrlWidget\images\Forward-play.png" />
+    <None Include="Main\rccapp\image\background.png" />
+    <None Include="Common\PlayCtrlWidget\images\backward-play.png" />
+    <None Include="Common\PlayCtrlWidget\images\backward.png" />
+    <None Include="Main\rccapp\image\big.png" />
+    <None Include="resources\translations\refaapp_en.qm" />
+    <None Include="resources\translations\refaapp_en.ts" />
+    <None Include="Splash\resources\qss\black.qss" />
+    <None Include="resources\images\camera_abnormal.gif" />
+    <None Include="resources\images\camera_external_sync_abnormal.gif" />
+    <None Include="resources\images\camera_normal.gif" />
+    <None Include="resources\images\camera_unconnected.gif" />
+    <None Include="Main\rccapp\image\collect.png" />
+    <None Include="Main\rccapp\image\collectmiddle.png" />
+    <None Include="Main\rccapp\image\collectsetting.png" />
+    <None Include="Main\rccapp\image\copydeviceparam.bmp" />
+    <None Include="Main\rccapp\image\cross.png" />
+    <None Include="resources\translations\csrccapp-zh_CN.qm" />
+    <None Include="Main\rccapp\csrccapp.qss" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-arrow.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-busy.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-closedhand.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-cross.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-forbidden.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-hand.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-hsplit.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-ibeam.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-openhand.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeall.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeb.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizef.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeh.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizev.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-uparrow.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-vsplit.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-wait.png" />
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-whatsthis.png" />
+    <None Include="resources\qss\default.qss" />
+    <None Include="resources\images\delete.png" />
+    <None Include="Common\AgSwitchButton\images\disabled_checked.png" />
+    <None Include="Common\AgSwitchButton\images\disabled_unchecked.png" />
+    <None Include="Common\AgSwitchButton\images\enabled_checked.png" />
+    <None Include="Common\AgSwitchButton\images\enabled_unchecked.png" />
+    <None Include="Common\AgErrorCode\Private\resources\en_US\error_code.csv" />
+    <None Include="Common\AgErrorCode\Private\resources\zh_CN\error_code.csv" />
+    <None Include="resources\images\export.png" />
+    <None Include="Main\rccapp\image\export_preview_slider-left.png" />
+    <None Include="Main\rccapp\image\export_preview_slider-pos.png" />
+    <None Include="Main\rccapp\image\export_preview_slider-right.png" />
+    <None Include="Main\rccapp\image\export_preview_trigger.png" />
+    <None Include="Main\rccapp\image\fallmirror.png" />
+    <None Include="Common\PlayCtrlWidget\images\fast-backward-play.png" />
+    <None Include="Common\PlayCtrlWidget\images\fast-forward-play.png" />
+    <None Include="Main\rccapp\image\fit.png" />
+    <None Include="Common\VideoToolBar\images\focus-line.png" />
+    <None Include="Common\PlayCtrlWidget\images\forward.png" />
+    <None Include="Main\rccapp\image\full.png" />
+    <None Include="Common\VideoToolBar\images\fullscreen.png" />
+    <None Include="resources\strings\en_US\gdstrings.ini" />
+    <None Include="resources\strings\zh_CN\gdstrings.ini" />
+    <None Include="Main\rccapp\image\help.png" />
+    <None Include="resources\images\help.png" />
+    <None Include="Main\rccapp\image\highspeed.png" />
+    <None Include="resources\images\import.png" />
+    <None Include="Main\rccapp\image\jointimage.png" />
+    <None Include="resources\images\logo.ico" />
+    <None Include="Main\rccapp\image\logo.png" />
+    <None Include="Main\rccapp\image\manual_select_close.png" />
+    <None Include="Main\rccapp\image\manualinput.png" />
+    <None Include="Main\rccapp\image\mirror.png" />
+    <None Include="Main\rccapp\image\onoff.png" />
+    <None Include="Main\rccapp\image\pastedeviceparam.bmp" />
+    <None Include="Main\rccapp\image\pause-hover.png" />
+    <None Include="Common\PlayCtrlWidget\images\pause.png" />
+    <None Include="Main\rccapp\image\pause.png" />
+    <None Include="Main\rccapp\image\preview.png" />
+    <None Include="resources\translations\qt_zh_CN.qm" />
+    <None Include="Main\rccapp\image\refreshdevicelist.bmp" />
+    <None Include="Main\rccapp\image\restore.png" />
+    <None Include="Common\VideoToolBar\images\roi-selection.png" />
+    <None Include="Main\rccapp\image\rotate.png" />
+    <None Include="resources\qss\scale_150per.qss" />
+    <None Include="Main\rccapp\image\selfinspection.png" />
+    <None Include="resources\images\settings-white.png" />
+    <None Include="resources\images\settings.png" />
+    <None Include="Common\PlayCtrlWidget\images\slider-left.png" />
+    <None Include="Common\PlayCtrlWidget\images\slider-pos.png" />
+    <None Include="Common\PlayCtrlWidget\images\slider-right.png" />
+    <None Include="Main\rccapp\image\small.png" />
+    <None Include="Common\VideoToolBar\images\snapshot.png" />
+    <None Include="Main\rccapp\image\speed_1.png" />
+    <None Include="Main\rccapp\image\speed_16.png" />
+    <None Include="Main\rccapp\image\speed_2.png" />
+    <None Include="Main\rccapp\image\speed_4.png" />
+    <None Include="Main\rccapp\image\speed_8.png" />
+    <None Include="Splash\resources\translations\splash-en_US.qm" />
+    <None Include="Splash\resources\translations\splash-zh_CN.qm" />
+    <None Include="Splash\resources\avi\splash01.avi" />
+    <None Include="Splash\resources\avi\splash02.avi" />
+    <None Include="Splash\resources\avi\splash03.avi" />
+    <None Include="Splash\resources\avi\splash04.avi" />
+    <None Include="Splash\resources\avi\splash05.avi" />
+    <None Include="Main\rccapp\image\stop.png" />
+    <None Include="Main\rccapp\image\takephoto.png" />
+    <None Include="Main\rccapp\image\title_hide.png" />
+    <None Include="Main\rccapp\image\title_show.png" />
+    <None Include="Common\PlayCtrlWidget\images\trigger.png" />
+    <None Include="Main\rccapp\image\trigger.png" />
+    <None Include="resources\images\trigger_lable.png" />
+    <None Include="Main\rccapp\image\turnimage.png" />
+    <None Include="resources\images\video_camera.png" />
+    <None Include="Main\rccapp\image\videobackground.png" />
+    <None Include="Main\rccapp\image\warning.png" />
+    <None Include="Main\rccapp\image\wincross.png" />
+    <None Include="Main\rccapp\image\wincrosssetting.jpg" />
+    <None Include="resources\images\window_control_icon_close.png" />
+    <None Include="resources\images\window_control_icon_maximize.png" />
+    <None Include="resources\images\window_control_icon_minimize.png" />
+    <None Include="resources\images\window_control_icon_restore.png" />
+    <None Include="Main\rccapp\image\xgs_stop_recording.png" />
+    <None Include="Main\rccapp\image\xgs_trigger.png" />
+    <None Include="Common\VideoToolBar\images\zoom-fit.png" />
+    <None Include="Common\VideoToolBar\images\zoom-full.png" />
+    <None Include="Common\VideoToolBar\images\zoom-in.png" />
+    <None Include="Common\VideoToolBar\images\zoom-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Main\rccapp\image\Display-hover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\Display.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\Display_disable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\Forward-play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\background.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\backward-play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\backward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\qss\black.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\camera_abnormal.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\camera_external_sync_abnormal.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\camera_normal.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\camera_unconnected.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\collect.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\collectmiddle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\collectsetting.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\copydeviceparam.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\cross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\translations\csrccapp-zh_CN.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="Main\rccapp\csrccapp.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="Main\rccapp\csrccapp.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-busy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-closedhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-cross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-forbidden.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-hand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-ibeam.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-openhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizef.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizeh.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-sizev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-uparrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-vsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-wait.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\3rdparty\qtpropertybrowser\images\cursor-whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qss\default.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\delete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\AgSwitchButton\images\disabled_checked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\AgSwitchButton\images\disabled_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\AgSwitchButton\images\enabled_checked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\AgSwitchButton\images\enabled_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\AgErrorCode\Private\resources\en_US\error_code.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\AgErrorCode\Private\resources\zh_CN\error_code.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="Common\AgErrorCode\Private\resources\error_code.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="resources\images\export.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\export_preview_slider-left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\export_preview_slider-pos.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\export_preview_slider-right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\export_preview_trigger.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\fallmirror.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\fast-backward-play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\fast-forward-play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\fit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\focus-line.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\full.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\fullscreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\strings\en_US\gdstrings.ini">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\strings\zh_CN\gdstrings.ini">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\help.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\help.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\highspeed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\import.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\jointimage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\logo.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\manual_select_close.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\manualinput.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\mirror.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\onoff.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\pastedeviceparam.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\pause-hover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\pause.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\pause.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="Common\PlayCtrlWidget\playctrl.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="Main\rccapp\image\preview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\translations\qt_zh_CN.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="..\3rdparty\qtpropertybrowser\qtpropertybrowser.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="resources\refaapp.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="Main\rccapp\image\refreshdevicelist.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\restore.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\roi-selection.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\rotate.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\qss\scale_150per.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\selfinspection.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\settings-white.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\settings.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\slider-left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\slider-pos.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\slider-right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\small.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\snapshot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\speed_1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\speed_16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\speed_2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\speed_4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\speed_8.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\translations\splash-en_US.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\translations\splash-zh_CN.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="Splash\resources\splash.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="Splash\resources\avi\splash01.avi">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\avi\splash02.avi">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\avi\splash03.avi">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\avi\splash04.avi">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splash\resources\avi\splash05.avi">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\stop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="Common\AgSwitchButton\switchbutton.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="Main\rccapp\image\takephoto.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\title_hide.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\title_show.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\PlayCtrlWidget\images\trigger.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\trigger.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\trigger_lable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\turnimage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\video_camera.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\videobackground.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="Common\VideoToolBar\videotoolbar.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="Main\rccapp\image\warning.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\wincross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\wincrosssetting.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\window_control_icon_close.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\window_control_icon_maximize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\window_control_icon_minimize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\window_control_icon_restore.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\xgs_stop_recording.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Main\rccapp\image\xgs_trigger.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\zoom-fit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\zoom-full.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\zoom-in.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Common\VideoToolBar\images\zoom-out.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\RefaApp_resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Video\Export\ToolTipsShowWidget.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PointMeasure\CSPointMeasureDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PointMeasure\measureresulttabelmodel.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PointMeasure\CMeasureLineManage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ManualWhiteBalance\CSManualWhiteBalanceDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

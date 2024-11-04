@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LocalMainWidget</class>
+ <widget class="QWidget" name="LocalMainWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>774</width>
+    <height>483</height>
+   </rect>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="PlaybackPlayerWidget" name="widgetPlayer" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="style" stdset="0">
+      <string>ctrl-panel</string>
+     </property>
+     <widget class="LocalCtrlWidget" name="widgetCtrl"/>
+     <widget class="SetRoiWidget" name="widgetRoi"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SetRoiWidget</class>
+   <extends>QWidget</extends>
+   <header>Common/setroiwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaybackPlayerWidget</class>
+   <extends>QWidget</extends>
+   <header>playbackplayerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LocalCtrlWidget</class>
+   <extends>QWidget</extends>
+   <header>localctrlwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

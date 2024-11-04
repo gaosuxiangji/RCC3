@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="clr-namespace:Microsoft.Build.Framework.XamlTypes;assembly=Microsoft.Build.Framework">
+  <Rule Name="ReferencedPackages12165206-7243-490a-9aac-31facaf78c2d" PageTemplate="tool" DisplayName="Referenced Packages" SwitchPrefix="/" Order="1">
+    <Rule.Categories>
+      <Category Name="jsoncpp" DisplayName="jsoncpp" />
+    </Rule.Categories>
+    <Rule.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="" />
+    </Rule.DataSource>
+    <EnumProperty Name="Linkage-jsoncpp" DisplayName="Linkage" Description="Which version of the .lib file to link to this library" Category="jsoncpp">
+      <EnumValue Name="" DisplayName="Dynamic Library (DLL)" />
+    </EnumProperty>
+  </Rule>
+</ProjectSchemaDefinitions>

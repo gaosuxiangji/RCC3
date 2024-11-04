@@ -1,0 +1,204 @@
+#Error Code,Error Type,Tip Level,Tip Content
+0x00000001,授权到期,3,"License expired, please call 4008-591-866 for a new one."
+0x00000002,授权文件错误,2,"License error, please call 4008-591-866 for more information."
+0x00000003,配置文件错误,2,"Configuration file error, please upgrade."
+0x00000004,设备文件错误,2,"Device file error, please upgrade."
+0x00000005,寄存器保存文件错误,2,"Register saving file error, please upgrade."
+0x000000ff,授权错误,1,License error.
+0x00000006,打开授权文件失败,2,Failed to open license file.
+0x00000007,授权文件中相机类型与实际不一致,2,The type of camera in the license file does not match the actual one.
+0x00000008,授权文件中序列号与实际不一致,2,The serial number in the license file does not match the actual.
+0x00000009,授权文件已使用,2, License file used.
+0x0000000A,授权文件无效,2,License file invalid.
+0x0000000B,未知授权错误,2,Unknown license error.
+0x0000000C,未授权,2,Unlicensed.
+0x0000000D,授权到期,3,License expired.
+0x00010101,参数设置通讯内容错误,2,"Newsletter error, please reconnect."
+0x00010102,RAW/YUV格式视频流发送，客户端未连接,2,"Video stream sent in RAW/YUV format, client not connected."
+0x00010103,RAW/YUV格式视频流发送，客户端异常断开,2,"Video stream sent in RAW/YUV format, client abnormally disconnected."
+0x00010104,H264格式RTSP未收到PLAY命令,1,"No PLAY command received, please stop before entering the current mode."
+0x00010201,ISP初始化错误,2,"ISP initialization failed, please restart."
+0x00010202,视频输入错误,2,"Video input error, please restart."
+0x00010203,视频处理子系统错误,2,"Video processing error, please restart."
+0x00010204,视频编码错误,2,"Video encoding error,please restart."
+0x00010205,获取RAW格式数据错误,2,RAW data acquisition error.
+0x00010206,获取YUV格式数据错误,2,YUV data acquisition error.
+0x00010207,获取H264格式数据错误,2,H264 data acquisition error.
+0x00010208,GPIO设置错误,2,"GPIO setting error, please restart."
+0x00010301,FPGA无图像数据输入,1,"No image data, please restart."
+0x00010302,FPGA输入图像宽高异常,1,"Width and height of the image are abnormal, please restart."
+0x80010303,到CFPGA i2c错误,2,"I2c error to CFPGA, please restart."
+0x80010304,到IFPGA i2c错误,2,"I2c error to IFPGA, please restart."
+0x80010305,到UFPGA i2c错误,2,"I2c error to UFPGA, please restart."
+0x80010306,到EEPROM1 i2c错误,2,"I2c error to EEPROM1, please restart."
+0x80010307,到EEPROM2 i2c错误,2,"I2c error to EEPROM2, please restart."
+0x80010308,到DAC1 i2c错误,2,"I2c error to DAC1, please restart."
+0x80010309,到DAC2 i2c错误,2,"I2c error to DAC2, please restart."
+0x8001030A,到CFGPA5338 i2c错误,2,"I2c error to CFGPA5338, please restart."
+0x8001030B,到主板5338 i2c错误,2,"I2c error to motherboard 5338, please restart."
+0x8001030C,到CMOS5338 i2c错误,2,"I2c error to CMOS5338, please restart."
+0x8001030D,千兆网为百兆网,1,"Network exception, please check the network connection or restart."
+0x02000000,未知错误,1,"Unknown error, please reconnect."
+0x02010001,网络连接异常,1,Abnormal network connection. Please check the connection or reconnect.
+0x02010002,USB通信异常,1,"Communication abnormalities, please check the connection or reconnect."
+0x02010003,操作超时,3,Operation timeout.
+0x02010004,打开数据流失败,3,Failed to open data stream. Please check device status.
+0x02010005,图像大小不对应,1,"The image size does not correspond, please stop the camera and try again."
+0x02010006,图像数据接收错误,1,"Image reception failed, please check the device and try it again."
+0x02010007,数据流存储错误,1,"Storage failed, please check the disk space."
+0x02010008,协议解析错误,2,Protocol parsing error.
+0x02010009,应答命令与请求命令不匹配,2,The answer command does not match the request command.
+0x0201000A,服务器响应错误,2,Server response error.
+0x0201000B,协议CRC校验错误,2,Protocol CRC checksum error.
+0x0201000C,命令执行失败,2,"Command execute failure. Please check the parameters or check whether the device is connected by multiple PCs."
+0x0201000D,导出预览异常,2,"The video image height is less than 128, which can only be downloaded in raw format. please switch stream type before download"
+0x02020001,存储空间不足,1,"Not enough storage available,please free up."
+0x02020002,未找到视频存储管理模块信息,1,"No memory management module information found,please format."
+0x02020003,格式化视频存储管理模块失败,2,"Formatting the memory management module failed, please check the connection or reformat."
+0x02020004,断电数据恢复失败,2,"Power failure data recovery failed,please check the connection or restart, or select a valid clip through export preview."
+0x02020005,设备视频片段数量过大,2,"The number of video clips exceeds the limit.Please clean up the video clips before trying again."
+0x02030001,拓扑错误,2,"Topology error, please check the connection."
+0x02040001,设备句柄错误,2,"Device handle error, please check the connection."
+0x02040002,未找到对应插件,1,"No corresponding plug-in found, please check."
+0x02040003,未找到设备,1,"No device found, please check the connection and the faults."
+0x02040004,设备初始化失败,1,"Device Initialization failed, please check the network."
+0x02040005,设备配置文件解析错误,2,"Configuration file parsing error, please check the cdf file."
+0x02040006,无此接口,3,"Invalid interface call, please check."
+0x02040007,非法参数,3,"Illegal parameters, please double check."
+0x02040008,设备已打开,3,Device is turned on.
+0x02040009,固件版本故障,1,"Firmware version error, please  power off and restart."
+0x0204000A,自动训练失败,3,"Automatic training failed, please retrain manually."
+0x0204000B,磁盘空间不够,3,"Insufficient local disk space, please free up."
+0x0204000C,设备配置文件解析错误,3,"Device profile error, please restart the camera or upgrade the ARM."
+0x0204000D,,,
+0x0204000E,,,
+0x0204000F,创建文件失败,3,"File creation failed, please check the space of local disk."
+0x02040010,硬件唤醒失败,3,"Hardware wake-up failed, please try again."
+0x02040011,主板初始化错误,2,"Motherboard initialization failed, please power off and restart."
+0x02040012,CMOS初始化错误,2,"CMOS initialization failed, please power off and restart."
+0x02040013,从板初始化错误,2,"Slaveboard initialisation failed, please try power off and restart."
+0x02040014,设备正在升级中,2,"The device is being upgraded, please wait until the upgrade is complete or check if the upgrade process is not closed."
+0x02040015,插件版本过低,2,"Plugin version is too low, please upgrade."
+0x02040016,插件版本过高,2,"Plugin version is too high, please upgrade."
+0x02040017,参数选择器不支持,2,"The Selector is unsupported."
+0x02040018,参数大小不匹配,2,"The Selector size is not matched."
+0x02040019,参数值超出范围,2,"The Selector value is out of range."
+0x0204001A,相机硬件待机中，无法切换工作状态,3,"The camera hardware is in standby, and the work status cannot be switched. "
+0x02060001,无效视频,2,"invalid video, open video failed"
+0x02060002,导出视频失败,2,"image or video save failed"
+0x02060003,非法路径,2,“invalid path or filename”
+0x01000001,授权到期,1,License expired.
+0x01000002,授权文件错误,2,License document error.
+0x01000003,配置文件错误,2,"Configuration file error, please upgrade."
+0x01000004,设备文件错误,2,"Device file error, please upgrade."
+0x01000005,寄存器保存文件错误,2,"Register saving file error, please upgrade."
+0x01000006,打开授权文件失败,2,Failed to open license file.
+0x01000007,授权文件中相机类型与实际不一致,1,The camera type in the license file does not match the actual one.
+0x01000008,授权文件中序列号与实际不一致,1,The serial number in the license document does not match the actual.
+0x01000009,授权文件已使用,1,The license file has been used.
+0x0100000A,授权文件无效,2,The license file is invalid.
+0x0100000B,未知授权错误,2,Unknown license error.
+0x0100000C,升级文件长度与命令中的长度不一致,2,The length of the upgrade file does not match the length in the command.
+0x0100000D,当前ARM版本过旧，不适合在线升级,1,"ARM version is old, please upgrade online."
+0x0100000E,升级命令ID错误,2,"Upgrade command ID error, please double check."
+0x0100000F,ARM升级文件名称未识别(前缀不是u-boot/uImage/rootfs/config),2,"ARM upgrade file name not recognised, please double check."
+0x01000010,升级失败，不要关机重新升级,3,"Upgrade failed, do not switch off and try again."
+0x01000011,升级成功,1,Upgrade successful.
+0x01000012,flash分区长度小于升级文件长度,3,The length of flash partition is less than the length of upgrade file.
+0x01000013,读FPGA升级程序完成,1,Read the upgrade program of FPGA completed.
+0x01000014,在线升级正在运行,1,"Online upgrade program is running, please wait a moment."
+0x01000015,升级文件CRC校验错误,2,"CRC check error in upgrade file, please check."
+0x01000016,升级未知错误,2,"Upgrade unknown error, please try again."
+0x01000017,千兆网为百兆网,3,"Network bandwidth reduced to 100Mbps, please check."
+0x01000018,读取出厂参数配置出错,2,"Reading the factory configuration error, please reset."
+0x01000019,当前系统时间早于最后一次使用时间,2,Current system time is earlier than the last time used.
+0x0100001A,检测到固件异常,2,"Detected firmware error, please power off and restart."
+0x0100001B,固件重新上电成功,2,"Firmware repowered."
+0x01010001,参数设置通讯内容错误,2,"Newsletter error, please reconnect."
+0x01010002,RAW/YUV格式视频流发送，客户端未连接,3,"Video stream sent in RAW/YUV format, client not connected."
+0x01010003,RAW/YUV格式视频流发送，客户端异常断开,3,"Video stream sent in RAW/YUV format, client abnormally disconnected."
+0x01010004,H264格式RTSP未收到PLAY命令,3,"No PLAY command received, please stop before entering the current mode."
+0x01020001,ISP初始化错误,2,"ISP initialization failed, please restart."
+0x01020002,视频输入错误,2,"Video input error, please restart."
+0x01020003,视频处理子系统错误,2,"Video processing error, please restart."
+0x01020004,视频编码错误,2,"Video encoding error, please restart."
+0x01020005,获取RAW格式数据错误,2,RAW data acquistion error.
+0x01020006,获取YUV格式数据错误,2,YUV data acquistion error.
+0x01020007,获取H264格式数据错误,2,H264 data acquistion error.
+0x01020008,GPIO设置错误,2,"GPIO setting error, please restart."
+0x01020009,读写串口设备错误,2,Read/write serial device error.
+0x0102000A,MIPI通道错误,2,MIPI channel error.
+0x0102000B,MIPI无图像数据输入,2,No image data input for MIPI.
+0x0102000C,MIPI输入图像宽高异常,2,MIPI input image width and height exception.
+0x0102000D,缓存溢出,2,Buffer overflow.
+0x81030001,程序切换错误,2,Program switching error.
+0x81030002,CMOS电压配置错误,2,CMOS voltage configuration error.
+0x81030003,SI5338时钟配置错误,2,SI5338 clock configuration error.
+0x81030004,DDR存储设备初始化失败,2,DDR memory device initialization failed.
+0x81030005,CMOS自动训练失败,2,CMOS automatic training failed.
+0x81030006,同步信号异常,2,Sync signal exception.
+0x81030007,接收B码异常,2,Receiving B code exception.
+0x81030008,CMOS图像输出异常（工作模式下CMOS无图像数据输出）,2,CMOS image output exception.
+0x81030009,板间通信异常（不同相机板间通信通道不同，需要单独定义）,2,Inter-board communication exception.
+0x8103000A,DDR写帧头错误（预留）,2,DDR write frame header error.
+0x8103000B,DDR读帧头错误（预留）,2,DDR read frame header error.
+0x8103000C,MIPI帧头错误（预留）,2,MIPI frame header error.
+0x8103000D,未知FPGA错误,2,Unkown FPGA error.
+0x8103000E,PCA9848设备I2C错误,2,Device error. please restart.
+0x8103000F,校正参数初始化失败,2,Calibration parameter initialization failed.
+0x81030010,内存无数据输出,2,No data output for memory.
+0x81030011,MIPI无数据输出,2,No data output for MIPI.
+0x81030012,SDI无数据输出,2,No data output for SDI.
+0x81030013,从板无数据输入,2,No data input for slaveboard.
+0x81030014,从板无数据输出,2,No data output for slaveboard.
+0x81030015,矫正参数异常,2,Correction parameters exception.
+0x81030016,GT时钟异常,2,GT clock exception.
+0x81030017,DDR时钟异常,2,DDR clock exception.
+0x81030018,CMOS时钟异常,2,CMOS clock exception.
+0x81030019,当前网络链接速度: 5G,1,"Current network link speed: 5G."
+0x8103001A,当前网络链接速度: 3G,1,"Current network link speed: 3G."
+0x8103001B,当前网络链接速度: 1G,1,"Current network link speed: 1G."
+0x8103001C,当前网络链接速度: 100M,1,"Current network link speed: 100M."
+0x8103001D,当前网络链接速度: 10M,1,"Current network link speed: 10M."
+0x8103001E,设备电压过低,2,"Device DAC Low."
+0x8103001F,设备电压过高,2,"Device DAC High."
+0x81030020,当前网络链接速度: 2.5G,1,"Current network link speed: 2.5G."
+0x81040001,到CFPGA i2c错误,2,"I2C error to CFPGA, please restart."
+0x81040002,到IFPGA i2c错误,2,"I2C error to IFPGA, please restart."
+0x81040003,到UFPGA i2c错误,2,"I2C error to UFPGA, please restart."
+0x81040004,到FPGA EEPROM i2c错误,2,"I2C error to FPGA EEPROM, please restart."
+0x81040005,到CMOS EEPROM i2c错误,2,"I2C error to CMOS EEPROM, please restart."
+0x81040006,到DAC1 i2c错误,2,"I2C error to DAC1, please restart."
+0x81040007,到DAC2 i2c错误,2,"I2C error to DAC2, please restart."
+0x81040008,到CFGPA 5338 i2c错误,2,"I2C error to CFPGA 5338, please restart."
+0x81040009,到主板5338 i2c错误,2,"I2C error to Mainboard 5338, please restart."
+0x8104000A,到CMOS5338 i2c错误,2,"I2C error to CMOS 5338, please restart."
+0x8104000B,,2,
+0x810400FF,未知设备错误,2,Unkown error.
+0x81050001,FPGA i2c错误,2,"I2C error to FPGA, please restart."
+0x81050002,flash EEPROM1 i2c错误,2,"I2C error to flash EEPROM1, please restart."
+0x81050003,flash EEPROM2 i2c错误,2,"I2C error to flash EEPROM2, please restart."
+0x81050004,COMS EEPROM i2c错误,2,"I2C error to COMS EEPROM, please restart."
+0x81050005,DAC1 i2c 错误,2,"I2C error to DAC1, please restart."
+0x81050006,DAC2 i2c错误,2,"I2C error to DAC2, please restart."
+0x81050007,COMS 5338 i2c错误,2,"I2C error to CMOS 5338, please restart."
+0x81050008,FPGA 5338 i2c错误,2,"I2C error to FPGA 5338, please restart."
+0x81050009,无B码输入,2,"No B code input."
+0x8105000A,CMOS训练异常,2,"CMOS training failed."
+0x8105000B,flash初始化失败,2,"flash Initialization failed."
+0x8105000C,Flash颗粒异常,2,"Device memorizer is abnormal. Please power off and restart."
+0x8105000D,对焦环控制异常,3,"Failed to control focus ring. Please check the focus ring connection!"
+0x810500FF,未知设备错误,2,Unkown error.
+0x81060001,主板FPGA i2c错误,2,"I2C error to Mainboard FPGA, please restart."
+0x81060002,从板FPGA i2c错误,2,"I2C error to Slaveboard FPGA, please restart."
+0x81060003,DAC1 i2c 错误,2,"I2C error to DAC1, please restart."
+0x81060004,DAC2 i2c错误,2,"I2C error to DAC2, please restart."
+0x81060005,COMS 5338 i2c错误,2,"I2C error to CMOS 5338, please restart."
+0x81060006,主板5338 i2c错误,2,"I2C error to Mainboard 5338, please restart."
+0x81060007,从板5338 i2c错误,2,"I2C error to Slaveboard 5338, please restart."
+0x81060008,主板EEPROOM 错误,2,"I2C error to Mainboard EEPROOM, please restart."
+0x81060009,从板EEPROOM 错误,2,"I2C error to Slaveboard EEPROOM, please restart."
+0x8106000A,CMOS板 EEPROOM错误,2,"I2C error to CMOS EEPROOM, please restart."
+0x8106000B,温控板读取温度错误,2,Temperature control board reading error.
+0x810600FF,未知设备错误,2,Unkown error.
+0x01000000,不在同一个网段上，无法连接！,1,Not on same network segment and cannot be connected.

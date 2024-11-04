@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="qtcsv_init">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-qtcsv Condition="'$(Linkage-qtcsv)' == ''">dynamic</Linkage-qtcsv>
+    <CallingConvention-qtcsv Condition="'$(CallingConvention-qtcsv)' == ''">cdecl</CallingConvention-qtcsv>
+  </PropertyGroup>
+  <ItemDefinitionGroup Label="x64 and Debug" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Debug\qtcsv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="x64 and Release" Condition="'$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 )">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\Release\qtcsv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..//build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="qtcsv_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+  <Target Name="qtcsv_init">
+    <qtcsv_Contains Text="Linkage-dynamic" Library="qtcsv" Value="dynamic" Condition="'$(Linkage-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="Linkage-static" Library="qtcsv" Value="static" Condition="'$(Linkage-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="Linkage-ltcg" Library="qtcsv" Value="ltcg" Condition="'$(Linkage-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="Linkage-sxs" Library="qtcsv" Value="sxs" Condition="'$(Linkage-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="CallingConvention-cdecl" Library="qtcsv" Value="cdecl" Condition="'$(CallingConvention-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="CallingConvention-stdcall" Library="qtcsv" Value="stdcall" Condition="'$(CallingConvention-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="CallingConvention-fastcall" Library="qtcsv" Value="fastcall" Condition="'$(CallingConvention-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="CallingConvention-thiscall" Library="qtcsv" Value="thiscall" Condition="'$(CallingConvention-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-qtcsv" />
+    </qtcsv_Contains>
+    <qtcsv_Contains Text="CallingConvention-clrcall" Library="qtcsv" Value="clrcall" Condition="'$(CallingConvention-qtcsv)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-qtcsv" />
+    </qtcsv_Contains>
+  </Target>
+</Project>

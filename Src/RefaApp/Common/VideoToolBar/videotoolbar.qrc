@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/videotoolbar">
+        <file>images/focus-line.png</file>
+        <file>images/fullscreen.png</file>
+        <file>images/roi-selection.png</file>
+        <file>images/snapshot.png</file>
+        <file>images/zoom-fit.png</file>
+        <file>images/zoom-full.png</file>
+        <file>images/zoom-in.png</file>
+        <file>images/zoom-out.png</file>
+    </qresource>
+</RCC>
