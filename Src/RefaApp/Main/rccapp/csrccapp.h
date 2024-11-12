@@ -733,7 +733,6 @@ private slots:
 
     void on_actionMachine_Self_check_triggered();
 
-    void on_actionHealth_Management_Settings_triggered();
     void on_actionAnti_aliasing_triggered(bool checked);
 
 	void on_actionBinning_Mode_triggered(bool checked);
@@ -805,8 +804,6 @@ private:
 
 	//当前设备指针
 	QSharedPointer<Device> m_current_device_ptr;
-
-	QToolBar * m_trigger_toolbar{nullptr};//西光所版本触发按钮工具栏
 
 	QActionGroup * m_actionGroup_WhiteBalance;//单选操作组,白平衡
 	QActionGroup * m_actionGroup_ColorMode;//单选操作组,色彩模式

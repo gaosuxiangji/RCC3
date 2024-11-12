@@ -30,10 +30,7 @@ static const QString kVideoExportSkipUnit("System/VideoExport/SkipUnit");//抽�
 static const QString kAviCompressEnabled("System/VideoExport/AviCompressEnabled");//avi压缩使能
 static const QString kWatermarkEnabled("System/VideoExport/WatermarkEnabled");//水印信息使能
 static const QString kVideoWatermarkParam("System/VideoExport/WatermarkParam");//水印操作参数信息
-//健康管理相关
-static const QString kHealthManagerIpKey("System/HealthManager/Ip");//本机ip
-static const QString kHealthManagerPortKey("System/HealthManager/port");//端口
-static const QString kHealthManagerPeriodKey("System/HealthManager/period");//发送周期
+
 //报靶相关
 static const QString kCalibrationFiles("System/CalibrationFiles");//标定参数文件目录(文件路径@相机IP)
 
@@ -127,44 +124,7 @@ QString SystemSettingsManager::getLocalIp() const
 	return addr;
 }
 
-void SystemSettingsManager::setHealthManagerIp(const QString  addr)
-{
-	QSettings settings;
-	settings.setValue(kHealthManagerIpKey, addr);
-}
 
-QString SystemSettingsManager::getHealthManagerIp() const
-{
-	QSettings settings;
-	QString addr = settings.value(kHealthManagerIpKey, local_ip_addresses_.first()).toString();
-	return addr;
-}
-
-void SystemSettingsManager::setHealthManagerPort(int port)
-{
-	QSettings settings;
-	settings.setValue(kHealthManagerPortKey, port);
-}
-
-int SystemSettingsManager::getHealthManagerPort() const
-{
-	QSettings settings;
-	uint16_t port = settings.value(kHealthManagerPortKey, 8080).toUInt();
-	return port;
-}
-
-void SystemSettingsManager::setHealthManagerPeriod(int period)
-{
-	QSettings settings;
-	settings.setValue(kHealthManagerPeriodKey, period);
-}
-
-int SystemSettingsManager::getHealthManagerPeriod() const
-{
-	QSettings settings;
-	uint16_t period = settings.value(kHealthManagerPeriodKey, 1).toUInt();
-	return period;
-}
 
 QStringList SystemSettingsManager::getAllLocalIp() const
 {

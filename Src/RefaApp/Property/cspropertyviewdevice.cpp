@@ -412,18 +412,7 @@ void CSPropertyViewDevice::getPropertyTypes(QSharedPointer<Device> device_ptr, Q
 				prop_types.push_back(kPropTriggerMode);
 				prop_types.push_back(kPropSpacebarTrigger);
 				prop_types.push_back(kPropExternalTriggerMode);
-				if (FunctionCustomizer::GetInstance().isH150Enabled())
-				{
-					prop_types.push_back(kPropChn1Delay);
-					prop_types.push_back(kPropChn2Delay);
-					prop_types.push_back(kPropChn3Delay);
-					prop_types.push_back(kPropChn4Delay);
-					prop_types.push_back(kPropChn5Delay);
-					prop_types.push_back(kPropChn6Delay);
-					prop_types.push_back(kPropChn7Delay);
-					prop_types.push_back(kPropChn8Delay);
-				}
-				else
+
 				{
 					if (device_ptr->IsPIVSupported())
 					{

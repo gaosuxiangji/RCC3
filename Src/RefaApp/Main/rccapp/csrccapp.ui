@@ -161,7 +161,6 @@
     <addaction name="separator"/>
     <addaction name="actionDelay_Correction"/>
     <addaction name="actionDrop_Measurement_Settings"/>
-    <addaction name="actionHealth_Management_Settings"/>
     <addaction name="separator"/>
     <addaction name="action_C"/>
     <addaction name="menuFan_Control_F"/>

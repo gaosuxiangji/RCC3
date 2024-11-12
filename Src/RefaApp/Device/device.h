@@ -1932,10 +1932,6 @@ public:
 	*/
 	void doMsgProcess();
 
-	/**
-	* @brief 更新健康管理消息
-	*/
-	void doUpdateHealthRecord();
 
 	/**
 	* @brief 更新开机和工作时长
@@ -2128,14 +2124,6 @@ private:
 	std::atomic_bool m_destory{ false };//退出
 	
 
-	//健康管理相关
-	const int kUpdateHealthRecordInterval{ 5000 }; // 更新健康管理间隔
-	QPointer<QTimer> m_health_record_timer_ptr; //健康管理更新定时器
-	std::unique_ptr<HealthRecord> health_record_ptr;//健康管理记录
-
-	//西光所记录设备开启时长
-	const int kUpdateCurBootTimeAndTotalWorkTimeInterval{ 10 * 60 * 1000 }; // 更新更新启动时间和工作间隔
-	QPointer<QTimer> m_boot_and_work_record_timer_ptr; //更新启动时间和工作时间定时器
 
 	//设备温度相关
 	const int kTemperatureBufLen = 1024;//温度字段长度

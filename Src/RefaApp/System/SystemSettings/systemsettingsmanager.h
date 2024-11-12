@@ -55,43 +55,6 @@ public:
      */
     QString getLocalIp() const;
 
-	/**
-	* @brief 设置健康管理IP
-	* @param addr ip地址
-	*/
-	void setHealthManagerIp(const QString  addr);
-
-	/**
-	* @brief 获取健康管理IP
-	* @return 本地IP
-	*/
-	QString getHealthManagerIp() const;
-
-	/**
-	* @brief 设置健康管理端口
-	* @param port 端口号
-	*/
-	void setHealthManagerPort(int port);
-
-	/**
-	* @brief 获取健康管理端口
-	* @return port 端口号
-	*/
-	int getHealthManagerPort() const;
-
-
-	/**
-	* @brief 设置健康管理发送周期
-	* @param period 发送周期
-	*/
-	void setHealthManagerPeriod(int period);
-
-	/**
-	* @brief 获取健康管理发送周期
-	* @return period 发送周期
-	*/
-	int getHealthManagerPeriod() const;
-
     /**
      * @brief 获取所有本地IP
      * @return 本地IP列表

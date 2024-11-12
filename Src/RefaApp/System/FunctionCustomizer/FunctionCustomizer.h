@@ -39,22 +39,10 @@ public:
 	bool isUsabilityVersion() const;
 
 	/**
-	*@brief 西光所版本是否使能
-	*@return : bool : true-西光所版本，false-非西光所版本
-	**/
-	bool isXiguangsuoVersion() const;
-
-	/**
 	*@brief 积分球版本是否使能
 	*@return : bool : true-积分球版本，false-非积分球版本
 	**/
 	bool isIntegratingSphereVersion() const;
-
-	/**
-	*@brief H150版本是否使能
-	*@return : bool : true-H150版本，false-非H150版本
-	**/
-	bool isH150Enabled() const;
 
 
 	/**
@@ -77,11 +65,8 @@ private:
 
 	bool busability_enable_{ true };
 
-	bool bxiguangsuo_version_{ false };
-
 	bool bintegrating_sphere_version_{ false };
 
-	bool bh150_enable_{ false };
 
 	bool m_bcf18_version{ true };
 

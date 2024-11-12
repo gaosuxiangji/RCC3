@@ -1451,14 +1451,7 @@ void CSDeviceListWidget::on_deviceTreeView_doubleClicked(const QModelIndex &inde
 		CSRccApp* main_window = dynamic_cast<CSRccApp*>( getMainWindow());
 		if (main_window)
 		{
-			if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-			{
-				main_window->on_actionHigh_speed_Acquisition_triggered();
-			}
-			else
-			{
-				main_window->on_actionPreview_P_triggered();
-			}
+			main_window->on_actionPreview_P_triggered();
 		}
 	}
 
@@ -1551,15 +1544,10 @@ bool CSDeviceListWidget::slotConnectCurrentDevice()
 	if (main_window)
 	{
 		//连接设备
-		if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())//西光所版本直接进入高采
-		{
-			main_window->on_actionHigh_speed_Acquisition_triggered();
-		}
-		else
-		{
-			device_ptr->setShowTip(true);
-			device_ptr->connect();
-		}
+
+		device_ptr->setShowTip(true);
+		device_ptr->connect();
+
 	}
 
 	return true;

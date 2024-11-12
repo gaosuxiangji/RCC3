@@ -59,10 +59,6 @@ bool CSVideoSaver::SaveSnapshot( RccFrameInfo video_info, bool bAnti, uint8_t fr
 	CSLOG_INFO("save snapshot to path:{}", image_path.toStdString());
 	if (dir.mkpath(QFileInfo(image_path).path()))
 	{
-		if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-		{
-			return saveBmpWithExtendInfo(image_path, video_info);
-		}
 
 		if (video_info.valid_bits != 8)//16bit数据存储对应的参数
 		{
@@ -89,32 +85,6 @@ unsigned long FourBytes2DWORD(const unsigned char bytes[4])
 	return dw;
 }
 
-/**
-* @brief 西光所XJ520角度转换
-* @param 角度值（1"）
-*/
-static float toXJ520Angle(uint32_t value)
-{
-	return (float)value / 536870912 * 360;
-}
-
-/**
-* @brief 西光所XJ520焦距转换
-* @return 焦距（1mm）
-*/
-static float toXJ520FocusLength(uint32_t value)
-{
-	return (float)value / 100;
-}
-
-/**
-* @brief 西光所XJ520帧频转换
-* @帧频（0.01帧/s）
-*/
-static float toXJ520FrameRate(uint32_t value)
-{
-	return value * 100;
-}
 
 
 bool CSVideoSaver::saveBmpWithExtendInfo(QString image_path,  RccFrameInfo & video_frame)
@@ -151,11 +121,9 @@ bool CSVideoSaver::saveBmpWithExtendInfo(QString image_path,  RccFrameInfo & vid
 	uint32_t usec = FourBytes2DWORD(&video_frame.timestamp[5]);
 	extend_info.absolute_time = (hour * 60 * 60 + min * 60 + sec) * 1000 * 10 + usec / 100;
 
-	extend_info.azimuth = toXJ520Angle(video_frame.extend_info.azimuth);
-	extend_info.pitch = toXJ520Angle(video_frame.extend_info.pitch);
+
 	extend_info.distance = video_frame.extend_info.distance;
-	extend_info.focal_length = toXJ520FocusLength(video_frame.extend_info.focal_length);
-	extend_info.frame_rate = toXJ520FrameRate(video_frame.extend_info.frame_rate);
+
 	extend_info.exposure_time = video_frame.extend_info.exposure_time;
 
 	std::string ascii_save_path =image_path.toLocal8Bit().data();

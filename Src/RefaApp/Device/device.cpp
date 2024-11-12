@@ -48,7 +48,6 @@ using namespace cv;
 //#include "FallPointMeasure/FallPointMeasure.h"
 #include "System/FunctionCustomizer/FunctionCustomizer.h"
 #include "System/SystemSettings/systemsettingsmanager.h"
-#include "System/cshealthmanager.h"
 #include "imageprocessor.h"
 #include "previewthread.h"
 #include "acquirethread.h"
@@ -261,20 +260,6 @@ Device::Device(const HscDeviceInfo & info, QObject *parent) : QObject(parent), i
 	});
 	QObject::connect(this, &Device::reconnectFinished, reconnected_timer_ptr_, &QTimer::stop);
 
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
-		//健康管理计时器
-		m_health_record_timer_ptr = new QTimer();
-		m_health_record_timer_ptr->setInterval(kUpdateHealthRecordInterval);
-		QObject::connect(m_health_record_timer_ptr, &QTimer::timeout, this, &Device::doUpdateHealthRecord);
-		m_health_record_timer_ptr->start();
-
-		//开机工作记录计时器
-		m_boot_and_work_record_timer_ptr = new QTimer();
-		m_boot_and_work_record_timer_ptr->setInterval(kUpdateCurBootTimeAndTotalWorkTimeInterval);
-		QObject::connect(m_boot_and_work_record_timer_ptr, &QTimer::timeout, this, &Device::doUpdateCurBootTimeAndTotalWorkTime);
-	}
-
 
 	//温度数据
 	if (temperature_buf_ptr_ == nullptr)
@@ -312,10 +297,7 @@ Device::~Device()
 	}
 	
 
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
-		m_health_record_timer_ptr->stop();
-	}
+
 
 	exitMsgProcessThread();
 	exitCF18HeartBeatThread();
@@ -1414,7 +1396,7 @@ bool Device::IsPixelDepthDifferent()
 
 bool Device::IsDataCorrectionSupported() const
 {
-	return FunctionCustomizer::GetInstance().isXiguangsuoVersion();
+	return false;
 }
 
 bool Device::AllowsEditDataCorrectionFrameOffset(StreamType stream_type) const
@@ -1909,10 +1891,6 @@ bool Device::IsWatermarkSupported(VideoFormat video_format) const
 		return false;
 	}
 
-	if (FunctionCustomizer::GetInstance().isH150Enabled())
-	{
-		return true;
-	}
 
 	StreamType stream_type = getProperty(Device::PropStreamType).value<StreamType>();
 	auto bpp = getProcessor()->GetBitsPerPixel();
@@ -2001,10 +1979,7 @@ bool Device::AllowsEditTriggerMode() const
 			//TODO:级联支持
 
 
-			if (!FunctionCustomizer::GetInstance().isH150Enabled())
-			{
-				return true;
-			}
+
 
 			if (IsPIVSupported())
 			{
@@ -3495,12 +3470,6 @@ HscResult Device::connectDevice(bool update_state, bool emit_device_connected)
 		}
 	}
 
-	//西光所版本开启运行计时
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion() && res == HSC_OK)
-	{
-		UpdateCurBootTimeAndTotalWorkTime();
-		m_boot_and_work_record_timer_ptr->start();
-	}
 
 
 	//授权提示
@@ -3789,11 +3758,7 @@ HscResult Device::disconnectDevice(bool update_state, bool emit_device_disconnec
 
     HscCloseDevice(device_handle_);
 	CSLOG_INFO("{} device closed.", getIpOrSn().toStdString());
-	//西光所版本关闭运行计时
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
-		m_boot_and_work_record_timer_ptr->stop();
-	}
+
 
     if (update_state)
     {
@@ -3980,11 +3945,7 @@ void Device::updateRealtimeFrame()
 			frameInfo.timestamp[i] = last_realtime_timestamp_[i];
 		}
 
-		//西光所xj1310调试信息中输出俯仰角信息
-		if (FunctionCustomizer::GetInstance().isXiguangsuoVersion() && getModel() == DEVICE_XJ1310)
-		{
-			printf("azimuth=%d, pitch=%d, focal_length=%d\n", frameInfo.extend_info.azimuth, frameInfo.extend_info.pitch, frameInfo.extend_info.focal_length);
-		}
+
 		int nBits = getProperty(PropPixelBitDepth).toInt();
 		int image_trigger_avg_avg_lum = buffer_ptr->frame_head.image_trigger_avg_avg_lum;
 		int auto_exposure_area_avg_lum = buffer_ptr->frame_head.auto_exposure_area_avg_lum;
@@ -5537,118 +5498,6 @@ void Device::doMsgProcess()
 	}
 }
 
-void Device::doUpdateHealthRecord()
-{
-	if (!health_record_ptr)
-	{
-		health_record_ptr.reset(new HealthRecord);
-	}
-
-	//帧头
-	memset(health_record_ptr.get(), 0, sizeof(HealthRecord));
-	const uint8_t kHeadMark[4] = { 'X', 'J', 'X', 'G' };
-	std::memcpy(health_record_ptr->head_mark, kHeadMark, sizeof(kHeadMark));
-
-	//设备编号
-	health_record_ptr->device_index = GetDeviceIndex();
-
-	//判断连接状态,检查设备错误信息
-	DeviceState state = getState();
-	if (state == Connected || state == Previewing || state == Acquiring || state == Recording )
-	{
-		//错误码
-		ErrorInfo errors[MAX_SYSTEM_SELF_CHECK_COUNT];
-		health_record_ptr->fault_count = SystemSelfCheck(errors);
-		uint32_t max_fault_count = sizeof(health_record_ptr->fault_codes) / sizeof(health_record_ptr->fault_codes[0]);
-		if (health_record_ptr->fault_count > max_fault_count)
-		{
-			health_record_ptr->fault_count = max_fault_count;
-		}
-
-		for (int i = 0; i < health_record_ptr->fault_count; i++)
-		{
-			health_record_ptr->fault_codes[i] = errors[i].error_code_;
-		}
-
-		//温度
-		std::map<TemperatureTypes, double> map_temperatures;
-		HscResult res = GetTemperatures(map_temperatures);
-		if (res == HSC_OK)
-		{
-			auto iter = map_temperatures.find(kTempMainBoard);
-			if (iter != map_temperatures.end())
-			{
-				health_record_ptr->temperatures[0] = iter->second;
-			}
-
-			iter = map_temperatures.find(kTempSlaveBoard);
-			if (iter != map_temperatures.end())
-			{
-				health_record_ptr->temperatures[1] = iter->second;
-			}
-
-			iter = map_temperatures.find(kTempArmChip);
-			if (iter != map_temperatures.end())
-			{
-				health_record_ptr->temperatures[2] = iter->second;
-			}
-		}
-
-
-	}
-	//设备工作模式转换
-	// 工作模式：0-未连接，1-正在连接，2-正在重连，3-已连接，4-正在断开，5-断开，6-预览，7-高速采集，8-正在录制，9-正在断电数据恢复，10-慢速回放，11-待机
-	uint8_t work_mode = 0;
-	switch (state)
-	{
-	case Unconnected:
-		work_mode = 0;
-		break;
-	case Connecting:
-		work_mode = 1;
-		break;
-	case Connected:
-		work_mode = 3;
-		break;
-	case Previewing:
-		work_mode = 6;
-		break;
-	case Acquiring:
-		work_mode = 7;
-		break;
-	case Recording:
-		work_mode = 8;
-		break;
-	case Replaying:
-		work_mode = 10;
-		break;
-	case Exporting:
-		work_mode = 10;
-		break;
-	case Disconnecting:
-		work_mode = 4;
-		break;
-	case Disconnected:
-		work_mode = 5;
-		break;
-	case Reconnecting:
-		work_mode = 2;
-		break;
-	case StandBy:
-		work_mode = 11;
-		break;
-	default:
-		work_mode = 0;
-		break;
-	}
-	health_record_ptr->work_mode = work_mode;
-
-	//写入到健康管理
-	CSHealthManager::instance().updateRecord(getIpOrSn(), *health_record_ptr);
-	
-
-}
-
 void Device::doUpdateCurBootTimeAndTotalWorkTime()
 {
 	LOCK_TEST(&mutex_);
@@ -6394,11 +6243,6 @@ void Device::doImageProcess()
 				frameInfo.timestamp[i] = last_realtime_timestamp_[i];
 			}
 
-			//西光所xj1310调试信息中输出俯仰角信息
-			if (FunctionCustomizer::GetInstance().isXiguangsuoVersion() && getModel() == DEVICE_XJ1310)
-			{
-				printf("azimuth=%d, pitch=%d, focal_length=%d\n", frameInfo.extend_info.azimuth, frameInfo.extend_info.pitch, frameInfo.extend_info.focal_length);
-			}
 			RccImageFrameInfo rccImage;
 			rccImage.image = frameInfo;
 			rccImage.image_trigger_avg_avg_lum = buffer_ptr->frame_head.image_trigger_avg_avg_lum;

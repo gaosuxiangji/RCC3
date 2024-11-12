@@ -39,7 +39,7 @@
 //#include "FallPointMeasure/FallPointMeasure.h"
 #include "System/FunctionCustomizer/FunctionCustomizer.h"
 #include "System/SystemSettings/systemsettingsmanager.h"
-#include "System/cshealthmanager.h"
+
 #include "imageprocessor.h"
 #include "previewthread.h"
 #include "acquirethread.h"

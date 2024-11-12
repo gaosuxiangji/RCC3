@@ -22,16 +22,7 @@ void DeviceUtils::getGeneralTypicalResolutions(QList<QSize> &resolutions, Device
 		return;
 	}
 
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion() && model == DeviceModel::DEVICE_XJ1310)
-	{
-		resolutions << QSize(1280, 1024);
-		resolutions << QSize(1024, 768);
-		resolutions << QSize(768, 576);
-		resolutions << QSize(640, 512);
-		resolutions << QSize(320, 256);
-		resolutions << QSize(512, 128);
-	}
-	else if (model == DeviceModel::DEVICE_GRABBER_100T) {
+	if (model == DeviceModel::DEVICE_GRABBER_100T) {
 		resolutions << QSize(1920, 1088);
 		resolutions << QSize(1920, 1080);
 		resolutions << QSize(1344, 960);

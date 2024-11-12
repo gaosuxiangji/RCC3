@@ -31,12 +31,10 @@
 #include "System/Experiment/csdlgopenexp.h"
 //#include "System/csdlgfallpointmeasuresetup.h"
 #include "System/csdlgselfcheck.h"
-#include "System/cshealthmanager.h"
 #include "Device/csframeinfo.h"
 #include "csmenulocalvideo/csmenulocalvideo.h"
 #include "cslocalvideoplayer/cslocalvideoplayer.h"
 #include "System/SystemSettings/systemsettingsmanager.h"
-#include "System/SystemSettings/csdlghealthmanagersetting.h"
 #include <QDesktopServices>
 #include "System/SystemSettings/csdlgdeviceauth.h"
 #include "cssoftwareversion/cssoftwareversion.h"
@@ -172,11 +170,6 @@ void CSRccApp::Init()
 	};
 
 	GetViewManagerPtr()->registerCbEx(associate_callback, un_associate_callback);
-
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
-		CSHealthManager::instance().start();
-	}
 
 
     //加载已经记录的标定文件
@@ -395,38 +388,14 @@ void CSRccApp::InitUI()
 		ui->actionFilter->setVisible(false);
 	}
 
-	//西光所版本采集相关工具栏布局变更
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
- 		//添加一个空白工具栏,添加空白布局. 
-		QToolBar* toolbar_spacer = new QToolBar(this);
-		addToolBar(toolbar_spacer);
-		toolbar_spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
-		QWidget* widget_spacer = new QWidget(this);
-		widget_spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
-		toolbar_spacer->addWidget(widget_spacer);
-		QHBoxLayout* layout_spacer = new QHBoxLayout(widget_spacer);
-		widget_spacer->setLayout(layout_spacer);
-		layout_spacer->addSpacerItem(new QSpacerItem(m_ui_max_size, 20, QSizePolicy::Expanding, QSizePolicy::Minimum));
 
-		//添加西光所触发按钮工具栏
-		m_trigger_toolbar = new QToolBar(this);
-		m_trigger_toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
-		m_trigger_toolbar->addAction(ui->actionTrigger_T);
-		addToolBar(Qt::TopToolBarArea, m_trigger_toolbar);
-		//去除原来的触发按钮显示
-		ui->cameraAcqToolBar->removeAction(ui->actionTrigger_T);
-	}
 
 	ui->mainToolBar->setIconSize(QSize(36, 36));
 	ui->cameraAcqToolBar->setIconSize(QSize(36, 36));
 	ui->acqWindowToolBar->setIconSize(QSize(36, 36));
 	ui->runAlarmToolBar->setIconSize(QSize(36, 36));
 	ui->userManualToolBar->setIconSize(QSize(36, 36));
-	if (m_trigger_toolbar)
-	{
-		m_trigger_toolbar->setIconSize(QSize(36,36));
-	}
+
 
 	ui->action_W->setVisible(false);
 	ui->actionBright_Field_Correction->setVisible(false);
@@ -663,11 +632,6 @@ void CSRccApp::updateImageActionsUI()
 	}
 
 	//亮度对比度
-	if (FunctionCustomizer::GetInstance().isH150Enabled())
-	{
-		ui->actionBrightness_Contrast->setEnabled(true);
-	}
-	else
 	{	
 		ui->actionBrightness_Contrast->setEnabled(device_ptr->AllowsEditLuminanceAndContrast());
 	}
@@ -1097,43 +1061,7 @@ void CSRccApp::updateAcquisitionActionsUI()
 {
 
 	//触发按钮
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
-		bool enable_trigger = false;
-		if (m_current_device_ptr)
-		{
-			if (m_current_device_ptr->allowsTrigger())
-			{
-				if (m_current_device_ptr->getProperty(Device::PropTriggerMode) != TRIGGER_EXTERNAL)
-				{
-					enable_trigger = true;
-				}
-			}
-			else if(m_current_device_ptr->getState() == Recording)//正在录制时也可以点击停止录制
-			{
-				enable_trigger = true;
-			}
-		}
-		ui->actionTrigger_T->setEnabled(enable_trigger);
-		QIcon icon;
-		QString text;
 
-		if (m_current_device_ptr && m_current_device_ptr->getState() == Recording)//使用西光所定制触发图像
-		{
-			icon.addFile(QStringLiteral(":/image/image/xgs_stop_recording.png"));
-			text = tr("Stop Recording");
-		}
-		else
-		{
-			icon.addFile(QStringLiteral(":/image/image/xgs_trigger.png"));
-			text = tr("Trigger");
-		}
-
-		ui->actionTrigger_T->setIcon(icon);
-		ui->actionTrigger_T->setText(text);
-		ui->actionTrigger_T->setToolTip(text);
-	}
-	else
 	{
 		ui->actionTrigger_T->setEnabled(DeviceManager::instance().AllowSoftTriggerAllDevice());
 	}
@@ -1175,7 +1103,7 @@ void CSRccApp::updateSettingActionsUI()
 
 	ui->actionDrop_Measurement_Settings->setEnabled(FunctionCustomizer::GetInstance().isTargetScoringSupported());//落点测量设置
 	ui->actionMachine_Self_check->setEnabled(DeviceManager::instance().hasDevices());//整机自检
-	ui->actionHealth_Management_Settings->setVisible(FunctionCustomizer::GetInstance().isXiguangsuoVersion());//健康管理设置
+	ui->actionHealth_Management_Settings->setVisible(false);//健康管理设置
 
 	//没有设备则置灰和设备相关的操作
 	auto pDevice = DeviceManager::instance().getCurrentDevice();
@@ -3126,10 +3054,7 @@ void CSRccApp::on_actionWindow_Tool_triggered(bool checked)
 void CSRccApp::on_actionCamera_Acquisition_triggered(bool checked)
 {
 	ui->cameraAcqToolBar->setVisible(checked);
-	if (m_trigger_toolbar)
-	{
-		m_trigger_toolbar->setVisible(checked);
-	}
+
 }
 
 void CSRccApp::on_actionAcquisition_Window_triggered(bool checked)
@@ -3286,21 +3211,7 @@ void CSRccApp::on_actionHigh_speed_Acquisition_triggered()
 
 void CSRccApp::on_actionTrigger_T_triggered()
 {
-	if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-	{
-		if (m_current_device_ptr)
-		{
-			if (m_current_device_ptr->getState() == Acquiring)
-			{
-				m_current_device_ptr->trigger();
-			}
-			else if(m_current_device_ptr->getState() == Recording)//正在录制时点击触发,停机进入下一次高采
-			{
-				m_current_device_ptr->stopCapture(true, true);
-			}
-		}
-	}
-	else
+
 	{
 		DeviceManager::instance().SoftTriggerAllDevice();
 	}
@@ -3452,13 +3363,7 @@ void CSRccApp::on_actionMachine_Self_check_triggered()
 	dlg.exec();
 }
 
-void CSRccApp::on_actionHealth_Management_Settings_triggered()
-{
-    //打开健康管理设置对话框
-    CSDlgHealthManagerSetting dlg(this);
-    dlg.exec();
 
-}
 
 void CSRccApp::on_actionNew_File_N_triggered()
 {
@@ -3633,11 +3538,7 @@ void CSRccApp::keyPressEvent(QKeyEvent *event)
 {
 	if (event->key() == Qt::Key_Space)//空格触发
 	{
-		if (FunctionCustomizer::GetInstance().isXiguangsuoVersion())
-		{
-			//西光所版本不支持空格触发
-		}
-		else
+
 		{
 			DeviceManager::instance().SoftTriggerAllDevice();
 		}

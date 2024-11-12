@@ -1544,10 +1544,7 @@ bool CSDlgDeviceVideoExport::GetWaterMarkOptionEnable(VideoSaveOpt opt)
 	{
 		return false;
 	}
-	if (FunctionCustomizer::GetInstance().isH150Enabled())
-	{
-		return true;
-	}
+
 	StreamType stream_type = opt.stream_type;
 	if (video_format == VIDEO_TIF && opt.nBpp == 16)//16bit tif水印暂时屏蔽
 	{
@@ -1667,7 +1664,6 @@ void CSDlgDeviceVideoExport::startExport()
 	export_info.contrast = item.getProperty(VideoItem::PropType::Contrast, 50).toInt();
 	export_info.enable_anti_color = item.isAntiColorEnable();
 	export_info.display_mode = item.getDisplayMode();
-	export_info.is_xiguangsuo_version = FunctionCustomizer::GetInstance().isXiguangsuoVersion();
 	export_info.frame_rate = item.getExportFrameRate();
 	export_info.enable_piv = item.getProperty(VideoItem::PropType::EnablePiv, false).toBool();
 	//export_info.m_video_name_type = m_video_items[mCrtIdx].getVideoNameType();

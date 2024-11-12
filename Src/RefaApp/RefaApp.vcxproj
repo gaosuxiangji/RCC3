@@ -302,7 +302,6 @@ powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(Proje
     <ClCompile Include="System\SystemSettings\csdlggainsetting.cpp" />
     <ClCompile Include="System\SystemSettings\csdlggainsettingv2.cpp" />
     <ClCompile Include="System\SystemSettings\csdlggainsettingv3.cpp" />
-    <ClCompile Include="System\SystemSettings\csdlghealthmanagersetting.cpp" />
     <ClCompile Include="System\csdlgimagetrainning.cpp" />
     <ClCompile Include="System\SystemSettings\csdlgluminanceandcontrastsetting.cpp" />
     <ClCompile Include="System\SystemSettings\csdlgmanualwhitebalance.cpp" />
@@ -318,7 +317,6 @@ powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(Proje
     <ClCompile Include="Main\rccapp\csexportpreview\csexportpreview.cpp" />
     <ClCompile Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayctrl.cpp" />
     <ClCompile Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.cpp" />
-    <ClCompile Include="System\cshealthmanager.cpp" />
     <ClCompile Include="Property\csintcomboproperty.cpp" />
     <ClCompile Include="Video\cslistviewvideo.cpp" />
     <ClCompile Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.cpp" />
@@ -483,7 +481,6 @@ powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(Proje
     <QtMoc Include="System\SystemSettings\csdlggainsetting.h" />
     <QtMoc Include="System\SystemSettings\csdlggainsettingv2.h" />
     <QtMoc Include="System\SystemSettings\csdlggainsettingv3.h" />
-    <QtMoc Include="System\SystemSettings\csdlghealthmanagersetting.h" />
     <QtMoc Include="System\csdlgimagetrainning.h" />
     <QtMoc Include="System\SystemSettings\csdlgluminanceandcontrastsetting.h" />
     <QtMoc Include="System\SystemSettings\csdlgmanualwhitebalance.h" />
@@ -501,7 +498,6 @@ powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(Proje
     <QtMoc Include="Main\rccapp\csexportpreviewplayctrl\csexportpreviewplayersliderwidget\csexportpreviewplayersliderwidget.h" />
     <ClInclude Include="Device\csframeinfo.h" />
     <ClInclude Include="Main\rccapp\csglobaldefine.h" />
-    <ClInclude Include="System\cshealthmanager.h" />
     <QtMoc Include="Property\csintcomboproperty.h" />
     <QtMoc Include="Video\cslistviewvideo.h" />
     <QtMoc Include="Main\rccapp\cslocalvideoplayer\cslocalvideoplayer.h" />
@@ -742,8 +738,6 @@ powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File  $(Proje
     <QtUic Include="System\SystemSettings\csdlggainsettingv2.ui">
     </QtUic>
     <QtUic Include="System\SystemSettings\csdlggainsettingv3.ui">
-    </QtUic>
-    <QtUic Include="System\SystemSettings\csdlghealthmanagersetting.ui">
     </QtUic>
     <QtUic Include="System\csdlgimagetrainning.ui">
     </QtUic>
